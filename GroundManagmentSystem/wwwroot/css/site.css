@@ -1,0 +1,1545 @@
+/*========================================================================================================================================================================*/
+/*---------------------------------------------------------INDEX-STYLIZACJA-----------------------------------------------------------------------------------------------*/
+/*========================================================================================================================================================================*/
+
+
+
+
+
+
+
+
+
+/*Stylizacja Fifo*/
+#fifo_main {
+    background-color: white;
+    position: relative;
+    left: -250px;
+    min-height: 100px;
+    min-width: 1800px;
+   
+}
+
+#fifo_main_nazwy {
+    height: 37px;
+    width: 1820px;
+}
+
+#fifo_nazwa_isa_numer {
+    background-color: #e6e600;
+    height: 35px;
+    width: 80px;
+    float: left;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    text-align: center;
+    margin-right:4px;
+}
+
+
+#fifo_nazwa_isa_data {
+    background-color: #66cc00;
+    height: 35px;
+    width: 62px;
+    float: left;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    text-align: center;
+    margin-right:4px;
+}
+
+
+
+#fifo_nazwa_isa_ilosc {
+    background-color: #009933;
+    height: 35px;
+    width: 70px;
+    float: left;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right:4px;
+}
+/*FBA*/
+#fifo_nazwa_isa_fba { /*Paleta kolorów #00ff99  <- Main (OD 30 % + 10%)  Tabela-> #00ffcc*/ /*https://www.w3schools.com/colors/colors_picker.asp*/
+    height: 35px;
+    width: 30px;
+    float: left;
+    margin-right: 2px;
+    background-color: #00995c;
+}
+
+                                    p_fba {
+                                        color: black;
+                                        font-size: 12px;
+                                        font-weight: bolder;
+                                        position: relative;
+                                        left: -3px;
+                                        top:-9px;
+                                        
+                        
+                                    }
+                                    p_fba_1 {
+                                        color: black;
+                                        font-size: 9px;
+                                        font-weight: bolder;
+                                        position: relative;
+                                        left: -3px;
+                                        top:-20px;
+                                    }
+
+#fifo_nazwa_isa_naczepa {
+    height: 35px;
+    width: 30px;
+    float: left;
+    margin-right: 2px;
+    background-color: #00cc7a;
+}
+                                p_fba_st {
+                                    color: black;
+                                    font-size: 12px;
+                                    font-weight: bolder;
+                                    position: relative;
+                                    left: -3px;
+                                    top: -9px;
+                                }
+                                p_fba_st_1 {
+                                    color: black;
+                                    font-size: 9px;
+                                    font-weight: bolder;
+                                    position: relative;
+                                    left: -0px;
+                                    top: -20px;
+                                }
+
+#fifo_nazwa_isa_morski {
+    height: 35px;
+    width: 30px;
+    float: left;
+    margin-right: 2px;
+    background-color: #00ff99;
+}
+                                p_fba_sc {
+                                    color: black;
+                                    font-size: 12px;
+                                    font-weight: bolder;
+                                    position: relative;
+                                    left: -3px;
+                                    top: -9px;
+                                }
+                                p_fba_sc_1 {
+                                    color: black;
+                                    font-size: 9px;
+                                    font-weight: bolder;
+                                    position: relative;
+                                    left: 0px;
+                                    top: -20px;
+                                }
+
+#fifo_nazwa_isa_standard {
+    height: 35px;
+    width: 30px;
+    float: left;
+    margin-right: 2px;
+    background-color: #33ffad;
+}
+                                p_fba_s {
+                                    color: black;
+                                    font-size: 12px;
+                                    font-weight: bolder;
+                                    position: relative;
+                                    left: -3px;
+                                    top: -9px;
+                                }
+                                p_fba_s_1 {
+                                    color: black;
+                                    font-size: 9px;
+                                    font-weight: bolder;
+                                    position: relative;
+                                    left: 0px;
+                                    top: -20px;
+                                }
+#fifo_nazwa_isa_value {
+    background-color: #66ffc2;
+    height: 35px;
+    width: 30px;
+    float: left;
+    margin-right: 2px;
+}
+                                p_fba_pl {
+                                    color: black;
+                                    font-size: 12px;
+                                    font-weight: bolder;
+                                    position: relative;
+                                    left: -3px;
+                                    top: -9px;
+                                }
+                                p_fba_pl_1 {
+                                    color: black;
+                                    font-size: 9px;
+                                    font-weight: bolder;
+                                    position: relative;
+                                    left: -0px;
+                                    top: -20px;
+                                }
+/*LP/PARCEL*/  /*Paleta kolorów #00ffcc  <- Main (OD 30 % + 10%)  Tabela-> #33cccc*/ /*https://www.w3schools.com/colors/colors_picker.asp */
+#fifo_nazwa_isa_lp {
+    background-color: #1f7a7a;
+    height: 35px;
+    width: 30px;
+    float: left;
+    font-size: 20px;
+    color: black;
+    font-size: 11px;
+    margin-left: 4px;
+}
+                                p_lp {
+                                    color: black;
+                                    font-size: 12px;
+                                    font-weight: bolder;
+                                    position: relative;
+                                    left: 0px;
+                                    bottom: 9px;
+                                }
+#fifo_nazwa_isa_lp_value {
+    background-color: #29a3a3;
+    height: 35px;
+    width: 50px;
+    float: left;
+    font-size: 20px;
+    color: black;
+    font-size: 11px;
+    margin-left: 2px;
+}
+                                p_lp_v {
+                                    color: black;
+                                    font-size: 12px;
+                                    font-weight: bolder;
+                                    position: relative;
+                                    left: 0px;
+                                    bottom: 4px;
+                                }
+                                p_lp_v_1 {
+                                    color: black;
+                                    font-size: 9px;
+                                    font-weight: bolder;
+                                    position: relative;
+                                    left: 0px;
+                                    bottom: 6px;
+                                }
+
+#fifo_nazwa_isa_parcel {
+    background-color: #33cccc;
+    height: 35px;
+    width: 30px;
+    float: left;
+    font-size: 20px;
+    color: black;
+    font-size: 11px;
+    margin-left: 2px;
+}
+
+                                p_parcel {
+                                    color: black;
+                                    font-size: 12px;
+                                    font-weight: bolder;
+                                    position: relative;
+                                    left: -3px;
+                                    bottom: 9px;
+                                }
+#fifo_nazwa_isa_parcel_value {
+    background-color: #5cd6d6;
+    height: 35px;
+    width: 50px;
+    float: left;
+    font-size: 20px;
+    color: black;
+    font-size: 11px;
+    margin-left: 2px;
+}
+                                p_parcel_v {
+                                    color: black;
+                                    font-size: 12px;
+                                    font-weight: bolder;
+                                    position: relative;
+                                    left: -3px;
+                                    bottom: 3px;
+                                }
+
+                                p_parcel_v_1 {
+                                    color: black;
+                                    font-size: 9px;
+                                    font-weight: bolder;
+                                    position: relative;
+                                    left: 0px;
+                                    bottom: 6px;
+                                }
+
+
+/*MONO/PAX*//*Paleta kolorów #00ffcc  <- Main (OD 30 % + 10%)  Tabela-> #33cccc*/ /*https://www.w3schools.com/colors/colors_picker.asp */
+#fifo_nazwa_isa_mono {
+    background-color: #007a99;
+    height: 35px;
+    width: 35px;
+    float: left;
+    font-size: 20px;
+    color: black;
+    font-size: 11px;
+    margin-left: 4px;
+    margin-right: 2px;
+}
+                                p_mono {
+                                    color: black;
+                                    font-size: 12px;
+                                    font-weight: bolder;
+                                    position: relative;
+                                    left: -4px;
+                                    bottom: 8px;
+                                }
+
+#fifo_nazwa_isa_mono_value {
+    height: 35px;
+    width: 50px;
+    background-color: #00a3cc;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+}
+    
+
+                                    p_mono_v {
+                                        color: black;
+                                        font-size: 12px;
+                                        font-weight: 700;
+                                        position: relative;
+                                        left: -1px;
+                                        bottom: 3px;
+                                    }
+
+                                    p_mono_v_1 {
+                                        color: black;
+                                        font-size: 9px;
+                                        font-weight: 700;
+                                        position: relative;
+                                        left: -1px;
+                                        bottom: 6px;
+                                    }
+
+#fifo_nazwa_isa_pax {
+    background-color: #00ccff;
+    height: 35px;
+    width: 30px;
+    float: left;
+    font-size: 20px;
+    color: black;
+    font-size: 11px;
+    margin-right: 2px;
+}
+                                    p_pax {
+                                        color: black;
+                                        font-size: 12px;
+                                        font-weight: bolder;
+                                        position: relative;
+                                        left: -3px;
+                                        bottom: 10px;
+                                    }
+#fifo_nazwa_isa_pax_value {
+    height: 35px;
+    width: 50px;
+    background-color: #33d6ff;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+}
+                                        p_pax_v {
+                                            color: black;
+                                            font-size: 12px;
+                                            font-weight: 700;
+                                            position: relative;
+                                            left: -1px;
+                                            bottom: 3px;
+                                        }
+                                        p_pax_v_1 {
+                                            color: black;
+                                            font-size: 9px;
+                                            font-weight: 700;
+                                            position: relative;
+                                            left: 0px;
+                                            bottom: 6px;
+                                        }
+
+#fifo_nazwa_isa_ra {
+    background-color: #5c0099;
+    height: 35px;
+    width: 30px;
+    float: left;
+    font-size: 20px;
+    color: black;
+    font-size: 11px;
+    margin-right: 2px;
+    margin-left: 2px;
+}
+                                        p_ra {
+                                            color: black;
+                                            font-size: 12px;
+                                            font-weight: 700;
+                                            position: relative;
+                                            left: 0px;
+                                            bottom: 8px;
+                                        }
+
+#fifo_nazwa_isa_ra_value {
+    background-color: #7a00cc;
+    height: 35px;
+    width: 50px;
+    float: left;
+    font-size: 20px;
+    color: black;
+    font-size: 11px;
+    margin-right: 2px;
+}
+                                        p_ra_v {
+                                            color: black;
+                                            font-size: 12px;
+                                            font-weight: 700;
+                                            position: relative;
+                                            left: 0px;
+                                            bottom: 3px;
+                                        }
+
+                                        p_ra_v_1 {
+                                            color: black;
+                                            font-size: 9px;
+                                            font-weight: 700;
+                                            position: relative;
+                                            left: 0px;
+                                            bottom: 6px;
+                                        }
+#fifo_nazwa_isa_rb {
+    background-color: #9900ff;
+    height: 35px;
+    width: 30px;
+    float: left;
+    font-size: 20px;
+    color: black;
+    font-size: 11px;
+    margin-right: 2px;
+}
+                                        p_rb {
+                                            color: black;
+                                            font-size: 12px;
+                                            font-weight: 700;
+                                            position: relative;
+                                            left: 0px;
+                                            bottom: 8px;
+                                        }
+
+
+#fifo_nazwa_isa_rb_value {
+    background-color: #ad33ff;
+    height: 35px;
+    width: 50px;
+    float: left;
+    font-size: 20px;
+    color: black;
+    font-size: 11px;
+    margin-right: 2px;
+}
+                                        p_rb_v {
+                                            color: black;
+                                            font-size: 12px;
+                                            font-weight: 700;
+                                            position: relative;
+                                            left: 0px;
+                                            bottom: 2px;
+                                        }
+                                        p_rb_v_1 {
+                                            color: black;
+                                            font-size: 9px;
+                                            font-weight: 700;
+                                            position: relative;
+                                            left: 0px;
+                                            bottom: 6px;
+                                        }
+#fifo_nazwa_isa_rh {
+    background-color: #c266ff;
+    height: 35px;
+    width: 30px;
+    float: left;
+    font-size: 20px;
+    color: black;
+    font-size: 11px;
+    margin-right: 2px;
+}
+                                        p_rh {
+                                            color: black;
+                                            font-size: 12px;
+                                            font-weight: 700;
+                                            position: relative;
+                                            left: 0px;
+                                            bottom: 8px;
+                                        }
+#fifo_nazwa_isa_rh_value {
+    background-color: #d699ff;
+    height: 35px;
+    width: 50px;
+    float: left;
+    font-size: 20px;
+    color: black;
+    font-size: 11px;
+    margin-right: 4px;
+}
+
+                                        p_rh_v {
+                                            color: black;
+                                            font-size: 12px;
+                                            font-weight: 700;
+                                            position: relative;
+                                            left: 0px;
+                                            bottom:2px;
+                                        }
+                                        p_rh_v_1 {
+                                            color: black;
+                                            font-size: 9px;
+                                            font-weight: 700;
+                                            position: relative;
+                                            left: 0px;
+                                            bottom: 6px;
+                                        }
+#fifo_nazwa_isa_rap {
+    background-color: #990099;
+    height: 35px;
+    width: 30px;
+    float: left;
+    font-size: 20px;
+    color: black;
+    font-size: 11px;
+    margin-right: 2px;
+}
+                                            p_rap {
+                                                color: black;
+                                                font-size: 12px;
+                                                font-weight: 700;
+                                                position: relative;
+                                                left: -3px;
+                                                bottom: 7px;
+                                            }
+#fifo_nazwa_isa_rap_value {
+    background-color: #cc00cc;
+    height: 35px;
+    width: 50px;
+    float: left;
+    font-size: 20px;
+    color: black;
+    font-size: 11px;
+    margin-right: 2px;
+}
+                                        p_rap_v {
+                                            color: black;
+                                            font-size: 12px;
+                                            font-weight: 700;
+                                            position: relative;
+                                            left: 0px;
+                                            bottom: 2px;
+                                        }
+                                        p_rap_v_1 {
+                                            color: black;
+                                            font-size: 9px;
+                                            font-weight: 700;
+                                            position: relative;
+                                            left: 0px;
+                                            bottom: 6px;
+                                        }
+
+#fifo_nazwa_isa_rbp {
+    background-color: #ff00ff;
+    height: 35px;
+    width: 30px;
+    float: left;
+    font-size: 20px;
+    color: black;
+    font-size: 11px;
+    margin-right: 2px;
+}
+                                    p_rbp {
+                                        color: black;
+                                        font-size: 12px;
+                                        font-weight: 700;
+                                        position: relative;
+                                        left: -4px;
+                                        bottom: 7px;
+                                    }
+#fifo_nazwa_isa_rbp_value {
+    background-color: #ff33ff;
+    height: 35px;
+    width: 50px;
+    float: left;
+    font-size: 20px;
+    color: black;
+    font-size: 11px;
+    margin-right: 2px;
+}
+                                    p_rbp_v {
+                                        color: black;
+                                        font-size: 12px;
+                                        font-weight: 700;
+                                        position: relative;
+                                        left: 0px;
+                                        bottom: 2px;
+                                    }
+                                    p_rbp_v_1 {
+                                        color: black;
+                                        font-size: 9px;
+                                        font-weight: 700;
+                                        position: relative;
+                                        left: 0px;
+                                        bottom: 6px;
+                                    }
+
+#fifo_nazwa_isa_rhp {
+    background-color: #ff66ff;
+    height: 35px;
+    width: 30px;
+    float: left;
+    font-size: 20px;
+    color: black;
+    font-size: 11px;
+    margin-right: 2px;
+}
+                                p_rhp {
+                                    color: black;
+                                    font-size: 12px;
+                                    font-weight: 700;
+                                    position: relative;
+                                    left: -4px;
+                                    bottom: 7px;
+                                }
+#fifo_nazwa_isa_rhp_value {
+    background-color: #ff99ff;
+    height: 35px;
+    width: 50px;
+    float: left;
+    font-size: 20px;
+    color: black;
+    font-size: 11px;
+    margin-right: 4px;
+}
+                                p_rhp_v {
+                                    color: black;
+                                    font-size: 12px;
+                                    font-weight: 700;
+                                    position: relative;
+                                    left: 0px;
+                                    bottom: 2px;
+                                }
+                                p_rhp_v_1 {
+                                    color: black;
+                                    font-size: 9px;
+                                    font-weight: 700;
+                                    position: relative;
+                                    left: 0px;
+                                    bottom: 6px;
+                                }
+
+#fifo_nazwa_isa_ac {
+    background-color: #99004d;
+    height: 35px;
+    width: 30px;
+    float: left;
+    font-size: 20px;
+    color: black;
+    font-size: 11px;
+    margin-right: 2px;
+}
+                                p_ac {
+                                    color: black;
+                                    font-size: 12px;
+                                    font-weight: 700;
+                                    position: relative;
+                                    left: 0px;
+                                    bottom: 6px;
+                                }
+#fifo_nazwa_isa_ac_value {
+    background-color: #cc0066;
+    height: 35px;
+    width: 50px;
+    float: left;
+    font-size: 20px;
+    color: black;
+    font-size: 11px;
+    margin-right: 2px;
+}
+                                p_ac_v {
+                                    color: black;
+                                    font-size: 12px;
+                                    font-weight: 700;
+                                    position: relative;
+                                    left: 0px;
+                                    bottom: 2px;
+                                }
+                                p_ac_v_1 {
+                                    color: black;
+                                    font-size: 9px;
+                                    font-weight: 700;
+                                    position: relative;
+                                    left: 0px;
+                                    bottom: 6px;
+                                }
+
+#fifo_nazwa_isa_bc {
+    background-color: #ff0080;
+    height: 35px;
+    width: 30px;
+    float: left;
+    font-size: 20px;
+    color: black;
+    font-size: 11px;
+    margin-right: 2px;
+}
+                                p_bc {
+                                    color: black;
+                                    font-size: 12px;
+                                    font-weight: 700;
+                                    position: relative;
+                                    left: 0px;
+                                    bottom: 7px;
+                                }
+#fifo_nazwa_isa_bc_value {
+    background-color: #ff3399;
+    height: 35px;
+    width: 50px;
+    float: left;
+    font-size: 20px;
+    color: black;
+    font-size: 11px;
+    margin-right: 2px;
+}
+                                p_bc_v {
+                                    color: black;
+                                    font-size: 12px;
+                                    font-weight: 700;
+                                    position: relative;
+                                    left: 0px;
+                                    bottom: 2px;
+                                }
+                                p_bc_v_1 {
+                                    color: black;
+                                    font-size: 9px;
+                                    font-weight: 700;
+                                    position: relative;
+                                    left: 0px;
+                                    bottom: 4px;
+                                }
+
+#fifo_nazwa_isa_hc {
+    background-color: #ff66b3;
+    height: 35px;
+    width: 30px;
+    float: left;
+    font-size: 20px;
+    color: black;
+    font-size: 11px;
+    margin-right: 2px;
+}
+                                p_hc {
+                                    color: black;
+                                    font-size: 12px;
+                                    font-weight: 700;
+                                    position: relative;
+                                    left: 0px;
+                                    bottom: 7px;
+                                }
+#fifo_nazwa_isa_hc_value {
+    background-color: #ff99cc;
+    height: 35px;
+    width: 50px;
+    float: left;
+    font-size: 20px;
+    color: black;
+    font-size: 11px;
+    margin-right: 4px;
+}
+                                p_hc_v {
+                                    color: black;
+                                    font-size: 12px;
+                                    font-weight: 700;
+                                    position: relative;
+                                    left: 0px;
+                                    bottom: 2px;
+                                }
+                                p_hc_v_1 {
+                                    color: black;
+                                    font-size: 9px;
+                                    font-weight: 700;
+                                    position: relative;
+                                    left: 0px;
+                                    bottom: 4px;
+                                }
+
+#fifo_nazwa_isa_komentarz {
+    background-color: #ff4000;
+    height: 35px;
+    width: 250px;
+    float: left;
+    font-size: 20px;
+    color: black;
+    font-size: 11px;
+    margin-right: 2px;
+}
+
+
+#fifo_nazwa_isa_opcje {
+    background-color: #cc6600;
+    height: 35px;
+    width: 40px;
+    float: left;
+    font-size: 20px;
+    color: black;
+    font-size: 11px;
+}
+                                    p_opcje {
+                                        color: black;
+                                        font-size: 12px;
+                                        font-weight: 500;
+                                        position: relative;
+                                        left: 12px;
+                                        bottom: 20px;
+                                    }
+
+/*FIFO TABELA G£ÓWNA*/
+#fifo_tabela_main {
+    background-color: white;
+    width: 1780px;
+    height: 37px;
+}
+
+#fifo_tabela_isa_numer {
+    height: 35px;
+    width: 80px;
+    background-color: #ffff33;
+    float: left;
+    text-align: center;
+    position: relative;
+    left: -1px;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+}
+
+#fifo_tabela_isa_data {
+    height: 35px;
+    width: 62px;
+    background-color: #8cff1a;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+}
+
+#fifo_tabela_isa_godzina {
+    height: 35px;
+    width: 51px;
+    background-color: whitesmoke;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+}
+
+#fifo_tabela_isa_ilosc {
+    height: 35px;
+    width: 70px;
+    background-color: #00e64d;
+    color: black;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+}
+/*FBA*/
+#fifo_tabela_isa_fba {
+    height: 35px;
+    width: 30px;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+    background-color: #00b36b;
+}
+
+#fifo_tabela_isa_naczepa {
+    height: 35px;
+    width: 30px;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+    background-color: #00e68a;
+}
+
+#fifo_tabela_isa_morski {
+    height: 35px;
+    width: 30px;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+    background-color: #1affa3;
+}
+
+#fifo_tabela_isa_standard {
+    height: 35px;
+    width: 30px;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+    background-color: #4dffb8;
+}
+
+#fifo_tabela_isa_palety {
+    height: 35px;
+    width: 30px;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+    background-color: #80ffcc;
+}
+/*LP/PARCEL*/
+#fifo_tabela_isa_lp {
+    height: 35px;
+    width: 30px;
+    background-color: #248f8f;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-left: 4px;
+    margin-right: 2px;
+}
+#fifo_tabela_isa_lp_value {
+    height: 35px;
+    width: 50px;
+    background-color: #2eb8b8;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+}
+
+#fifo_tabela_isa_parcel {
+    height: 35px;
+    width: 30px;
+    background-color: #47d1d1;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+}
+#fifo_tabela_isa_parcel_value {
+    height: 35px;
+    width: 50px;
+    background-color: #70dbdb;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right:4px;
+}
+
+#fifo_tabela_isa_mono {
+    height: 35px;
+    width: 35px;
+    background-color: #008fb3;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+}
+#fifo_tabela_isa_mono_value {
+    height: 35px;
+    width: 50px;
+    background-color: #00b8e6;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+}
+
+
+#fifo_tabela_isa_pax {
+    height: 35px;
+    width: 30px;
+    background-color: #1ad1ff;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+}
+#fifo_tabela_isa_pax_value {
+    height: 35px;
+    width: 50px;
+    background-color: #4ddbff;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 4px;
+}
+
+
+#fifo_tabela_isa_ra {
+    height: 35px;
+    width: 30px;
+    background-color: #6b00b3;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+}
+#fifo_tabela_isa_ra_value {
+    height: 35px;
+    width: 50px;
+    background-color: #8a00e6;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+}
+
+#fifo_tabela_isa_rb {
+    height: 35px;
+    width: 30px;
+    background-color: #a31aff;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+}
+#fifo_tabela_isa_rb_value {
+    height: 35px;
+    width: 50px;
+    background-color: #b84dff;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+}
+
+#fifo_tabela_isa_rh {
+    height: 35px;
+    width: 30px;
+    background-color: #cc80ff;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+}
+#fifo_tabela_isa_rh_value {
+    height: 35px;
+    width: 50px;
+    background-color: #e0b3ff;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right:4px;
+}
+
+#fifo_tabela_isa_rap {
+    height: 35px;
+    width: 30px;
+    background-color: #b300b3;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+}
+#fifo_tabela_isa_rap_value {
+    height: 35px;
+    width: 50px;
+    background-color: #e600e6;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+}
+
+#fifo_tabela_isa_rbp {
+    height: 35px;
+    width: 30px;
+    background-color: #ff1aff;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+}
+#fifo_tabela_isa_rbp_value {
+    height: 35px;
+    width: 50px;
+    background-color: #ff4dff;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+}
+
+#fifo_tabela_isa_rhp {
+    height: 35px;
+    width: 30px;
+    background-color: #ff80ff;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+}
+#fifo_tabela_isa_rhp_value {
+    height: 35px;
+    width: 50px;
+    background-color: #ffb3ff;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 4px;
+}
+
+#fifo_tabela_isa_ac {
+    height: 35px;
+    width: 30px;
+    background-color: #b30059;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+}
+#fifo_tabela_isa_ac_value {
+    height: 35px;
+    width: 50px;
+    background-color: #e60073;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+}
+
+#fifo_tabela_isa_bc {
+    height: 35px;
+    width: 30px;
+    background-color: #ff1a8c;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+}
+#fifo_tabela_isa_bc_value {
+    height: 35px;
+    width: 50px;
+    background-color: #ff4da6;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+}
+
+
+#fifo_tabela_isa_hc {
+    height: 35px;
+    width: 30px;
+    background-color: #ff80bf;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+}
+#fifo_tabela_isa_hc_value {
+    height: 35px;
+    width: 50px;
+    background-color: #ffb3d9;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 4px;
+}
+
+
+
+#fifo_tabela_isa_komentarz {
+    height: 35px;
+    width: 250px;
+    background-color: #ff794d;
+    color: black;
+    float: left;
+    text-align: left;
+    font-size: 9px;
+    margin-right: 2px;
+}
+
+#fifo_tabela_opcje {
+    height: 35px;
+    width: 40px;
+    background-color: #ff9933;
+    color: black;
+    float: left;
+    text-align: center;
+}
+/*FIFO SUMA*/
+#fifo_main_suma {
+    height: 35px;
+    width: 1800px;
+    background-color: forestgreen;
+}
+
+#fifo_suma_glowne {
+    height: 35px;
+    width: 205px;
+    background-color: whitesmoke;
+    color: black;
+    float: left;
+    text-align: center;
+}
+
+#fifo_suma_ilosc {
+    height: 35px;
+    width: 70px;
+    background-color: whitesmoke;
+    color: black;
+    float: left;
+    text-align: center;
+}
+
+#fifo_suma_fba {
+    height: 35px;
+    width: px;
+    background-color: whitesmoke;
+    color: black;
+    float: left;
+    text-align: center;
+}
+
+#fifo_suma_naczepa {
+    height: 35px;
+    width: 50px;
+    background-color: whitesmoke;
+    color: black;
+    float: left;
+    text-align: center;
+}
+
+#fifo_suma_morski {
+    height: 35px;
+    width: 70px;
+    background-color: whitesmoke;
+    color: black;
+    float: left;
+    text-align: center;
+}
+
+#fifo_suma_standardowy {
+    height: 35px;
+    width: 70px;
+    background-color: whitesmoke;
+    color: black;
+    float: left;
+    text-align: center;
+}
+
+#fifo_suma_fba_palety {
+    height: 35px;
+    width: 70px;
+    background-color: whitesmoke;
+    color: black;
+    float: left;
+    text-align: center;
+}
+
+#fifo_suma_lp {
+    height: 35px;
+    width: 70px;
+    background-color: whitesmoke;
+    color: black;
+    float: left;
+    text-align: center;
+}
+
+#fifo_suma_parcel {
+    height: 35px;
+    width: 70px;
+    background-color: whitesmoke;
+    color: black;
+    float: left;
+    text-align: center
+}
+
+#fifo_suma_mono {
+    height: 35px;
+    width: 70px;
+    background-color: whitesmoke;
+    color: black;
+    float: left;
+    text-align: center
+}
+
+#fifo_suma_pax {
+    height: 35px;
+    width: 70px;
+    background-color: whitesmoke;
+    color: black;
+    float: left;
+    text-align: center
+}
+
+#fifo_suma_ra {
+    height: 35px;
+    width: 70px;
+    background-color: whitesmoke;
+    color: black;
+    float: left;
+    text-align: center
+}
+
+#fifo_suma_rb {
+    height: 35px;
+    width: 70px;
+    background-color: whitesmoke;
+    color: black;
+    float: left;
+    text-align: center
+}
+
+#fifo_suma_rh {
+    height: 35px;
+    width: 70px;
+    background-color: whitesmoke;
+    color: black;
+    float: left;
+    text-align: center
+}
+
+#fifo_suma_rap {
+    height: 35px;
+    width: 70px;
+    background-color: whitesmoke;
+    color: black;
+    float: left;
+    text-align: center
+}
+
+#fifo_suma_rbp {
+    height: 35px;
+    width: 70px;
+    background-color: whitesmoke;
+    color: black;
+    float: left;
+    text-align: center
+}
+
+#fifo_suma_rhp {
+    height: 35px;
+    width: 70px;
+    background-color: whitesmoke;
+    color: black;
+    float: left;
+    text-align: center
+}
+
+#fifo_suma_ac {
+    height: 35px;
+    width: 70px;
+    background-color: whitesmoke;
+    color: black;
+    float: left;
+    text-align: center
+}
+
+#fifo_suma_bc {
+    height: 35px;
+    width: 70px;
+    background-color: whitesmoke;
+    color: black;
+    float: left;
+    text-align: center
+}
+
+#fifo_suma_hc {
+    height: 35px;
+    width: 70px;
+    background-color: whitesmoke;
+    color: black;
+    float: left;
+    text-align: center
+}
+
+#fifo_suma_pusty {
+    height: 35px;
+    width: 100px;
+    background-color: black;
+    color: black;
+    float: left;
+    text-align: center
+}
+
+#fifo_suma_opcje {
+    height: 35px;
+    width: 20px;
+    background-color: whitesmoke;
+    color: black;
+    float: left;
+    text-align: center
+}
+
+
+/*========================================================================================================================================================================*/
+/*---------------------------------------------------------INDEX-STYLIZACJA-KONIEC----------------------------------------------------------------------------------------*/
+/*========================================================================================================================================================================*/
+
+
+
+
+
+
+
+
+
+
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}

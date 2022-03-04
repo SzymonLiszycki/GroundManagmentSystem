@@ -1,0 +1,298 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+@model IEnumerable<ISA_Model>
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
+@{
+    ViewData["Title"] = "Index";
+}
+<p>
+  <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Link with href
+  </a>
+  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Button with data-bs-target
+  </button>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+    Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+  </div>
+</div>
+<h1>Index</h1>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+  <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+  <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+</svg>
+<!-- Default dropend button -->
+<div class="btn-group dropend">
+  <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    Dropright
+  </button>
+  <ul class="dropdown-menu">
+    <!-- Dropdown menu links -->
+  </ul>
+</div>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<div id="fifo_main" class="" >
+<table class="table">
+    
+    <thead>
+       <div id="fifo_main_nazwy" class="border-1 rounded sticky-top" >
+        <button id="fifo_nazwa_isa_numer" type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="ISA numer">
+           @Html.DisplayNameFor(model => model.ISA_number)     
+        </button>
+        <div id="vertical_spacer" class="border border-white" style="width:4px; height:10px; float:left;"></div>
+        <button id="fifo_nazwa_isa_data" type="button" class="rounded-start  border border-dark" data-bs-toggle="tooltip" data-bs-placement="top" title="Data">
+            @Html.DisplayNameFor(model => model.ISA_date)     
+        </button>            
+        <button id="fifo_nazwa_isa_godzina" type="button" class="rounded-end  border border-dark " data-bs-toggle="tooltip" data-bs-placement="top" title="Godzina">
+            <p_godzina>@Html.DisplayNameFor(model => model.ISA_hour)      </p_godzina>   
+        </button>
+        <div id="vertical_spacer" class="border border-white" style="width:4px; height:10px; float:left;"><!-- SPACER--></div><!--------------------------------------SPACER--->
+         <button id="fifo_nazwa_isa_ilosc" type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Ilość [szt.]">
+            @Html.DisplayNameFor(model => model.ISA_units)         
+        </button>
+        <div id="vertical_spacer" class="border border-white" style="width:4px; height:10px; float:left;"><!-- SPACER--></div><!--------------------------------------SPACER--->
+        <button id="fifo_nazwa_isa_fba" type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Ilość  kontenerów:standard/morski/naczepa">
+           <p_fba>@Html.DisplayNameFor(model => model.ISA_fba)</p_fba>          
+        </button>
+        <button id="fifo_nazwa_isa_naczepa" type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Kontener typu naczepa">
+             <p_fba_st style="color: black;font-size: 12px;font-weight: bolder;position:relative;left:-9px; bottom:10px;">@Html.DisplayNameFor(model => model.ISA_semitrailer)</p_fba_st>
+             <p_fba_st_1 style="color: black;font-size: 12px;font-weight: bolder;position:relative;left:-5px; bottom:18px;">ST</p_fba_st_1> 
+        </button>
+        <button id="fifo_nazwa_isa_morski" type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Kontener morski">
+            <p_fba_sc style="color: black;font-size: 12px;font-weight: bolder;position:relative;left:-9px; bottom:10px;">@Html.DisplayNameFor(model => model.ISA_fba_sea_container) </p_fba_sc>
+             <p_fba_sc_1 style="color: black;font-size: 12px;font-weight: bolder;position:relative;left:-5px; bottom:18px;">SC</p_fba_sc_1> 
+                    
+        </button>
+        <button id="fifo_nazwa_isa_standard" type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Kontener standardowy">
+            <p_fba_sc style="color: black;font-size: 12px;font-weight: bolder;position:relative;left:-9px; bottom:10px;">@Html.DisplayNameFor(model => model.ISA_fba_standard) </p_fba_sc>
+            <p_fba_sc_1 style="color: black;font-size: 12px;font-weight: bolder;position:relative;left:-5px; bottom:18px;">ST</p_fba_sc_1> 
+                    
+        </button>
+        <button id="fifo_nazwa_isa_value" type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Ilość palet na naczepie">
+            <p_fba_sc style="color: black;font-size: 12px;font-weight: bolder;position:relative;left:-9px; bottom:10px;">@Html.DisplayNameFor(model => model.ISA_fba_palets_value)  </p_fba_sc>
+            <p_fba_sc_1 style="color: black;font-size: 12px;font-weight: bolder;position:relative;left:-3px; bottom:18px;">P</p_fba_sc_1>                  
+        </button>
+        <div id="vertical_spacer" class="border border-white" style="width:4px; height:10px; float:left;"><!-- SPACER--></div><!--------------------------------------SPACER--->
+        <button id="fifo_nazwa_isa_lp" type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="LP">
+            <p_lp style="color: black;font-size: 12px;font-weight: bolder;position:relative;left:0px; bottom:1px;">@Html.DisplayNameFor(model => model.ISA_lp)</p_lp>       
+        </button>
+        <button id="fifo_nazwa_isa_parcel" type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Parcel">
+            <p_parcel style="color: black;font-size: 12px;font-weight: bolder;position:relative;left:-6px; bottom:1px;">@Html.DisplayNameFor(model => model.ISA_parcel)  </p_parcel>                 
+        </button>
+        <div id="vertical_spacer" class="border border-white" style="width:4px; height:10px; float:left;"><!-- SPACER--></div><!--------------------------------------SPACER--->
+        <button id="fifo_nazwa_isa_mono" type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Mono">
+            <p_mono style="color: black;font-size: 12px;font-weight: bolder;position:relative;left:-6px; bottom:1px;">@Html.DisplayNameFor(model => model.ISA_mono) </p_mono>                 
+        </button>
+        <button id="fifo_nazwa_isa_pax" type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="PAX">
+            <p_pax style="color: black;font-size: 12px;font-weight: bolder;position:relative;left:-6px; bottom:1px;">@Html.DisplayNameFor(model => model.ISA_pax) </p_pax>                  
+        </button>
+        <div id="vertical_spacer" class="border border-white" style="width:4px; height:10px; float:left;"><!-- SPACER--></div><!--------------------------------------SPACER--->
+        <button id="fifo_nazwa_isa_ra" type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Recive apparel">
+            <p_ra style="color: black;font-size: 12px;font-weight: bolder;position:relative;left:0px; bottom:1px;">@Html.DisplayNameFor(model => model.ISA_ra) </p_ra>      
+        </button>
+        <button id="fifo_nazwa_isa_rb" type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Recive boots">
+            <p_rb style="color: black;font-size: 12px;font-weight: bolder;position:relative;left:0px; bottom:1px;">@Html.DisplayNameFor(model => model.ISA_rb) </p_rb>       
+        </button>
+        <button id="fifo_nazwa_isa_rh" type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Recive hardline">
+            <p_rh style="color: black;font-size: 12px;font-weight: bolder;position:relative;left:0px; bottom:1px;">@Html.DisplayNameFor(model => model.ISA_rh) </p_rh>      
+        </button>
+        <div id="vertical_spacer" class="border border-white" style="width:4px; height:10px; float:left;"><!-- SPACER--></div><!--------------------------------------SPACER--->
+        <button id="fifo_nazwa_isa_rap" type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Recive apparel prep.">
+            <p_rap style="color: black;font-size: 12px;font-weight: bolder;position:relative;left:0px; bottom:1px;">@Html.DisplayNameFor(model => model.ISA_rap) </p_rap>    
+        </button>
+        <button id="fifo_nazwa_isa_rbp" type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Recive boots prep.">
+            <p_rbp style="color: black;font-size: 12px;font-weight: bolder;position:relative;left:0px; bottom:1px;">@Html.DisplayNameFor(model => model.ISA_rbp) </p_rbp> 
+        </button>
+        <button id="fifo_nazwa_isa_rhp" type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Recive hardline prep.">
+            <p_rhp style="color: black;font-size: 12px;font-weight: bolder;position:relative;left:0px; bottom:1px;">@Html.DisplayNameFor(model => model.ISA_rhp) </p_rhp> 
+        </button>
+        <div id="vertical_spacer" class="border border-white" style="width:4px; height:10px; float:left;"><!-- SPACER--></div><!--------------------------------------SPACER--->
+        <button id="fifo_nazwa_isa_ac" type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Apparel case">
+            <p_ac style="color: black;font-size: 12px;font-weight: bolder;position:relative;left:0px; bottom:1px;">@Html.DisplayNameFor(model => model.ISA_ac) </p_ac>     
+        </button>
+        <button id="fifo_nazwa_isa_bc" type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Boots case">
+            <p_bc style="color: black;font-size: 12px;font-weight: bolder;position:relative;left:0px; bottom:1px;">@Html.DisplayNameFor(model => model.ISA_bc) </p_bc>    
+        </button>
+        <button id="fifo_nazwa_isa_hc" type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Hardline case">
+            <p_hc style="color: black;font-size: 12px;font-weight: bolder;position:relative;left:0px; bottom:1px;">@Html.DisplayNameFor(model => model.ISA_hc) </p_hc>                
+        </button>
+        <div id="vertical_spacer" class="border border-white" style="width:4px; height:10px; float:left;"><!-- SPACER--></div><!--------------------------------------SPACER--->
+        <button id="fifo_nazwa_isa_dosprawdzenia" type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Do sprawdzenia">
+            <p_ds style="color: black;font-size: 12px;font-weight: bolder;position:relative;left:0px; bottom:1px;">@Html.DisplayNameFor(model => model.ISA_to_chceck) </p_ds>    
+        </button>
+        <button id="fifo_nazwa_isa_komentarz" type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Komentarz">
+            <p_comment style="color: black;font-size: 12px;font-weight: bolder;position:relative;left:0px; bottom:1px;">@Html.DisplayNameFor(model => model.ISA_comment)</p_comment>               
+        </button> 
+        <div id="fifo_nazwa_isa_opcje" class="border border border-secondary rounded">
+          <p_opcje style="color: black;font-size: 12px;font-weight: bolder;position:relative;left:28px; bottom:-6px;">OPCJE</p_opcje>
+        </div>      
+      </div>
+      
+    <tbody>
+       
+@foreach (var item in Model) 
+{
+        <tr>       
+            <div id="fifo_tabela_main"  class="border-0">
+                 
+            <div id="fifo_tabela_isa_numer" class="border-end-0 border border-secondary rounded-start">
+                @Html.DisplayFor(modelItem => item.ISA_number)
+            </div>
+            <div id="vertical_spacer" class="border border-white" style="width:4px; height:10px; float:left;"></div>
+            <div id="fifo_tabela_isa_data" class="border-end-0 border border-secondary ">
+                @Html.DisplayFor(modelItem => item.ISA_date)
+            </div>
+            <div id="fifo_tabela_isa_godzina" class="border-end-0 border border-secondary ">
+                @Html.DisplayFor(modelItem => item.ISA_hour)
+            </div>
+            <div id="vertical_spacer" class="border border-white" style="width:4px; height:10px; float:left;"></div>
+            <div id="fifo_tabela_isa_ilosc" class="border-end-0 border border-secondary ">
+                @Html.DisplayFor(modelItem => item.ISA_units)
+            </div>
+            <div id="vertical_spacer" class="border border-white" style="width:4px; height:10px; float:left;"></div>
+            <div id="fifo_tabela_isa_fba" class="border-end-0 border border-secondary ">
+                @Html.DisplayFor(modelItem => item.ISA_fba)
+            </div>
+            <div id="fifo_tabela_isa_naczepa" class="border-end-0 border border-secondary ">
+                @Html.DisplayFor(modelItem => item.ISA_semitrailer)
+            </div>   
+            <div id="fifo_tabela_isa_morski" class="border-end-0 border border-secondary ">
+                @Html.DisplayFor(modelItem => item.ISA_fba_sea_container)
+            </div>
+            <div id="fifo_tabela_isa_standard" class="border-end-0 border border-secondary ">
+                @Html.DisplayFor(modelItem => item.ISA_fba_standard)
+            </div>    
+            <div id="fifo_tabela_isa_palety" class="border-end-0 border border-secondary ">
+                @Html.DisplayFor(modelItem => item.ISA_fba_palets_value)
+            </div>
+            <div id="vertical_spacer" class="border border-white" style="width:4px; height:10px; float:left;"></div>
+        <!--    <div id="fifo_tabela_isa_lp" class="border-end-0 border border-secondary ">
+              
+            </div> -->
+
+            <div class="btn-group dropright">
+              <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width:4px; height:10px; float:left;">
+                 @Html.DisplayFor(modelItem => item.ISA_lp) halo
+              </button>
+              <div class="dropdown-menu" style="width:4px; height:10px; float:left;">
+                @Html.DisplayFor(modelItem => item.ISA_lp_value)
+              </div>
+            </div>
+            <div id="fifo_tabela_isa_parcel" class="border-end-0 border border-secondary ">
+                @Html.DisplayFor(modelItem => item.ISA_parcel)
+            </div>
+            <div id="vertical_spacer" class="border border-white" style="width:4px; height:10px; float:left;"></div>
+           <div id="fifo_tabela_isa_mono" class="border-end-0 border border-secondary ">
+                @Html.DisplayFor(modelItem => item.ISA_mono)
+            </div>
+            <div id="fifo_tabela_isa_pax" class="border-end-0 border border-secondary ">
+                @Html.DisplayFor(modelItem => item.ISA_pax)
+            </div>
+            <div id="vertical_spacer" class="border border-white" style="width:4px; height:10px; float:left;"></div>
+            <div id="fifo_tabela_isa_ra" class="border-end-0 border border-secondary ">
+                @Html.DisplayFor(modelItem => item.ISA_ra)
+            </div> 
+             <div id="fifo_tabela_isa_rb" class="border-end-0 border border-secondary ">
+                @Html.DisplayFor(modelItem => item.ISA_rb)
+            </div>   
+            <div id="fifo_tabela_isa_rh" class="border-end-0 border border-secondary ">
+                @Html.DisplayFor(modelItem => item.ISA_rh)
+            </div>
+            <div id="vertical_spacer" class="border border-white" style="width:4px; height:10px; float:left;"></div>
+            <div id="fifo_tabela_isa_rap" class="border-end-0 border border-secondary ">
+                @Html.DisplayFor(modelItem => item.ISA_rap)
+            </div>    
+           <div id="fifo_tabela_isa_rbp" class="border-end-0 border border-secondary ">
+                @Html.DisplayFor(modelItem => item.ISA_rbp)
+            </div> 
+            <div id="fifo_tabela_isa_rhp" class="border-end-0 border border-secondary ">
+                @Html.DisplayFor(modelItem => item.ISA_rhp)
+            </div> 
+            <div id="vertical_spacer" class="border border-white" style="width:4px; height:10px; float:left;"></div>
+            <div id="fifo_tabela_isa_ac" class="border-end-0 border border-secondary ">
+                @Html.DisplayFor(modelItem => item.ISA_ac)
+            </div> 
+            <div id="fifo_tabela_isa_bc" class="border-end-0 border border-secondary ">
+                @Html.DisplayFor(modelItem => item.ISA_bc)
+            </div>
+            <div id="fifo_tabela_isa_hc" class="border-end-0 border border-secondary ">
+                @Html.DisplayFor(modelItem => item.ISA_hc)
+            </div>
+            <div id="vertical_spacer" class="border border-white" style="width:4px; height:10px; float:left;"></div>
+            <div id="fifo_tabela_isa_dosprawdzenia" class="border-end-0 border border-secondary ">
+                @Html.DisplayFor(modelItem => item.ISA_to_chceck)
+            </div> 
+            <div id="fifo_tabela_isa_komentarz" class="border-end-0 border border-secondary ">
+                @Html.DisplayFor(modelItem => item.ISA_comment)
+            </div>
+            <div id="fifo_tabela_opcje"class="border-end-0 border border-secondary rounded-end">
+              
+                <div id="fifo_tabela_edytuj" class="border rounded" style="width:35px; height:25px; background-color:yellow;float:left;font-size:10px;"><a asp-action="Edit" asp-route-id="@item.ISA_id">Edytuj</a> </div>
+                <div id="fifo_tabela_wiecej" class="border rounded" style="width:35px; height:25px; background-color:yellow;float:left;font-size:10px;"><a asp-action="Details" asp-route-id="@item.ISA_id">Więcej</a> </div>
+                <div id="fifo_tabela_usun" class="border rounded" style="width:35px; height:25px; background-color:yellow;float:left;font-size:10px;"><a asp-action="Delete" asp-route-id="@item.ISA_id">Usuń</a> </div>                   
+            </div>  
+            
+        </tr> 
+        
+} 
+    </tbody>
+</table>
+<br>
+
+    
+@using Microsoft.Data.SqlClient
+@using System;
+@using System.Collections.Generic;
+@using System.Linq;
+@using System.Text;
+@using System.Threading.Tasks;
+@using System.Data
+
+    @{
+        // using (SqlConnection connection = new SqlConnection("Server=(localdb)\\MSSQLLocalDB;Database=GroundManagmentSystemDB;Trusted_Connection=True;")){connection.Open(); }//
+        string mojaVartosc = "0";
+        int zmienna = 56747643;
+        string ConnectionString = "Server=(localdb)\\MSSQLLocalDB;Database=GroundManagmentSystemDB;Trusted_Connection=True;";
+        string sqlQuery = $"SELECT  ISA_comment FROM GroundManagmentSystemDB.dbo.ISA_Models WHERE ISA_number={zmienna};";
+        SqlConnection con = new SqlConnection(ConnectionString);
+        con.Open();
+        SqlCommand sc = new SqlCommand(sqlQuery, con);
+
+        mojaVartosc = (string)sc.ExecuteScalar();
+
+
+
+       
+        <h1>@mojaVartosc</h1>
+        
+            <script type="text/javascript"> alert(KURWA MAC UDAŁO SIE !!!!!!!!!!!!!!!!);</script>
+           
+        
+
+
+        
+       
+     
+
+
+        con.Close();
+
+}
+
+    
+
+
+
+

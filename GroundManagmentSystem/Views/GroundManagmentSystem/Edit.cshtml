@@ -1,0 +1,239 @@
+﻿@model GroundManagmentSystem.Models.ISA_Model
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>ISA_Model</h4>
+<hr />
+
+<div id="edit_isa_numer" class="form-group" style="width:150px; height:35px; margin-bottom:25px;float:left;">
+                <p_label_for_edit_text>ISA NUMER</p_label_for_edit_text>
+                <input asp-for="ISA_number" class="form-control" />
+                <span asp-validation-for="ISA_number" class="text-danger"></span>
+  </div>
+  <div id="edit_isa_data"class="form-group" style="width:150px; height:35px; margin-bottom:25px; float:left;">
+                <label asp-for="ISA_date_time" class="control-label"></label>
+                <input asp-for="ISA_date_time" class="form-control" />
+                <span asp-validation-for="ISA_date_time" class="text-danger"></span>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ISA_id" />
+            <div class="form-group">
+                <label asp-for="ISA_number" class="control-label"></label>
+                <input asp-for="ISA_number" class="form-control" />
+                <span asp-validation-for="ISA_number" class="text-danger"></span>
+            </div>
+           
+            <div class="form-group">
+                <label asp-for="ISA_units" class="control-label"></label>
+                <input asp-for="ISA_units" class="form-control" />
+                <span asp-validation-for="ISA_units" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ISA_fba" class="control-label"></label>
+                <input asp-for="ISA_fba" class="form-control" />
+                <span asp-validation-for="ISA_fba" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ISA_semitrailer" class="control-label"></label>
+                <input asp-for="ISA_semitrailer" class="form-control" />
+                <span asp-validation-for="ISA_semitrailer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ISA_fba_sea_container" class="control-label"></label>
+                <input asp-for="ISA_fba_sea_container" class="form-control" />
+                <span asp-validation-for="ISA_fba_sea_container" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ISA_fba_standard" class="control-label"></label>
+                <input asp-for="ISA_fba_standard" class="form-control" />
+                <span asp-validation-for="ISA_fba_standard" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ISA_fba_palets_value" class="control-label"></label>
+                <input asp-for="ISA_fba_palets_value" class="form-control" />
+                <span asp-validation-for="ISA_fba_palets_value" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ISA_lp" class="control-label"></label>
+                <input asp-for="ISA_lp" class="form-control" />
+                <span asp-validation-for="ISA_lp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ISA_lp_value" class="control-label"></label>
+                <input asp-for="ISA_lp_value" class="form-control" />
+                <span asp-validation-for="ISA_lp_value" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ISA_parcel" class="control-label"></label>
+                <input asp-for="ISA_parcel" class="form-control" />
+                <span asp-validation-for="ISA_parcel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ISA_parcel_value" class="control-label"></label>
+                <input asp-for="ISA_parcel_value" class="form-control" />
+                <span asp-validation-for="ISA_parcel_value" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ISA_mono" class="control-label"></label>
+                <input asp-for="ISA_mono" class="form-control" />
+                <span asp-validation-for="ISA_mono" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ISA_mono_value" class="control-label"></label>
+                <input asp-for="ISA_mono_value" class="form-control" />
+                <span asp-validation-for="ISA_mono_value" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ISA_pax" class="control-label"></label>
+                <input asp-for="ISA_pax" class="form-control" />
+                <span asp-validation-for="ISA_pax" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ISA_pax_value" class="control-label"></label>
+                <input asp-for="ISA_pax_value" class="form-control" />
+                <span asp-validation-for="ISA_pax_value" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ISA_ra" class="control-label"></label>
+                <input asp-for="ISA_ra" class="form-control" />
+                <span asp-validation-for="ISA_ra" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ISA_ra_value" class="control-label"></label>
+                <input asp-for="ISA_ra_value" class="form-control" />
+                <span asp-validation-for="ISA_ra_value" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ISA_rb" class="control-label"></label>
+                <input asp-for="ISA_rb" class="form-control" />
+                <span asp-validation-for="ISA_rb" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ISA_rb_value" class="control-label"></label>
+                <input asp-for="ISA_rb_value" class="form-control" />
+                <span asp-validation-for="ISA_rb_value" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ISA_rh" class="control-label"></label>
+                <input asp-for="ISA_rh" class="form-control" />
+                <span asp-validation-for="ISA_rh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ISA_rh_value" class="control-label"></label>
+                <input asp-for="ISA_rh_value" class="form-control" />
+                <span asp-validation-for="ISA_rh_value" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ISA_rap" class="control-label"></label>
+                <input asp-for="ISA_rap" class="form-control" />
+                <span asp-validation-for="ISA_rap" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ISA_rap_value" class="control-label"></label>
+                <input asp-for="ISA_rap_value" class="form-control" />
+                <span asp-validation-for="ISA_rap_value" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ISA_rbp" class="control-label"></label>
+                <input asp-for="ISA_rbp" class="form-control" />
+                <span asp-validation-for="ISA_rbp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ISA_rbp_value" class="control-label"></label>
+                <input asp-for="ISA_rbp_value" class="form-control" />
+                <span asp-validation-for="ISA_rbp_value" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ISA_rhp" class="control-label"></label>
+                <input asp-for="ISA_rhp" class="form-control" />
+                <span asp-validation-for="ISA_rhp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ISA_rhp_value" class="control-label"></label>
+                <input asp-for="ISA_rhp_value" class="form-control" />
+                <span asp-validation-for="ISA_rhp_value" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ISA_ac" class="control-label"></label>
+                <input asp-for="ISA_ac" class="form-control" />
+                <span asp-validation-for="ISA_ac" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ISA_ac_value" class="control-label"></label>
+                <input asp-for="ISA_ac_value" class="form-control" />
+                <span asp-validation-for="ISA_ac_value" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ISA_bc" class="control-label"></label>
+                <input asp-for="ISA_bc" class="form-control" />
+                <span asp-validation-for="ISA_bc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ISA_bc_value" class="control-label"></label>
+                <input asp-for="ISA_bc_value" class="form-control" />
+                <span asp-validation-for="ISA_bc_value" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ISA_hc" class="control-label"></label>
+                <input asp-for="ISA_hc" class="form-control" />
+                <span asp-validation-for="ISA_hc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ISA_hc_value" class="control-label"></label>
+                <input asp-for="ISA_hc_value" class="form-control" />
+                <span asp-validation-for="ISA_hc_value" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ISA_to_chceck" class="control-label"></label>
+                <input asp-for="ISA_to_chceck" class="form-control" />
+                <span asp-validation-for="ISA_to_chceck" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ISA_comment" class="control-label"></label>
+                <input asp-for="ISA_comment" class="form-control" />
+                <span asp-validation-for="ISA_comment" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ISA_date_time" class="control-label"></label>
+                <input asp-for="ISA_date_time" class="form-control" />
+                <span asp-validation-for="ISA_date_time" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
