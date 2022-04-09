@@ -45,16 +45,10 @@ namespace GroundManagmentSystem.Migrations
                     b.Property<string>("ISA_comment")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ISA_date")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime>("ISA_date_time")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("ISA_fba")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ISA_fba_palets_value")
                         .HasColumnType("int");
 
                     b.Property<int>("ISA_fba_sea_container")
@@ -69,7 +63,10 @@ namespace GroundManagmentSystem.Migrations
                     b.Property<int>("ISA_hc_value")
                         .HasColumnType("int");
 
-                    b.Property<string>("ISA_hour")
+                    b.Property<DateTime>("ISA_last_update")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ISA_line")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("ISA_lp")
@@ -138,8 +135,8 @@ namespace GroundManagmentSystem.Migrations
                     b.Property<int>("ISA_semitrailer")
                         .HasColumnType("int");
 
-                    b.Property<string>("ISA_to_chceck")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("ISA_to_chceck")
+                        .HasColumnType("bit");
 
                     b.Property<int>("ISA_units")
                         .HasColumnType("int");

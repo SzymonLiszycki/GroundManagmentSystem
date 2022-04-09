@@ -11,23 +11,21 @@ namespace GroundManagmentSystem.Models
             [DisplayName("ID")]
             public int ISA_id { get; set; }
             [DisplayName("ISA")]
-            public long ISA_number { get; set; }
+            public long ISA_number { get; set; }                   
             [DisplayName("Data")]
-            public string? ISA_date { get; set; }
-            [DisplayName("Godzina")]
-            public string? ISA_hour { get; set; }
+            public DateTime ISA_date_time { get; set; }
+            [DisplayName("Linia")]
+            public string ?ISA_line { get; set; }
             [DisplayName("Ilość")]
             public int ISA_units { get; set; }
             [DisplayName("FBA-Ilość")]
-            public int ISA_fba { get; set; }                                //Naczepy ilość
+            public int ISA_fba { get; set; }                                
             [DisplayName("FBA-ST")]
             public int ISA_semitrailer { get; set; }
             [DisplayName("FBA-SC")]
             public int ISA_fba_sea_container { get; set; }
             [DisplayName("FBA-S")]
-            public int ISA_fba_standard { get; set; }
-            [DisplayName("FBA-PL")]
-            public int ISA_fba_palets_value { get; set; }                  //Ilość palet na naczepie
+            public int ISA_fba_standard { get; set; }                      
             [DisplayName("LP")]
             public int ISA_lp { get; set; }
             [DisplayName("LP-ILOŚĆ")]
@@ -81,11 +79,11 @@ namespace GroundManagmentSystem.Models
             [DisplayName("hc-ILOŚĆ")]
             public int ISA_hc_value { get; set; }
             [DisplayName("DS")]
-            public string? ISA_to_chceck { get; set; }
+            public bool ISA_to_chceck { get; set; }
             [DisplayName("Komentarz.")]
             public string? ISA_comment { get; set; }
-            [DisplayName("Data")]
-            public  DateTime ISA_date_time { get; set; }
+            public DateTime ISA_last_update { get; set; } = DateTime.Now;
+            
         }
         public class Line_Model
         {

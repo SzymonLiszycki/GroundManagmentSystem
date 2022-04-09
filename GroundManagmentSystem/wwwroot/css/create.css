@@ -1,0 +1,362 @@
+﻿/*--------------------------------------------------------------------*/
+/*--------------MAIN-DIVS--------------------------------------------*/
+/*--------------------------------------------------------------------*/
+#create_main{
+    width: 1020px;
+    height: 120px;
+    float: left;
+    
+    margin-bottom:10px;
+}
+#create_fba {
+    width: 1020px;
+    height: 120px;
+    float: left;
+    
+    margin-bottom:10px;
+}
+#create_vendor {
+    width: 1020px;
+    height: 120px;
+    float: left;
+   
+    margin-bottom:10px;
+}
+#create_vendor_recive {
+    width: 1020px;
+    height: 295px;
+    float: left;
+   
+}
+#create_vendor_recive_standard {
+    width: 1020px;
+    height: 80px;
+    float: left;
+    
+}
+#create_vendor_recive_prep {
+    width: 1020px;
+    height: 80px;
+    float: left;
+    
+}
+#create_vendor_recive_case {
+    width: 1020px;
+    height: 80px;
+    float: left;
+    
+}
+#create_isa_add_or_back {
+    width: 300px;
+    height: 30px;
+    float: left;
+   
+}
+
+
+
+
+
+
+
+
+
+#create_isa_number {
+    margin-left: 2px;
+    height: 40px;
+    width: 160px;
+}
+#create_date_time {
+    float: left;
+    height: 40px;
+    width: 160px;
+    background-color:red;
+    position:relative;
+    left:170px;
+    bottom:40px;
+}
+#create_isa_line {
+    float: left;
+    height: 40px;
+    width: 160px;
+    background-color: red;
+    position: relative;
+    left: 180px;
+    bottom: 40px;
+}
+#create_isa_comment {
+    float: left;
+    height: 40px;
+    width: 500px;
+    background-color: red;
+    position: relative;
+    left: 190px;
+    bottom: 40px;
+}
+
+
+#create_isa_fba {
+    float: left;
+    height: 40px;
+    width: 160px;
+    background-color: red;
+    position: relative;
+    left: ;
+    bottom:;
+    margin-right:200px;
+}
+#create_isa_standard {
+    float: left;
+    height: 40px;
+    width: 100px;
+    background-color: red;
+    position: relative;
+    margin-left: 20px;
+    left:;
+    bottom:;
+    margin-right: 150px;
+}
+#create_isa_sea_container {
+    float: left;
+    height: 40px;
+    width: 100px;
+    background-color: red;
+    position: relative;
+    margin-left: 8px;
+    left:;
+    bottom:;
+    margin-right: 150px;
+}
+#create_isa_semitrailer { 
+    float: left;
+    height: 40px;
+    width: 100px;
+    background-color: red;
+    position: relative;
+    margin-left: 8px;
+    left:;
+    bottom:;
+}
+#create_isa_lp_ilosc {
+    float: left;
+    height: 40px;
+    width: 60px;
+    background-color: red;
+    position: relative;
+    margin-left: 8px;
+    left:;
+    bottom:;
+    
+}
+#create_isa_lp {
+    float: left;
+    height: 40px;
+    width: 100px;
+    background-color: red;
+    position: relative;
+    margin-left: 8px;
+    left:;
+    bottom:;
+}
+#create_isa_parcel_ilosc {
+    float: left;
+    height: 40px;
+    width: 100px;
+    background-color: red;
+    position: relative;
+    margin-left: 8px;
+    left:;
+    bottom:;
+}
+#create_isa_parcel {
+    float: left;
+    height: 40px;
+    width: 100px;
+    background-color: red;
+    position: relative;
+    margin-left: 8px;
+    left:;
+    bottom:;
+}
+#create_isa_pax_ilosc {
+    float: left;
+    height: 40px;
+    width: 100px;
+    background-color: red;
+    position: relative;
+    margin-left: 8px;
+    left:;
+    bottom:;
+}
+#create_isa_pax {
+    float: left;
+    height: 40px;
+    width: 100px;
+    background-color: red;
+    position: relative;
+    margin-left: 8px;
+    left:;
+    bottom:;
+}
+#create_isa_mono_ilosc {
+    float: left;
+    height: 40px;
+    width: 100px;
+    background-color: red;
+    position: relative;
+    margin-left: 8px;
+    left:;
+    bottom:;
+}
+#create_isa_mono {
+    float: left;
+    height: 40px;
+    width: 100px;
+    background-color: red;
+    position: relative;
+    margin-left: 8px;
+    left:;
+    bottom:;
+}
+#create_isa_ra_ilosc {
+    float: left;
+    height: 40px;
+    width: 100px;
+    background-color: red;
+    position: relative;
+    margin-left: 8px;
+    left:;
+    bottom:;
+}
+#create_isa_ra {
+    float: left;
+    height: 40px;
+    width: 100px;
+    background-color: red;
+    position: relative;
+    margin-left: 8px;
+    left:;
+    bottom:;
+}
+#create_isa_rb_ilosc {
+    float: left;
+    height: 40px;
+    width: 100px;
+    background-color: red;
+    position: relative;
+    margin-left: 8px;
+    left:;
+    bottom:;
+}
+#create_isa_rb {
+    float: left;
+    height: 40px;
+    width: 100px;
+    background-color: red;
+    position: relative;
+    margin-left: 8px;
+    left:;
+    bottom:;
+}
+#create_isa_rh_ilosc {
+    float: left;
+    height: 40px;
+    width: 100px;
+    background-color: red;
+    position: relative;
+    margin-left: 8px;
+    left:;
+    bottom:;
+}
+#create_isa_rh {
+    float: left;
+    height: 40px;
+    width: 100px;
+    background-color: red;
+    position: relative;
+    margin-left: 8px;
+    left:;
+    bottom:;
+}
+
+
+
+
+
+
+
+
+
+
+#input_isa_number {
+    font-size: 12px;
+    height: 35px;
+    width: 160px;
+}
+#input_isa_date_time {
+    font-size:12px;
+    height: 35px;
+    width: 160px;
+    background-color:white ;
+}
+#input_isa_line {
+    font-size:12px;
+    height: 35px;
+    width: 160px;
+}
+#input_isa_comment {
+    font-size: 12px;
+    height: 35px;
+    width: 500px;
+}
+#input_isa_fba {
+    font-size: 12px;
+    height: 35px;
+    width: 160px;
+}
+#input_isa_standard {
+    font-size: 12px;
+    height: 35px;
+    width: 100px;
+    
+}
+#input_isa_sea_container {
+    font-size: 12px;
+    height: 35px;
+    width: 100px;
+}
+#input_isa_semitrailer {
+    font-size: 12px;
+    height: 35px;
+    width: 100px;
+}
+#input_lp_ilosc {
+    font-size: 12px;
+    height: 35px;
+    width: 100px;
+}
+#input_lp {
+    font-size: 12px;
+    height: 35px;
+    width: 100px;
+}
+#input_pax_ilosc {
+    font-size: 12px;
+    height: 35px;
+    width: 100px;
+}
+#input_pax {
+    font-size: 12px;
+    height: 35px;
+    width: 100px;
+}
+#input_mono_ilosc {
+    font-size: 12px;
+    height: 35px;
+    width: 100px;
+}
+#input_mono {
+    font-size: 12px;
+    height: 35px;
+    width: 100px;
+}
