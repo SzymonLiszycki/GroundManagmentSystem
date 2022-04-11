@@ -13,6 +13,7 @@
 
 <div id="create_main" class="border border-secondary rounded">
     <h1>Podstawowe informacje</h1>
+ 
 <div id="create_isa_number" class="form-group" >
    <!--<label asp-for="ISA_number" class="control-label"></label>--> 
    <p1>Numer ISA</p1>
@@ -21,7 +22,8 @@
 </div>
 
 <div id="create_date_time">
-   
+    
+    
    <label asp-for="ISA_date_time" class="control-label">Data i godzina</label>
    <input id="input_isa_date_time"asp-for="ISA_date_time" class="form-control"  />
    <span asp-validation-for="ISA_date_time" class="text-danger"></span>
@@ -35,7 +37,13 @@
     <p1> Komentarz</p1>
     <input id="input_isa_comment" asp-for="ISA_comment" class="form-control" />
 </div>
+<div id="create_to_check"class="form-check form-switch">
+
+  <input asp-for="ISA_to_chceck" class="form-check-input" type="checkbox" role="switch" id="input_to_check">
+  
 </div>
+
+
 
 <div id="create_fba" class="border border-secondary rounded">
     <h1>FBA</h1>

@@ -1,0 +1,240 @@
+﻿@model GroundManagmentSystem.Models.ISA_Model
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>ISA_Model</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ISA_number)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ISA_number)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ISA_date_time)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ISA_date_time)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ISA_line)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ISA_line)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ISA_units)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ISA_units)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ISA_fba)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ISA_fba)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ISA_semitrailer)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ISA_semitrailer)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ISA_fba_sea_container)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ISA_fba_sea_container)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ISA_fba_standard)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ISA_fba_standard)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ISA_lp)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ISA_lp)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ISA_lp_value)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ISA_lp_value)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ISA_parcel)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ISA_parcel)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ISA_parcel_value)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ISA_parcel_value)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ISA_mono)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ISA_mono)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ISA_mono_value)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ISA_mono_value)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ISA_pax)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ISA_pax)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ISA_pax_value)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ISA_pax_value)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ISA_ra)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ISA_ra)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ISA_ra_value)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ISA_ra_value)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ISA_rb)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ISA_rb)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ISA_rb_value)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ISA_rb_value)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ISA_rh)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ISA_rh)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ISA_rh_value)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ISA_rh_value)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ISA_rap)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ISA_rap)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ISA_rap_value)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ISA_rap_value)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ISA_rbp)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ISA_rbp)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ISA_rbp_value)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ISA_rbp_value)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ISA_rhp)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ISA_rhp)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ISA_rhp_value)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ISA_rhp_value)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ISA_ac)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ISA_ac)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ISA_ac_value)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ISA_ac_value)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ISA_bc)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ISA_bc)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ISA_bc_value)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ISA_bc_value)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ISA_hc)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ISA_hc)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ISA_hc_value)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ISA_hc_value)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ISA_to_chceck)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ISA_to_chceck)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ISA_comment)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ISA_comment)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ISA_last_update)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ISA_last_update)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.ISA_id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

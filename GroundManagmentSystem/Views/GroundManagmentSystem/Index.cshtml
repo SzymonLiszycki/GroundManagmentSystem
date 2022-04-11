@@ -14,7 +14,7 @@
 @{
     DateTime Czas_teraz = DateTime.Now;
     
-     @Czas_teraz
+    
 }
 
 
@@ -197,8 +197,8 @@
             <div id="fill_div" class="rounded border-0" style=" float:left;width:210px;height:35px; margin-right:4px;"></div>
                     @{
                         int zero_int = 0;
-                        string ConnectionString = "Server=DESKTOP-KE35JQO;Database=GroundManagmentSystemDataBase;Trusted_Connection=True;";
-                        string sqlQuery = $"SELECT COUNT(ISA_units) FROM [GroundManagmentSystemDataBase].[dbo].[ISA_Models]";
+                        string ConnectionString = "Server=tcp:groundmanagmentsystemsql.database.windows.net,1433;Initial Catalog=gms_sql;Persist Security Info=False;User ID=sovellis166;Password=Szymcio1^^;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+                        string sqlQuery = $"SELECT COUNT(ISA_units) FROM [gms_sql].[dbo].[ISA_Models]";
                         SqlConnection con = new SqlConnection(ConnectionString);
                         SqlCommand sc = new SqlCommand(sqlQuery, con);
                         con.Open();
@@ -209,9 +209,9 @@
                     
                     if (table_count>=1)
                     {
-                    SqlConnection connection = new SqlConnection("Server=DESKTOP-KE35JQO;Database=GroundManagmentSystemDataBase;Trusted_Connection=True;");
+                    SqlConnection connection = new SqlConnection("Server=tcp:groundmanagmentsystemsql.database.windows.net,1433;Initial Catalog=gms_sql;Persist Security Info=False;User ID=sovellis166;Password=Szymcio1^^;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
                     connection.Open();
-                    SqlCommand command = new SqlCommand("SELECT SUM([ISA_units]),SUM([ISA_fba]),SUM([ISA_semitrailer]),SUM([ISA_fba_sea_container]),SUM([ISA_fba_standard]),SUM([ISA_lp]),SUM([ISA_lp_value]),SUM([ISA_parcel]),SUM([ISA_parcel_value]),SUM([ISA_mono]),SUM([ISA_mono_value]),SUM([ISA_pax]),SUM([ISA_pax_value]),SUM([ISA_ra]),SUM([ISA_ra_value]),SUM([ISA_rb]),SUM([ISA_rb_value]),SUM([ISA_rh]),SUM([ISA_rh_value]),SUM([ISA_rap]),SUM([ISA_rap_value]),SUM([ISA_rbp]),SUM([ISA_rbp_value]),SUM([ISA_rhp]),SUM([ISA_rhp_value]),SUM([ISA_ac]),SUM([ISA_ac_value]),SUM([ISA_bc]),SUM([ISA_bc_value]),SUM([ISA_hc]),SUM([ISA_hc_value]) FROM [GroundManagmentSystemDataBase].[dbo].[ISA_Models]", connection);
+                    SqlCommand command = new SqlCommand("SELECT SUM([ISA_units]),SUM([ISA_fba]),SUM([ISA_semitrailer]),SUM([ISA_fba_sea_container]),SUM([ISA_fba_standard]),SUM([ISA_lp]),SUM([ISA_lp_value]),SUM([ISA_parcel]),SUM([ISA_parcel_value]),SUM([ISA_mono]),SUM([ISA_mono_value]),SUM([ISA_pax]),SUM([ISA_pax_value]),SUM([ISA_ra]),SUM([ISA_ra_value]),SUM([ISA_rb]),SUM([ISA_rb_value]),SUM([ISA_rh]),SUM([ISA_rh_value]),SUM([ISA_rap]),SUM([ISA_rap_value]),SUM([ISA_rbp]),SUM([ISA_rbp_value]),SUM([ISA_rhp]),SUM([ISA_rhp_value]),SUM([ISA_ac]),SUM([ISA_ac_value]),SUM([ISA_bc]),SUM([ISA_bc_value]),SUM([ISA_hc]),SUM([ISA_hc_value]) FROM [gms_sql].[dbo].[ISA_Models]", connection);
                     SqlDataReader dataReader = command.ExecuteReader();
                     while (dataReader.Read())
                     {
@@ -264,9 +264,8 @@
                        }                                                      
                     </div>                                            
                     <div id="fifo_tabela_isa_fba" class="border-end-0 border border-secondary ">
-                      @if (table_count >= 1){
-                            int all_fba_sum = (int)valuesList[2] + (int)valuesList[3] + (int)valuesList[4];
-                            @all_fba_sum
+                      @if (table_count >= 1){                           
+                            @valuesList[1]
                         }
                        else{
                        @zero_int
@@ -572,7 +571,7 @@
                         @if (table_count >= 1)
                         {
                           SqlConnection con_update = new SqlConnection(ConnectionString);
-                        string update_question = $"SELECT [ISA_last_update] FROM [GroundManagmentSystemDataBase].[dbo].[ISA_Models] ORDER BY ISA_last_update DESC";
+                        string update_question = $"SELECT [ISA_last_update] FROM [gms_sql].[dbo].[ISA_Models] ORDER BY ISA_last_update DESC";
 
                          SqlCommand  update_answer = new SqlCommand(update_question, con_update);
                             con_update.Open();
@@ -593,7 +592,7 @@
         <div id="fifo_main_name_space_bar" class="border border border-secondary rounded" style="width:1755px; height:2px; margin-bottom:10px;margin-top:10px;"></div>
        <div id="fifo_main_nazwy" class="border-1 rounded sticky-top" >
 
-       <!-- <div id="fifo_main_name_space_bar" class="border border border-secondary rounded" style="width:1785px; height:2px; margin-bottom:2px;"></div>-->
+      
         <button id="fifo_nazwa_isa_numer" type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="ISA numer">
            @Html.DisplayNameFor(model => model.ISA_number)     
         </button>
@@ -761,7 +760,7 @@
                 <div id="fifo_tabela_isa_numer" class="border-end-0 border border-secondary rounded-start">
                         @Html.DisplayFor(modelItem => item.ISA_number)
                     </div>
-                    <div id="vertical_spacer" class="border border-white" style="width:4px; height:10px; float:left;"></div>
+                    
                     <div id="fifo_tabela_isa_data" class="border-end-0 border border-secondary ">
                         @Html.DisplayFor(modelItem => item.ISA_date_time)
                     </div> 
@@ -778,10 +777,7 @@
                             @value_lacznie
                         
                     </div>                    
-                    <div id="fifo_tabela_isa_fba" class="border-end-0 border border-secondary ">
-                            @{
-                                int fba_lacznie = (item.ISA_semitrailer) + (item.ISA_fba_sea_container) + (item.ISA_fba_standard);
-                             }
+                    <div id="fifo_tabela_isa_fba" class="border-end-0 border border-secondary ">                           
                              @item.ISA_fba
                     </div>
                     <div id="fifo_tabela_isa_naczepa" class="border-end-0 border border-secondary ">
@@ -880,19 +876,17 @@
                           
                                                             <p_opcje></p_opcje>
                       </button>
-                      <ul class="dropdown-menu border-end-0 border border-secondary" style="width:200px;height:35px; background-color:#ff9933;">
-                          <a asp-action="Edit" class="btn btn-primary"  asp-route-id="@item.ISA_id" style="position:relative; bottom:8px; height:34px;" >Edytuj
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16">
-                              <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001zm-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708l-1.585-1.585z"/>
-                            </svg>
+                      <ul class="dropdown-menu border-end-0 border border-secondary" style="width:225px;height:35px; background-color:#ff9933;">
+                          <a asp-action="Edit" class="btn btn-primary"  asp-route-id="@item.ISA_id" style="position:relative; bottom:8px;height:34px; " ><p1 style="font-size:11px;">Edytuj</p1>
+                            
                             </a>                          
                     
-                        <a asp-action="Delete" asp-route-id="@item.ISA_id" class="btn btn-danger"style="position:relative; bottom:8px; height:34px;">Usuń
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                          <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-                          <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-                        </svg>
-                        </a>      
+                        <a asp-action="Delete" asp-route-id="@item.ISA_id" class="btn btn-danger"style="position:relative; bottom:8px;left:-3px; height:34px;"><p1 style="font-size:11px;">Usuń</p1>
+                           
+                        </a>
+                        <a asp-action="Details" asp-route-id="@item.ISA_id" class="btn btn-info"style="position:relative; bottom:8px;left:-3px; height:34px; height:34px;"><p1 style="font-size:11px;">Szczegóły</p1>
+                          
+                        </a>     
                        
           
 </tr>        

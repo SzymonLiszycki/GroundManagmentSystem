@@ -114,6 +114,34 @@ namespace GroundManagmentSystem.Controllers
 
 
         }
+        public IActionResult Details(int? id)  //GET
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+            var CategoryFromDb = _db.ISA_Models.Find(id);
+            if (CategoryFromDb == null)
+            {
+                return NotFound();
+            }
+
+            return View(CategoryFromDb);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Details(ISA_Model obj) //POST
+        {
+
+
+            _db.ISA_Models.Update(obj);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+
+
+
+        }
 
         public IActionResult Index1()
         {

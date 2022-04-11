@@ -5,13 +5,13 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>EDYCJA </h1>
 
-
-<hr />
-<form  asp-action="Edit" >
-
-<div id="create_main" class="border border-secondary rounded">
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ISA_id" />
+            <div id="create_main" class="border border-secondary rounded">
     <h1>Podstawowe informacje</h1>
 <div id="create_isa_number" class="form-group" >
    <!--<label asp-for="ISA_number" class="control-label"></label>--> 
@@ -184,26 +184,17 @@
      <div id="create_isa_rh" class="form-group">
      <p1>HC</p1>      
      <input id="input_isa_rh" asp-for="ISA_hc" class="form-control" />
+     </div>   
      </div>
+           
+            <div class="form-group">
+                <input type="submit" value="ZAPISZ" class="btn btn-primary" />
+                 <button type="button" class="btn btn-secondary"><a asp-action="Index">Powrót</a></button>
+            </div>
 
-      
-     </div>
-
-    
-
-
-
-
-     
-     </div>
-    <div id="create_isa_add_or_back"class="form-group">
-     <input type="submit" value="EDYTUJ" class="btn btn-primary" />
-     <button type="button" class="btn btn-secondary"><a asp-action="Index">Powrót</a></button>
-      
+        </form>
     </div>
+</div>
 
 
 
-
-
-</form>

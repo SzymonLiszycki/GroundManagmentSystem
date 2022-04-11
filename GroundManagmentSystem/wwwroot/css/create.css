@@ -87,7 +87,16 @@
 #create_isa_comment {
     float: left;
     height: 40px;
-    width: 500px;
+    width: 450px;
+    background-color: red;
+    position: relative;
+    left: 190px;
+    bottom: 40px;
+}
+#create_to_check {
+    float: left;
+    height: 40px;
+    width: 50px;
     background-color: red;
     position: relative;
     left: 190px;
@@ -307,7 +316,12 @@
 #input_isa_comment {
     font-size: 12px;
     height: 35px;
-    width: 500px;
+    width: 450px;
+}
+#input_to_check {
+    font-size: 12px;
+    height: 35px;
+    width: 45px;
 }
 #input_isa_fba {
     font-size: 12px;

@@ -35,7 +35,7 @@
     font-size: 12px;
     font-weight: bolder;
     text-align: center;
-    margin-right:4px;
+    margin-right:2px;
 }
 #fifo_nazwa_isa_line {
     background-color: #66cc00;
@@ -845,6 +845,7 @@
     font-size: 12px;
     font-weight: bolder;
     margin-bottom:2px;
+    margin-right:2px;
 }
 #fifo_tabela_isa_line {
     height: 35px;

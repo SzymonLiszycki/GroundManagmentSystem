@@ -28,11 +28,11 @@ namespace GroundManagmentSystem.Models
             public int ISA_fba_standard { get; set; }                      
             [DisplayName("LP")]
             public int ISA_lp { get; set; }
-            [DisplayName("LP-ILOŚĆ")]
+            [DisplayName("LP ilość")]
             public int ISA_lp_value { get; set; }
-            [DisplayName("Parcel.")]
+            [DisplayName("Parcel")]
             public int ISA_parcel { get; set; }
-            [DisplayName("Parcel-ILOŚĆ")]
+            [DisplayName("Parcel ilość")]
             public int ISA_parcel_value { get; set; }
             [DisplayName("Mono.")]
             public int ISA_mono { get; set; }
@@ -80,7 +80,7 @@ namespace GroundManagmentSystem.Models
             public int ISA_hc_value { get; set; }
             [DisplayName("DS")]
             public bool ISA_to_chceck { get; set; }
-            [DisplayName("Komentarz.")]
+            [DisplayName("Komentarz")]
             public string? ISA_comment { get; set; }
             public DateTime ISA_last_update { get; set; } = DateTime.Now;
             
