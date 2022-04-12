@@ -70,7 +70,6 @@
     float: left;
     height: 40px;
     width: 160px;
-    background-color:red;
     position:relative;
     left:170px;
     bottom:40px;
@@ -79,7 +78,6 @@
     float: left;
     height: 40px;
     width: 160px;
-    background-color: red;
     position: relative;
     left: 180px;
     bottom: 40px;
@@ -87,8 +85,8 @@
 #create_isa_comment {
     float: left;
     height: 40px;
-    width: 450px;
-    background-color: red;
+    width: 400px;
+
     position: relative;
     left: 190px;
     bottom: 40px;
@@ -97,10 +95,10 @@
     float: left;
     height: 40px;
     width: 50px;
-    background-color: red;
+
     position: relative;
     left: 190px;
-    bottom: 40px;
+    bottom: 65px;
 }
 
 
@@ -108,7 +106,7 @@
     float: left;
     height: 40px;
     width: 160px;
-    background-color: red;
+
     position: relative;
     left: ;
     bottom:;
@@ -118,7 +116,7 @@
     float: left;
     height: 40px;
     width: 100px;
-    background-color: red;
+
     position: relative;
     margin-left: 20px;
     left:;
@@ -129,7 +127,7 @@
     float: left;
     height: 40px;
     width: 100px;
-    background-color: red;
+
     position: relative;
     margin-left: 8px;
     left:;
@@ -140,7 +138,7 @@
     float: left;
     height: 40px;
     width: 100px;
-    background-color: red;
+
     position: relative;
     margin-left: 8px;
     left:;
@@ -150,7 +148,7 @@
     float: left;
     height: 40px;
     width: 60px;
-    background-color: red;
+    margin-right:40px;
     position: relative;
     margin-left: 8px;
     left:;
@@ -161,7 +159,7 @@
     float: left;
     height: 40px;
     width: 100px;
-    background-color: red;
+
     position: relative;
     margin-left: 8px;
     left:;
@@ -171,7 +169,7 @@
     float: left;
     height: 40px;
     width: 100px;
-    background-color: red;
+
     position: relative;
     margin-left: 8px;
     left:;
@@ -181,7 +179,7 @@
     float: left;
     height: 40px;
     width: 100px;
-    background-color: red;
+
     position: relative;
     margin-left: 8px;
     left:;
@@ -191,7 +189,7 @@
     float: left;
     height: 40px;
     width: 100px;
-    background-color: red;
+
     position: relative;
     margin-left: 8px;
     left:;
@@ -201,7 +199,7 @@
     float: left;
     height: 40px;
     width: 100px;
-    background-color: red;
+   
     position: relative;
     margin-left: 8px;
     left:;
@@ -211,7 +209,7 @@
     float: left;
     height: 40px;
     width: 100px;
-    background-color: red;
+
     position: relative;
     margin-left: 8px;
     left:;
@@ -221,7 +219,7 @@
     float: left;
     height: 40px;
     width: 100px;
-    background-color: red;
+
     position: relative;
     margin-left: 8px;
     left:;
@@ -231,7 +229,7 @@
     float: left;
     height: 40px;
     width: 100px;
-    background-color: red;
+
     position: relative;
     margin-left: 8px;
     left:;
@@ -241,7 +239,7 @@
     float: left;
     height: 40px;
     width: 100px;
-    background-color: red;
+
     position: relative;
     margin-left: 8px;
     left:;
@@ -251,7 +249,7 @@
     float: left;
     height: 40px;
     width: 100px;
-    background-color: red;
+    
     position: relative;
     margin-left: 8px;
     left:;
@@ -261,7 +259,7 @@
     float: left;
     height: 40px;
     width: 100px;
-    background-color: red;
+   
     position: relative;
     margin-left: 8px;
     left:;
@@ -271,7 +269,7 @@
     float: left;
     height: 40px;
     width: 100px;
-    background-color: red;
+    
     position: relative;
     margin-left: 8px;
     left:;
@@ -281,7 +279,7 @@
     float: left;
     height: 40px;
     width: 100px;
-    background-color: red;
+
     position: relative;
     margin-left: 8px;
     left:;
@@ -316,7 +314,7 @@
 #input_isa_comment {
     font-size: 12px;
     height: 35px;
-    width: 450px;
+    width: 400px;
 }
 #input_to_check {
     font-size: 12px;
