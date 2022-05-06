@@ -1,4 +1,3 @@
-using GroundManagmentSystem.Models;
 using GroundManagmentSystem.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,7 +14,7 @@ builder.Services.AddDbContext<Ground_Managment_System_Db_context>(options => opt
 
 
 var app = builder.Build();
- 
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
