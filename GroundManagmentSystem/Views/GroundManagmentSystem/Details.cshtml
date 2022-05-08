@@ -4,12 +4,16 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h1>Szczegóły</h1>
 
 <div>
-    <h4>ISA_Model</h4>
-    <hr />
+    
     <dl class="row">
+        @{
+            DateTime CzasTeraz = DateTime.Now;
+            DateTime CzasISA = Model.ISA_date_time;
+
+        }
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.ISA_number)
         </dt>
