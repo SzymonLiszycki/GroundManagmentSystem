@@ -1,9 +1,10 @@
 ﻿@using Microsoft.Data.SqlClient
-@using GroundManagmentSystem.Objects;
 @model IEnumerable<ISA_Model>
 @using System.Linq;
 @using System.Data;
 @using System.Collections
+@using MySqlConnector
+@using IronXL;
 <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 
@@ -14,9 +15,52 @@
 @{
     DateTime Czas_teraz = DateTime.Now;
     
+    WorkBook workbook = WorkBook.Create(ExcelFileFormat.XLSX);
+    var sheet = workbook.CreateWorkSheet("RAPORT");
+    string contring;
+    string sql;
+    DataSet ds = new DataSet("ISA_models");
+    MySqlConnection conn_nyr;
+    MySqlDataAdapter da;
+    //Set Database Connection string
+    contring = @"server=localhost; database=gmsdb; user=root; password=";
+    //SQL Query to obtain data
+    sql = "SELECT ISA_number FROM isa_models ";
+    //Open Connection & Fill DataSet
+    conn_nyr = new MySqlConnection(contring);
+    da = new MySqlDataAdapter(sql, conn_nyr);
+    conn_nyr.Open();
+    da.Fill(ds);
+    //Loop through contents of dataset
+    foreach (DataTable table in ds.Tables)
+    {
+        int Count = table.Rows.Count - 1;
+        for (int j = 1; j <= Count; j++)
+        {
+
+            sheet["A" + j].Value = table.Rows[Count]
+            ["ISA_number"];
+        
+     }
+     Count++;
+}
+workbook.SaveAs("NYR.xlsx");
+    
+    
+    
+
+    
     
 }
 
+
+
+    
+}
+
+    
+
+    W
 
 
 <div id="fifo_main" class="" >
@@ -180,24 +224,32 @@
 
         <div id="fifo_suma_podsumowanie_main" class="" style=" float:left;width:1785px;height:35px; margin-right:4px;">
             <div id="fill_div" class="rounded border-0" style=" float:left;width:210px;height:35px; margin-right:4px;"></div>
+            @{
+                       
+
+            }
+
                     @{
                         int zero_int = 0;
-                        string ConnectionString = "Server=tcp:groundmanagmentsystemsql.database.windows.net,1433;Initial Catalog=gms_sql;Persist Security Info=False;User ID=sovellis166;Password=Szymcio1^^;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
-                        string sqlQuery = $"SELECT COUNT(ISA_units) FROM [gms_sql].[dbo].[ISA_Models]";
-                        SqlConnection con = new SqlConnection(ConnectionString);
-                        SqlCommand sc = new SqlCommand(sqlQuery, con);
+                        string ConnectionString = "server=localhost; database=gmsdb; user=root; password=";
+                        string sqlQuery = $"SELECT COUNT(ISA_units) FROM isa_models ";
+                        MySqlConnection con = new MySqlConnection(ConnectionString);
+                        MySqlCommand sc = new MySqlCommand(sqlQuery, con);
                         con.Open();
-                        int table_count = (int)sc.ExecuteScalar();                     
-                        con.Close();
+                        int table_count = int.Parse(sc.ExecuteScalar()+"");                         
+                        
+
+                        
                         ArrayList valuesList = new ArrayList();
 
                     
                     if (table_count>=1)
                     {
-                    SqlConnection connection = new SqlConnection("Server=tcp:groundmanagmentsystemsql.database.windows.net,1433;Initial Catalog=gms_sql;Persist Security Info=False;User ID=sovellis166;Password=Szymcio1^^;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+                    MySqlConnection connection = new MySqlConnection("server=localhost; database=gmsdb; user=root; password=");                       
+                    string sqlQuery1= "SELECT SUM(ISA_units),SUM(ISA_fba),SUM(ISA_semitrailer),SUM(ISA_fba_sea_container),SUM(ISA_fba_standard),SUM(ISA_lp),SUM(ISA_lp_value),SUM(ISA_parcel),SUM(ISA_parcel_value),SUM(ISA_mono),SUM(ISA_mono_value),SUM(ISA_pax),SUM(ISA_pax_value),SUM(ISA_ra),SUM(ISA_ra_value),SUM(ISA_rb),SUM(ISA_rb_value),SUM(ISA_rh),SUM(ISA_rh_value),SUM(ISA_rap),SUM(ISA_rap_value),SUM(ISA_rbp),SUM(ISA_rbp_value),SUM(ISA_rhp),SUM(ISA_rhp_value),SUM(ISA_ac),SUM(ISA_ac_value),SUM(ISA_bc),SUM(ISA_bc_value),SUM(ISA_hc),SUM(ISA_hc_value)  FROM isa_models";
+                    MySqlCommand sc1 = new MySqlCommand(sqlQuery1, con);
                     connection.Open();
-                    SqlCommand command = new SqlCommand("SELECT SUM([ISA_units]),SUM([ISA_fba]),SUM([ISA_semitrailer]),SUM([ISA_fba_sea_container]),SUM([ISA_fba_standard]),SUM([ISA_lp]),SUM([ISA_lp_value]),SUM([ISA_parcel]),SUM([ISA_parcel_value]),SUM([ISA_mono]),SUM([ISA_mono_value]),SUM([ISA_pax]),SUM([ISA_pax_value]),SUM([ISA_ra]),SUM([ISA_ra_value]),SUM([ISA_rb]),SUM([ISA_rb_value]),SUM([ISA_rh]),SUM([ISA_rh_value]),SUM([ISA_rap]),SUM([ISA_rap_value]),SUM([ISA_rbp]),SUM([ISA_rbp_value]),SUM([ISA_rhp]),SUM([ISA_rhp_value]),SUM([ISA_ac]),SUM([ISA_ac_value]),SUM([ISA_bc]),SUM([ISA_bc_value]),SUM([ISA_hc]),SUM([ISA_hc_value]) FROM [gms_sql].[dbo].[ISA_Models]", connection);
-                    SqlDataReader dataReader = command.ExecuteReader();
+                    MySqlDataReader dataReader = sc1.ExecuteReader();
                     while (dataReader.Read())
                     {
                     valuesList.Add(Convert.ToInt32(dataReader[0]));//  Unity łącznie                    
@@ -555,10 +607,10 @@
                           
                         @if (table_count >= 1)
                         {
-                          SqlConnection con_update = new SqlConnection(ConnectionString);
-                        string update_question = $"SELECT [ISA_last_update] FROM [gms_sql].[dbo].[ISA_Models] ORDER BY ISA_last_update DESC";
+                          MySqlConnection con_update = new MySqlConnection(ConnectionString);
+                        string update_question = $"SELECT ISA_last_update FROM isa_models ORDER BY ISA_last_update DESC";
 
-                         SqlCommand  update_answer = new SqlCommand(update_question, con_update);
+                         MySqlCommand  update_answer = new MySqlCommand(update_question, con_update);
                             con_update.Open();
                             DateTime last_update = (DateTime)update_answer.ExecuteScalar();      
                           <p_last_update style="font-weight:700;font-size:13px;position:relative;top:-14px; color:white;">@last_update</p_last_update>  
@@ -738,34 +790,18 @@
   
 @foreach (var item in Model.OrderBy(i=> i.ISA_date_time)) 
 {
-        
-        <tr>
-          
-
-                    <div id="fifo_tabela_isa_numer" class="border-end-0 border border-secondary rounded-start">
-                            @Html.DisplayFor(modelItem => item.ISA_number)
-                    @{
-                        bool to_check = item.ISA_to_chceck;
-                        if (to_check == true)
-                        {
-                            <script type="text/javascript">document.getElementById("fifo_tabela_isa_numer").style.backgroundColor = "lightgray";</script>
-                             <script type="text/javascript">document.getElementById("fifo_tabela_isa_data").style.backgroundColor = "lightgray";</script>
-                             <script type="text/javascript">document.getElementById("fifo_tabela_isa_line").style.backgroundColor = "lightgray";</script>
-                             
-                        }
-                    }
-                    </div>
-                    
-                    <div id="fifo_tabela_isa_data" class="border-end-0 border border-secondary ">
-                        @Html.DisplayFor(modelItem => item.ISA_date_time)
-                        
-                    
-                    </div> 
-                    <div id="fifo_tabela_isa_line" class="border-end-0 border border-secondary ">
-                        @Html.DisplayFor(modelItem => item.ISA_line)
-                    </div> 
-                    
-                    <div id="fifo_tabela_isa_ilosc" class="border-end-0 border border-secondary ">
+      <table>
+     <div id="@item.ISA_id+fifo_isa" class="border-end-0 border border-secondary rounded-start"  style="height: 35px;width: 80px;background-color: #ffff33;float: left;text-align: center;position: relative;left: -1px;color: black;font-size: 12px;font-weight: bolder;margin-bottom:2px;margin-right:4px;">
+         @Html.DisplayFor(modelItem => item.ISA_number)
+         
+      </div>
+      <div id="@item.ISA_id+fifo_data" class="border-end-0 border border-secondary" style="height: 35px; width: 60px;background-color: #ffff33;float: left;text-align: center;position: relative;left: -1px;color: black;font-size: 11px;font-weight: bolder;margin-left:0px;margin-right: 5px;margin-bottom: 2px;">
+          @Html.DisplayFor(modelItem => item.ISA_date_time)
+      </div> 
+      <div id="@item.ISA_id+fifo_line" class="border-end-0 border border-secondary " style="height: 35px;width: 62px;background-color: #8cff1a;float: left;text-align: center;color: black;font-size: 12px;font-weight: bolder;margin-bottom: 2px;margin-right:4px;">
+          @Html.DisplayFor(modelItem => item.ISA_line)
+      </div> 
+      <div id="@item.ISA_id+fifo_value" class="border-end-0 border border-secondary " style="height: 35px; width: 50px;background-color: #00e64d;color: black;float: left;text-align: center;color: black;font-size: 12px;font-weight: bolder;margin-right: 4px;margin-bottom: 2px;">
                             @{                             
                                int value_lacznie = (item.ISA_units) + (item.ISA_lp_value)+(item.ISA_parcel_value)+(item.ISA_mono_value)+(item.ISA_pax_value)+(item.ISA_ra_value)+(item.ISA_rb_value)+(item.ISA_rh_value)+(item.ISA_rap_value)+(item.ISA_rbp_value)+(item.ISA_rhp_value)+(item.ISA_ac_value)+(item.ISA_bc_value)+(item.ISA_hc_value);    
                                
@@ -773,101 +809,379 @@
                        
                             @value_lacznie
                         
-                    </div>                    
-                    <div id="fifo_tabela_isa_fba" class="border-end-0 border border-secondary ">                           
+      </div>                    
+      <div id="@item.ISA_id+fifo_fba" class="border-end-0 border border-secondary" style="height: 35px;
+    width: 50px;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+    background-color: #00b36b;
+    margin-bottom: 2px;">                           
                              @item.ISA_fba
-                    </div>
-                    <div id="fifo_tabela_isa_naczepa" class="border-end-0 border border-secondary ">
+      </div>
+      <div id="@item.ISA_id+fifo_st" class="border-end-0 border border-secondary "style="height: 35px;
+    width: 30px;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+    background-color: #00e68a;
+    margin-bottom: 2px;">
                         @Html.DisplayFor(modelItem => item.ISA_semitrailer)
-                    </div>   
-                    <div id="fifo_tabela_isa_morski" class="border-end-0 border border-secondary ">
+      </div>   
+      <div id="@item.ISA_id+fifo_sc" class="border-end-0 border border-secondary "style="height: 35px;
+    width: 30px;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+    background-color: #1affa3;
+    margin-bottom: 2px;">
                         @Html.DisplayFor(modelItem => item.ISA_fba_sea_container)
-                    </div>
-                    <div id="fifo_tabela_isa_standard" class="border-end-0 border border-secondary ">
+       </div>
+      <div id="@item.ISA_id+fifo_s" class="border-end-0 border border-secondary "style="height: 35px;
+    width: 30px;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+    background-color: #4dffb8;
+    margin-bottom: 2px;">
                         @Html.DisplayFor(modelItem => item.ISA_fba_standard)
-                    </div>                                         
-                     <div id="fifo_tabela_isa_lp" class="border-end-0 border border-secondary">
+      </div>                                         
+      <div id="@item.ISA_id+fifo_lp" class="border-end-0 border border-secondary"style="height: 35px;
+    width: 30px;
+    background-color: #248f8f;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-left: 4px;
+    margin-right: 2px;
+    margin-bottom: 2px;">
                          @Html.DisplayFor(modelItem => item.ISA_lp) 
-                    </div>
-                    <div id="fifo_tabela_isa_lp_value" class="border-end-0 border border-secondary">
+      </div>
+      <div id="@item.ISA_id+fifo_lp_v" class="border-end-0 border border-secondary"style=" height: 35px;
+    width: 50px;
+    background-color: #2eb8b8;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+    margin-bottom: 2px;">
                          @Html.DisplayFor(modelItem => item.ISA_lp_value) 
-                    </div>                                    
-                    <div id="fifo_tabela_isa_parcel" class="border-end-0 border border-secondary ">
+      </div>                                    
+      <div id="@item.ISA_id+fifo_pracel" class="border-end-0 border border-secondary "style="height: 35px;
+    width: 30px;
+    background-color: #47d1d1;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+    margin-bottom: 2px;">
                         @Html.DisplayFor(modelItem => item.ISA_parcel)
-                    </div>
-                    <div id="fifo_tabela_isa_parcel_value" class="border-end-0 border border-secondary ">
+      </div>
+      <div id="@item.ISA_id+fifo_parcel_v" class="border-end-0 border border-secondary "style="height: 35px;
+    width: 50px;
+    background-color: #70dbdb;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 4px;
+    margin-bottom: 2px;">
                         @Html.DisplayFor(modelItem => item.ISA_parcel_value)
-                    </div>                                      
-                   <div id="fifo_tabela_isa_mono" class="border-end-0 border border-secondary ">
+      </div>                                      
+      <div id="@item.ISA_id+fifo_mono" class="border-end-0 border border-secondary "style="height: 35px;
+    width: 35px;
+    background-color: #008fb3;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+    margin-bottom: 2px;">
                         @Html.DisplayFor(modelItem => item.ISA_mono)
-                    </div>
-                    <div id="fifo_tabela_isa_mono_value" class="border-end-0 border border-secondary ">
+      </div>
+      <div id="@item.ISA_id+fifo_mono_v" class="border-end-0 border border-secondary "style="height: 35px;
+    width: 50px;
+    background-color: #00b8e6;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+    margin-bottom: 2px;">
                         @Html.DisplayFor(modelItem => item.ISA_mono_value)
-                    </div>
-                    <div id="fifo_tabela_isa_pax" class="border-end-0 border border-secondary ">
+      </div>
+      <div id="@item.ISA_id+fifo_pax" class="border-end-0 border border-secondary "style="height: 35px;
+    width: 30px;
+    background-color: #1ad1ff;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+    margin-bottom: 2px;">
                         @Html.DisplayFor(modelItem => item.ISA_pax)
-                    </div>
-                    <div id="fifo_tabela_isa_pax_value" class="border-end-0 border border-secondary ">
+      </div>
+      <div id="@item.ISA_id+fifo_pax_v" class="border-end-0 border border-secondary "style="height: 35px;
+    width: 50px;
+    background-color: #4ddbff;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 4px;
+    margin-bottom: 2px;">
                         @Html.DisplayFor(modelItem => item.ISA_pax_value)
-                    </div>                   
-                    <div id="fifo_tabela_isa_ra" class="border-end-0 border border-secondary ">
+      </div>                   
+      <div id="@item.ISA_id+fifo_ra" class="border-end-0 border border-secondary "style="height: 35px;
+    width: 30px;
+    background-color: #6b00b3;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+    margin-bottom: 2px;">
                         @Html.DisplayFor(modelItem => item.ISA_ra)
-                    </div> 
-                    <div id="fifo_tabela_isa_ra_value" class="border-end-0 border border-secondary ">
+      </div> 
+      <div id="@item.ISA_id+fifo_ra_v" class="border-end-0 border border-secondary "style="height: 35px;
+    width: 50px;
+    background-color: #8a00e6;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+    margin-bottom: 2px;">
                         @Html.DisplayFor(modelItem => item.ISA_ra_value)
-                    </div> 
-                     <div id="fifo_tabela_isa_rb" class="border-end-0 border border-secondary ">
+      </div> 
+      <div id="@item.ISA_id+fifo_rb" class="border-end-0 border border-secondary "style=" height: 35px;
+    width: 30px;
+    background-color: #a31aff;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+    margin-bottom: 2px;">
                         @Html.DisplayFor(modelItem => item.ISA_rb)
-                    </div>
-                    <div id="fifo_tabela_isa_rb_value" class="border-end-0 border border-secondary ">
+      </div>
+      <div id="@item.ISA_id+fifo_rb_v" class="border-end-0 border border-secondary "style="height: 35px;
+    width: 50px;
+    background-color: #b84dff;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+    margin-bottom: 2px;">
                         @Html.DisplayFor(modelItem => item.ISA_rb_value)
-                    </div> 
-                    <div id="fifo_tabela_isa_rh" class="border-end-0 border border-secondary ">
+      </div> 
+      <div id="@item.ISA_id+fifo_rh" class="border-end-0 border border-secondary "style="height: 35px;
+    width: 30px;
+    background-color: #cc80ff;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+    margin-bottom: 2px;">
                         @Html.DisplayFor(modelItem => item.ISA_rh)
-                    </div>
-                    <div id="fifo_tabela_isa_rh_value" class="border-end-0 border border-secondary ">
+      </div>
+      <div id="@item.ISA_id+fifo_rh_v" class="border-end-0 border border-secondary "style="height: 35px;
+    width: 50px;
+    background-color: #e0b3ff;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 4px;
+    margin-bottom: 2px;">
                         @Html.DisplayFor(modelItem => item.ISA_rh_value)
-                    </div> 
-                    
-                    <div id="fifo_tabela_isa_rap" class="border-end-0 border border-secondary">
+      </div> 
+      <div id="@item.ISA_id+fifo_rap" class="border-end-0 border border-secondary"style="height: 35px;
+    width: 30px;
+    background-color: #b300b3;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+    margin-bottom: 2px;">
                         @Html.DisplayFor(modelItem => item.ISA_rap)
-                    </div>
-                    <div id="fifo_tabela_isa_rap_value" class="border-end-0 border border-secondary ">
+      </div>
+      <div id="@item.ISA_id+fifo_rap_v" class="border-end-0 border border-secondary "style="height: 35px;
+    width: 50px;
+    background-color: #e600e6;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+    margin-bottom: 2px;">
                         @Html.DisplayFor(modelItem => item.ISA_rap_value)
-                    </div>  
-                   <div id="fifo_tabela_isa_rbp" class="border-end-0 border border-secondary ">
+      </div>  
+      <div id="@item.ISA_id+fifo_rbp" class="border-end-0 border border-secondary "style="height: 35px;
+    width: 30px;
+    background-color: #ff1aff;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+    margin-bottom: 2px;">
                         @Html.DisplayFor(modelItem => item.ISA_rbp)
-                    </div> 
-                    <div id="fifo_tabela_isa_rbp_value" class="border-end-0 border border-secondary ">
+      </div> 
+      <div id="@item.ISA_id+fifo_rbp_v" class="border-end-0 border border-secondary "style="height: 35px;
+    width: 50px;
+    background-color: #ff4dff;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+    margin-bottom: 2px;">
                         @Html.DisplayFor(modelItem => item.ISA_rbp_value)
-                    </div>  
-                    <div id="fifo_tabela_isa_rhp" class="border-end-0 border border-secondary ">
-                        @Html.DisplayFor(modelItem => item.ISA_rhp)
-                    </div> 
-                    <div id="fifo_tabela_isa_rhp_value" class="border-end-0 border border-secondary">
+      </div>  
+      <div id="@item.ISA_id+fifo_rhp" class="border-end-0 border border-secondary "style=" height: 35px;
+    width: 30px;
+    background-color: #ff80ff;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+    margin-bottom: 2px;">
+                        @Html.DisplayFor(modelItem => item.ISA_rhp)                       
+      </div> 
+      <div id="@item.ISA_id+fifo_rhp_v" class="border-end-0 border border-secondary"style="height: 35px;
+    width: 50px;
+    background-color: #ffb3ff;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 4px;
+    margin-bottom: 2px;">
                         @Html.DisplayFor(modelItem => item.ISA_rhp_value)
-                    </div>  
-                  
-                    <div id="fifo_tabela_isa_ac" class="border-end-0 border border-secondary ">
+      </div>                   
+      <div id="@item.ISA_id+fifo_ac" class="border-end-0 border border-secondary "style="height: 35px;
+    width: 30px;
+    background-color: #b30059;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+    margin-bottom: 2px;">
                         @Html.DisplayFor(modelItem => item.ISA_ac)
-                    </div> <div id="fifo_tabela_isa_ac_value" class="border-end-0 border border-secondary ">
+      </div> 
+      <div id="@item.ISA_id+fifo_ac_v" class="border-end-0 border border-secondary "style="height: 35px;
+    width: 50px;
+    background-color: #e60073;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+    margin-bottom: 2px;">
                         @Html.DisplayFor(modelItem => item.ISA_ac_value)
-                    </div>
-                    <div id="fifo_tabela_isa_bc" class="border-end-0 border border-secondary ">
+      </div>
+      <div id="@item.ISA_id+fifo_bc" class="border-end-0 border border-secondary "style="height: 35px;
+    width: 30px;
+    background-color: #ff1a8c;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+    margin-bottom: 2px;">
                         @Html.DisplayFor(modelItem => item.ISA_bc)
-                    </div>
-                    <div id="fifo_tabela_isa_bc_value" class="border-end-0 border border-secondary ">
+      </div>
+      <div id="@item.ISA_id+fifo_bc_v" class="border-end-0 border border-secondary "style="height: 35px;
+    width: 50px;
+    background-color: #ff4da6;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+    margin-bottom: 2px;">
                         @Html.DisplayFor(modelItem => item.ISA_bc_value)
-                    </div>
-                    <div id="fifo_tabela_isa_hc" class="border-end-0 border border-secondary ">
+      </div>
+      <div id="@item.ISA_id+fifo_hc" class="border-end-0 border border-secondary "style="height: 35px;
+    width: 30px;
+    background-color: #ff80bf;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+    margin-bottom: 2px;">
                         @Html.DisplayFor(modelItem => item.ISA_hc)
-                    </div>
-                    <div id="fifo_tabela_isa_hc_value" class="border-end-0 border border-secondary ">
+      </div>
+      <div id="@item.ISA_id+fifo_hc_v" class="border-end-0 border border-secondary "style="height: 35px;
+    width: 50px;
+    background-color: #ffb3d9;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 4px;
+    margin-bottom: 2px;">
                         @Html.DisplayFor(modelItem => item.ISA_hc_value)
-                    </div>                   
-                    <div id="fifo_tabela_isa_komentarz" class="border-end-0 border border-secondary ">
+      </div>                   
+      <div id="@item.ISA_id+fifo_comment" class="border-end-0 border border-secondary "style=" height: 35px;
+    width: 225px;
+    background-color: #ff794d;
+    color: black;
+    float: left;
+    text-align: left;
+    font-size: 9px;
+    margin-right: 2px;
+    margin-bottom: 2px;">
                         @Html.DisplayFor(modelItem => item.ISA_comment)
-                    </div>
+      </div>
                     <div class="btn-group dropend" style="color:red;">
                       <button id="fifo_tabela_opcje" type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" >
                           
@@ -883,13 +1197,124 @@
                         </a>
                         <a asp-action="Details" asp-route-id="@item.ISA_id" class="btn btn-info"style="position:relative; bottom:8px;left:-3px; height:34px; height:34px;"><p1 style="font-size:11px;">Szczegóły</p1>
                           
-                        </a>     
-                       
+                        </a> 
+                     </div>
+
+ 
           
-</tr>        
-} 
-    </tbody>
+
 </table>
+
+
+     //Skrypt zmiana barwy , jeśli do sprawdzenia 
+     if(item.ISA_to_chceck ==true)
+      {
+        <script type="text/javascript">
+                    document.getElementById("@item.ISA_id+fifo_isa").style.backgroundColor = "lightgray";
+                    document.getElementById("@item.ISA_id+fifo_data").style.backgroundColor = "lightgray";
+                    document.getElementById("@item.ISA_id+fifo_line").style.backgroundColor = "lightgray";
+                    document.getElementById("@item.ISA_id+fifo_value").style.backgroundColor = "lightgray";
+                    document.getElementById("@item.ISA_id+fifo_fba").style.backgroundColor = "lightgray";
+                    document.getElementById("@item.ISA_id+fifo_fba").style.backgroundColor = "lightgray";
+                    document.getElementById("@item.ISA_id+fifo_st").style.backgroundColor = "lightgray";
+                    document.getElementById("@item.ISA_id+fifo_sc").style.backgroundColor = "lightgray";
+                    document.getElementById("@item.ISA_id+fifo_s").style.backgroundColor = "lightgray";
+                    document.getElementById("@item.ISA_id+fifo_lp").style.backgroundColor = "lightgray";
+                    document.getElementById("@item.ISA_id+fifo_lp_v").style.backgroundColor = "lightgray";
+                    document.getElementById("@item.ISA_id+fifo_pracel").style.backgroundColor = "lightgray";
+                    document.getElementById("@item.ISA_id+fifo_parcel_v").style.backgroundColor = "lightgray";
+                    document.getElementById("@item.ISA_id+fifo_mono").style.backgroundColor = "lightgray";
+                    document.getElementById("@item.ISA_id+fifo_mono_v").style.backgroundColor = "lightgray";
+                    document.getElementById("@item.ISA_id+fifo_pax").style.backgroundColor = "lightgray";
+                    document.getElementById("@item.ISA_id+fifo_pax_v").style.backgroundColor = "lightgray";
+                    document.getElementById("@item.ISA_id+fifo_ra").style.backgroundColor = "lightgray";
+                    document.getElementById("@item.ISA_id+fifo_ra_v").style.backgroundColor = "lightgray";
+                    document.getElementById("@item.ISA_id+fifo_rb").style.backgroundColor = "lightgray";
+                    document.getElementById("@item.ISA_id+fifo_rb_v").style.backgroundColor = "lightgray";
+                    document.getElementById("@item.ISA_id+fifo_rh").style.backgroundColor = "lightgray";
+                    document.getElementById("@item.ISA_id+fifo_rh_v").style.backgroundColor = "lightgray";
+                    document.getElementById("@item.ISA_id+fifo_rap").style.backgroundColor = "lightgray";
+                    document.getElementById("@item.ISA_id+fifo_rap_v").style.backgroundColor = "lightgray";
+                    document.getElementById("@item.ISA_id+fifo_rbp").style.backgroundColor = "lightgray";
+                    document.getElementById("@item.ISA_id+fifo_rbp_v").style.backgroundColor = "lightgray";
+                    document.getElementById("@item.ISA_id+fifo_rhp").style.backgroundColor = "lightgray";
+                    document.getElementById("@item.ISA_id+fifo_rhp_v").style.backgroundColor = "lightgray";
+                    document.getElementById("@item.ISA_id+fifo_ac").style.backgroundColor = "lightgray";
+                    document.getElementById("@item.ISA_id+fifo_ac_v").style.backgroundColor = "lightgray";
+                    document.getElementById("@item.ISA_id+fifo_bc").style.backgroundColor = "lightgray";
+                    document.getElementById("@item.ISA_id+fifo_bc_v").style.backgroundColor = "lightgray";
+                    document.getElementById("@item.ISA_id+fifo_hc").style.backgroundColor = "lightgray";
+                    document.getElementById("@item.ISA_id+fifo_hc_v").style.backgroundColor = "lightgray";
+                    document.getElementById("@item.ISA_id+fifo_comment").style.backgroundColor = "lightgray";              
+                        </script>
+                    }             
+
+                    //Skrypt zmiana barwy , jesli towar się "pali" 
+                    DateTime data_isa = item.ISA_date_time;
+                    DateTime data_teraz = DateTime.Now;
+                    TimeSpan interval = data_teraz - data_isa;
+                    double minut = -1*interval.TotalMinutes;
+                   
+
+                if(interval.TotalMinutes>=-60||interval.TotalMinutes>=0)
+                {
+                 <script type="text/javascript">
+                    document.getElementById("@item.ISA_id+fifo_isa").style.backgroundColor = "red";
+                    document.getElementById("@item.ISA_id+fifo_data").style.backgroundColor = "red";
+                    document.getElementById("@item.ISA_id+fifo_line").style.backgroundColor = "red";
+                    document.getElementById("@item.ISA_id+fifo_value").style.backgroundColor = "red";
+                    document.getElementById("@item.ISA_id+fifo_fba").style.backgroundColor = "red";
+                    document.getElementById("@item.ISA_id+fifo_fba").style.backgroundColor = "red";
+                    document.getElementById("@item.ISA_id+fifo_st").style.backgroundColor = "red";
+                    document.getElementById("@item.ISA_id+fifo_sc").style.backgroundColor = "red";
+                    document.getElementById("@item.ISA_id+fifo_s").style.backgroundColor = "red";
+                    document.getElementById("@item.ISA_id+fifo_lp").style.backgroundColor = "red";
+                    document.getElementById("@item.ISA_id+fifo_lp_v").style.backgroundColor = "red";
+                    document.getElementById("@item.ISA_id+fifo_pracel").style.backgroundColor = "red";
+                    document.getElementById("@item.ISA_id+fifo_parcel_v").style.backgroundColor = "red";
+                    document.getElementById("@item.ISA_id+fifo_mono").style.backgroundColor = "red";
+                    document.getElementById("@item.ISA_id+fifo_mono_v").style.backgroundColor = "red";
+                    document.getElementById("@item.ISA_id+fifo_pax").style.backgroundColor = "red";
+                    document.getElementById("@item.ISA_id+fifo_pax_v").style.backgroundColor = "red";
+                    document.getElementById("@item.ISA_id+fifo_ra").style.backgroundColor = "red";
+                    document.getElementById("@item.ISA_id+fifo_ra_v").style.backgroundColor = "red";
+                    document.getElementById("@item.ISA_id+fifo_rb").style.backgroundColor = "red";
+                    document.getElementById("@item.ISA_id+fifo_rb_v").style.backgroundColor = "red";
+                    document.getElementById("@item.ISA_id+fifo_rh").style.backgroundColor = "red";
+                    document.getElementById("@item.ISA_id+fifo_rh_v").style.backgroundColor = "red";
+                    document.getElementById("@item.ISA_id+fifo_rap").style.backgroundColor = "red";
+                    document.getElementById("@item.ISA_id+fifo_rap_v").style.backgroundColor = "red";
+                    document.getElementById("@item.ISA_id+fifo_rbp").style.backgroundColor = "red";
+                    document.getElementById("@item.ISA_id+fifo_rbp_v").style.backgroundColor = "red";
+                    document.getElementById("@item.ISA_id+fifo_rhp").style.backgroundColor = "red";
+                    document.getElementById("@item.ISA_id+fifo_rhp_v").style.backgroundColor = "red";
+                    document.getElementById("@item.ISA_id+fifo_ac").style.backgroundColor = "red";
+                    document.getElementById("@item.ISA_id+fifo_ac_v").style.backgroundColor = "red";
+                    document.getElementById("@item.ISA_id+fifo_bc").style.backgroundColor = "red";
+                    document.getElementById("@item.ISA_id+fifo_bc_v").style.backgroundColor = "red";
+                    document.getElementById("@item.ISA_id+fifo_hc").style.backgroundColor = "red";
+                    document.getElementById("@item.ISA_id+fifo_hc_v").style.backgroundColor = "red";
+                    document.getElementById("@item.ISA_id+fifo_comment").style.backgroundColor = "red";                              
+
+                   document.getElementById("fifo_tabela_alert").style.backgroundColor = "Red";
+                    document.getElementById("fifo_tabela_alert").innerHTML = "ISA:@item.ISA_number Pozostało: @Math.Round(minut, 0); Minut.";
+                    document.getElementById("fifo_alert").document.class.innerHTML = "alert alert-danger";
+                    
+                    
+                      </script>
+    /*Alert*/                  
+   <div class="alert alert-danger alert-dismissible fade show" role="alert"style="position:fixed; top:0px;left:750px; width:450px; height:100px;">
+  <strong>Palę się!</strong>  Palę się mordeczko! ISA:[@item.ISA_number]
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+                     
+                     
+
+                 
+                }
+                       
+} 
+    
+
 <br>
 
-    

@@ -1,23 +1,28 @@
 ﻿using System;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
 namespace GroundManagmentSystem.Migrations
 {
-    public partial class azure : Migration
+    public partial class @new : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.AlterDatabase()
+                .Annotation("MySql:CharSet", "utf8mb4");
+
             migrationBuilder.CreateTable(
                 name: "ISA_Models",
                 columns: table => new
                 {
                     ISA_id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     ISA_number = table.Column<long>(type: "bigint", nullable: false),
-                    ISA_date_time = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ISA_line = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ISA_date_time = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    ISA_line = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
                     ISA_units = table.Column<int>(type: "int", nullable: false),
                     ISA_fba = table.Column<int>(type: "int", nullable: false),
                     ISA_semitrailer = table.Column<int>(type: "int", nullable: false),
@@ -49,57 +54,22 @@ namespace GroundManagmentSystem.Migrations
                     ISA_bc_value = table.Column<int>(type: "int", nullable: false),
                     ISA_hc = table.Column<int>(type: "int", nullable: false),
                     ISA_hc_value = table.Column<int>(type: "int", nullable: false),
-                    ISA_to_chceck = table.Column<bool>(type: "bit", nullable: false),
-                    ISA_comment = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ISA_last_update = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    ISA_to_chceck = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    ISA_comment = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    ISA_last_update = table.Column<DateTime>(type: "datetime(6)", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ISA_Models", x => x.ISA_id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Line_Models",
-                columns: table => new
-                {
-                    LINE_id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    LINE_number = table.Column<int>(type: "int", nullable: false),
-                    LINE_asign_isa = table.Column<int>(type: "int", nullable: false),
-                    LINE_units = table.Column<int>(type: "int", nullable: false),
-                    LINE_to_check = table.Column<short>(type: "smallint", nullable: false),
-                    LINE_lp = table.Column<short>(type: "smallint", nullable: false),
-                    LINE_parcel = table.Column<short>(type: "smallint", nullable: false),
-                    LINE_mono = table.Column<short>(type: "smallint", nullable: false),
-                    LINE_pax = table.Column<short>(type: "smallint", nullable: false),
-                    LINE_ra = table.Column<short>(type: "smallint", nullable: false),
-                    LINE_rb = table.Column<short>(type: "smallint", nullable: false),
-                    LINE_rh = table.Column<short>(type: "smallint", nullable: false),
-                    LINE_rap = table.Column<short>(type: "smallint", nullable: false),
-                    LINE_rbp = table.Column<short>(type: "smallint", nullable: false),
-                    LINE_rhp = table.Column<short>(type: "smallint", nullable: false),
-                    LINE_ac = table.Column<short>(type: "smallint", nullable: false),
-                    LINE_bc = table.Column<short>(type: "smallint", nullable: false),
-                    LINE_hc = table.Column<short>(type: "smallint", nullable: false),
-                    LINE_fba = table.Column<short>(type: "smallint", nullable: false),
-                    LINE_sea_container = table.Column<short>(type: "smallint", nullable: false),
-                    LINE_standard = table.Column<short>(type: "smallint", nullable: false),
-                    LINE_semitrailer = table.Column<short>(type: "smallint", nullable: false),
-                    LINE_comment = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Line_Models", x => x.LINE_id);
-                });
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
                 name: "ISA_Models");
-
-            migrationBuilder.DropTable(
-                name: "Line_Models");
         }
     }
 }

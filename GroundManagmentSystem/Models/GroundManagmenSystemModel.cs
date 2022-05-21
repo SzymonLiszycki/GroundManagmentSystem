@@ -85,39 +85,7 @@ namespace GroundManagmentSystem.Models
             public DateTime ISA_last_update { get; set; } = DateTime.Now;
             
         }
-        public class Line_Model
-        {
-            [Key]
-            public int LINE_id { get; set; }
-            public ushort LINE_number { get; set; }
-            public int LINE_asign_isa { get; set; }
-            public int LINE_units { get; set; }
-            public short LINE_to_check { get; set; }
-            public short LINE_lp { get; set; }
-            public short LINE_parcel { get; set; }
-            public short LINE_mono { get; set; }
-            public short LINE_pax { get; set; }
-            public short LINE_ra { get; set; }
-            public short LINE_rb { get; set; }
-            public short LINE_rh { get; set; }
-            public short LINE_rap { get; set; }
-            public short LINE_rbp { get; set; }
-            public short LINE_rhp { get; set; }
-            public short LINE_ac { get; set; }
-            public short LINE_bc { get; set; }
-            public short LINE_hc { get; set; }
-            public short LINE_fba { get; set; }
-            public short LINE_sea_container { get; set; }
-            public short LINE_standard { get; set; }
-            public short LINE_semitrailer { get; set; }
-            public string? LINE_comment { get; set; }
-
-
-
-
-
-
-        }
+        
     
 
 }

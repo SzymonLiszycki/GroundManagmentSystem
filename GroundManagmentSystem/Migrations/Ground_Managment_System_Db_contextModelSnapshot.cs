@@ -3,7 +3,6 @@ using System;
 using GroundManagmentSystem.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -18,17 +17,13 @@ namespace GroundManagmentSystem.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "6.0.2")
-                .HasAnnotation("Relational:MaxIdentifierLength", 128);
-
-            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+                .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("GroundManagmentSystem.Models.ISA_Model", b =>
                 {
                     b.Property<int>("ISA_id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ISA_id"), 1L, 1);
 
                     b.Property<int>("ISA_ac")
                         .HasColumnType("int");
@@ -43,10 +38,10 @@ namespace GroundManagmentSystem.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("ISA_comment")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("longtext");
 
                     b.Property<DateTime>("ISA_date_time")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<int>("ISA_fba")
                         .HasColumnType("int");
@@ -64,10 +59,10 @@ namespace GroundManagmentSystem.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime>("ISA_last_update")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("ISA_line")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("longtext");
 
                     b.Property<int>("ISA_lp")
                         .HasColumnType("int");
@@ -136,7 +131,7 @@ namespace GroundManagmentSystem.Migrations
                         .HasColumnType("int");
 
                     b.Property<bool>("ISA_to_chceck")
-                        .HasColumnType("bit");
+                        .HasColumnType("tinyint(1)");
 
                     b.Property<int>("ISA_units")
                         .HasColumnType("int");
@@ -144,85 +139,6 @@ namespace GroundManagmentSystem.Migrations
                     b.HasKey("ISA_id");
 
                     b.ToTable("ISA_Models");
-                });
-
-            modelBuilder.Entity("GroundManagmentSystem.Models.Line_Model", b =>
-                {
-                    b.Property<int>("LINE_id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("LINE_id"), 1L, 1);
-
-                    b.Property<short>("LINE_ac")
-                        .HasColumnType("smallint");
-
-                    b.Property<int>("LINE_asign_isa")
-                        .HasColumnType("int");
-
-                    b.Property<short>("LINE_bc")
-                        .HasColumnType("smallint");
-
-                    b.Property<string>("LINE_comment")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<short>("LINE_fba")
-                        .HasColumnType("smallint");
-
-                    b.Property<short>("LINE_hc")
-                        .HasColumnType("smallint");
-
-                    b.Property<short>("LINE_lp")
-                        .HasColumnType("smallint");
-
-                    b.Property<short>("LINE_mono")
-                        .HasColumnType("smallint");
-
-                    b.Property<int>("LINE_number")
-                        .HasColumnType("int");
-
-                    b.Property<short>("LINE_parcel")
-                        .HasColumnType("smallint");
-
-                    b.Property<short>("LINE_pax")
-                        .HasColumnType("smallint");
-
-                    b.Property<short>("LINE_ra")
-                        .HasColumnType("smallint");
-
-                    b.Property<short>("LINE_rap")
-                        .HasColumnType("smallint");
-
-                    b.Property<short>("LINE_rb")
-                        .HasColumnType("smallint");
-
-                    b.Property<short>("LINE_rbp")
-                        .HasColumnType("smallint");
-
-                    b.Property<short>("LINE_rh")
-                        .HasColumnType("smallint");
-
-                    b.Property<short>("LINE_rhp")
-                        .HasColumnType("smallint");
-
-                    b.Property<short>("LINE_sea_container")
-                        .HasColumnType("smallint");
-
-                    b.Property<short>("LINE_semitrailer")
-                        .HasColumnType("smallint");
-
-                    b.Property<short>("LINE_standard")
-                        .HasColumnType("smallint");
-
-                    b.Property<short>("LINE_to_check")
-                        .HasColumnType("smallint");
-
-                    b.Property<int>("LINE_units")
-                        .HasColumnType("int");
-
-                    b.HasKey("LINE_id");
-
-                    b.ToTable("Line_Models");
                 });
 #pragma warning restore 612, 618
         }
