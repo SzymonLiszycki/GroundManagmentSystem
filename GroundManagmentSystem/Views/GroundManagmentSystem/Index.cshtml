@@ -12,55 +12,11 @@
     ViewData["Title"] = "Index";
 
 }
-@{
-    DateTime Czas_teraz = DateTime.Now;
-    
-    WorkBook workbook = WorkBook.Create(ExcelFileFormat.XLSX);
-    var sheet = workbook.CreateWorkSheet("RAPORT");
-    string contring;
-    string sql;
-    DataSet ds = new DataSet("ISA_models");
-    MySqlConnection conn_nyr;
-    MySqlDataAdapter da;
-    //Set Database Connection string
-    contring = @"server=localhost; database=gmsdb; user=root; password=";
-    //SQL Query to obtain data
-    sql = "SELECT ISA_number FROM isa_models ";
-    //Open Connection & Fill DataSet
-    conn_nyr = new MySqlConnection(contring);
-    da = new MySqlDataAdapter(sql, conn_nyr);
-    conn_nyr.Open();
-    da.Fill(ds);
-    //Loop through contents of dataset
-    foreach (DataTable table in ds.Tables)
-    {
-        int Count = table.Rows.Count - 1;
-        for (int j = 1; j <= Count; j++)
-        {
-
-            sheet["A" + j].Value = table.Rows[Count]
-            ["ISA_number"];
-        
-     }
-     Count++;
-}
-workbook.SaveAs("NYR.xlsx");
-    
-    
-    
-
-    
-    
-}
 
 
 
     
-}
 
-    
-
-    W
 
 
 <div id="fifo_main" class="" >
@@ -1256,7 +1212,7 @@ workbook.SaveAs("NYR.xlsx");
                     double minut = -1*interval.TotalMinutes;
                    
 
-                if(interval.TotalMinutes>=-60||interval.TotalMinutes>=0)
+                if(interval.TotalMinutes>=-60&&interval.TotalMinutes<=-1)
                 {
                  <script type="text/javascript">
                     document.getElementById("@item.ISA_id+fifo_isa").style.backgroundColor = "red";
