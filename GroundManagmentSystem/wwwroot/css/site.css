@@ -901,18 +901,6 @@
     margin-bottom: 2px;
 }
 /*FBA*/
-.fifo_tabela_isa_fba {
-    height: 35px;
-    width: 50px;
-    float: left;
-    text-align: center;
-    color: black;
-    font-size: 12px;
-    font-weight: bolder;
-    margin-right: 2px;
-    background-color: #00b36b;
-    margin-bottom: 2px;
-}
 #fifo_tabela_isa_fba {
     height: 35px;
     width: 50px;
