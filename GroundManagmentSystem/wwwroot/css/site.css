@@ -14,20 +14,22 @@
 #fifo_main {
    
     position: relative;
-    left: -250px;
+    left: -175px;
     min-height: 100px;
     min-width: 1810px;
+    
+
    
 }
 
 #fifo_main_nazwy {
     height: 37px;
-    width: 1805px;
+    width: 1648px;
    
 }
 
 #fifo_nazwa_isa_numer {
-    background-color: #e6e600;
+    background-color: #FDE248;
     height: 35px;
     width: 80px;
     float: left;
@@ -35,10 +37,10 @@
     font-size: 12px;
     font-weight: bolder;
     text-align: center;
-    margin-right:2px;
+    margin-right: 2px;
 }
 #fifo_nazwa_isa_line {
-    background-color: #66cc00;
+    background-color: #FDC537;
     height: 35px;
     width: 62px;
     float: left;
@@ -51,7 +53,7 @@
 
 
 #fifo_nazwa_isa_data {
-    background-color: #66cc00;
+    background-color: #FCD444;
     height: 35px;
     width: 62px;
     float: left;
@@ -61,18 +63,36 @@
     text-align: center;
     margin-right: 4px;
 }
-
-
+.fifo_nazwa_isa_ilosc_total {
+    background-color: red;
+    height: 35px;
+    width: 265px;
+    float: left;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 4px;
+}
+.fifo_nazwa_isa_ilosc_total_suma {
+    background-color: #009933;
+    height: 35px;
+    width: 265px;
+    float: left;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 4px;
+}
 
 #fifo_nazwa_isa_ilosc {
-    background-color: #009933;
+    background-color: #BFDD52;
     height: 35px;
     width: 50px;
     float: left;
     color: black;
     font-size: 12px;
     font-weight: bolder;
-    margin-right:4px;
+    margin-right: 4px;
 }
 /*FBA*/
 #fifo_nazwa_isa_fba { /*Paleta kolorów #00ff99  <- Main (OD 30 % + 10%)  Tabela-> #00ffcc*/ /*https://www.w3schools.com/colors/colors_picker.asp*/
@@ -80,7 +100,7 @@
     width: 50px;
     float: left;
     margin-right: 2px;
-    background-color: #00995c;
+    background-color: #65AD64;
 }
 
                                     p_fba {
@@ -102,60 +122,12 @@
                                         top:-20px;
                                     }
 
-#fifo_nazwa_isa_naczepa {
-    height: 35px;
-    width: 30px;
-    float: left;
-    margin-right: 2px;
-    background-color: #00cc7a;
-}
-                                p_fba_st {
-                                    color: black;
-                                    font-size: 12px;
-                                    font-weight: bolder;
-                                    position: relative;
-                                    left: -3px;
-                                    top: -9px;
-                                }
-                                p_fba_st_1 {
-                                    color: black;
-                                    font-size: 9px;
-                                    font-weight: bolder;
-                                    position: relative;
-                                    left: -0px;
-                                    top: -20px;
-                                }
-
-#fifo_nazwa_isa_morski {
-    height: 35px;
-    width: 30px;
-    float: left;
-    margin-right: 2px;
-    background-color: #00ff99;
-}
-                                p_fba_sc {
-                                    color: black;
-                                    font-size: 12px;
-                                    font-weight: bolder;
-                                    position: relative;
-                                    left: -3px;
-                                    top: -9px;
-                                }
-                                p_fba_sc_1 {
-                                    color: black;
-                                    font-size: 9px;
-                                    font-weight: bolder;
-                                    position: relative;
-                                    left: 0px;
-                                    top: -20px;
-                                }
-
 #fifo_nazwa_isa_standard {
     height: 35px;
     width: 30px;
     float: left;
     margin-right: 2px;
-    background-color: #33ffad;
+    background-color: #78B777;
 }
                                 p_fba_s {
                                     color: black;
@@ -198,7 +170,7 @@
                                 }
 /*LP/PARCEL*/  /*Paleta kolorów #00ffcc  <- Main (OD 30 % + 10%)  Tabela-> #33cccc*/ /*https://www.w3schools.com/colors/colors_picker.asp */
 #fifo_nazwa_isa_lp {
-    background-color: #1f7a7a;
+    background-color: #439BBE;
     height: 35px;
     width: 30px;
     float: left;
@@ -216,7 +188,7 @@
                                     bottom: 9px;
                                 }
 #fifo_nazwa_isa_lp_value {
-    background-color: #29a3a3;
+    background-color: #3B85DA;
     height: 35px;
     width: 50px;
     float: left;
@@ -243,7 +215,7 @@
                                 }
 
 #fifo_nazwa_isa_parcel {
-    background-color: #33cccc;
+    background-color: #3F7CEF;
     height: 35px;
     width: 30px;
     float: left;
@@ -262,7 +234,7 @@
                                     bottom: 9px;
                                 }
 #fifo_nazwa_isa_parcel_value {
-    background-color: #5cd6d6;
+    background-color: #4375FE ;
     height: 35px;
     width: 50px;
     float: left;
@@ -342,51 +314,7 @@
                                         bottom: 6px;
                                     }
 
-#fifo_nazwa_isa_pax {
-    background-color: #00ccff;
-    height: 35px;
-    width: 30px;
-    float: left;
-    font-size: 20px;
-    color: black;
-    font-size: 11px;
-    margin-right: 2px;
-}
-                                    p_pax {
-                                        color: black;
-                                        font-size: 12px;
-                                        font-weight: bolder;
-                                        position: relative;
-                                        left: -3px;
-                                        bottom: 10px;
-                                    }
-#fifo_nazwa_isa_pax_value {
-    height: 35px;
-    width: 50px;
-    background-color: #33d6ff;
-    float: left;
-    text-align: center;
-    color: black;
-    font-size: 12px;
-    font-weight: bolder;
-    margin-right: 2px;
-}
-                                        p_pax_v {
-                                            color: black;
-                                            font-size: 12px;
-                                            font-weight: 700;
-                                            position: relative;
-                                            left: -1px;
-                                            bottom: 3px;
-                                        }
-                                        p_pax_v_1 {
-                                            color: black;
-                                            font-size: 9px;
-                                            font-weight: 700;
-                                            position: relative;
-                                            left: 0px;
-                                            bottom: 6px;
-                                        }
+
 
 #fifo_nazwa_isa_ra {
     background-color: #5c0099;
@@ -828,11 +756,510 @@
 
 /*FIFO TABELA G£ÓWNA*/
 #fifo_tabela_main {
-    background-color: white;
+    background-color: ;
     width: 1840px;
     height: 37px;
 }
+.box {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 2px 5px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
 
+    .box::after {
+        content: "";
+        border-radius: 10px;
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        
+        opacity: 0;
+        -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .box:hover {
+        -webkit-transform: scale(1.01, 1.01);
+        transform: scale(1.01, 1.01);
+        box-shadow: 5px 5px 5px rgb(10 0 0);
+    }
+
+        .box:hover::after {
+            opacity: 1;
+        }
+
+.klik:focus {
+    background-color: ghostwhite;
+}
+
+
+/*==========================================================================*/
+/*KLASY*/
+.fifo_tabela_isa_numer {
+    height: 35px;
+    width: 80px;
+    background-color: #FEF2AE;
+    float: left;
+    text-align: center;
+    position: relative;
+    left: -1px;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-bottom: 2px;
+    margin-right: 2px;
+}
+/*Link ISA*/
+b:link {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+b:visited {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+b:hover {
+    color: blue;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+b:active {
+    color: blue;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.fifo_tabela_isa_line {
+    height: 35px;
+    width: 60px;
+    background-color: #FEE29A;
+    float: left;
+    text-align: center;
+    position: relative;
+    left: -1px;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 2px;
+}
+
+.fifo_tabela_isa_data {
+    height: 35px;
+    width: 62px;
+    background-color: #FEEBAA;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-bottom: 2px;
+}
+
+
+
+.fifo_tabela_isa_ilosc {
+    height: 35px;
+    width: 50px;
+    background-color: #DEEDA6;
+    color: black;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 4px;
+    margin-bottom: 2px;
+}
+/*FBA*/
+.fifo_tabela_isa_fba {
+    height: 35px;
+    width: 50px;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+    background-color: #A9D1A8;
+    margin-bottom: 2px;
+}
+
+
+
+.fifo_tabela_isa_standard {
+    height: 35px;
+    width: 30px;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+    background-color: #B9DAB9;
+    margin-bottom: 2px;
+}
+
+
+/*LP/PARCEL*/
+.fifo_tabela_isa_lp {
+    height: 35px;
+    width: 30px;
+    background-color: #8DC3D8;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-left: 4px;
+    margin-right: 2px;
+    margin-bottom: 2px;
+}
+
+.fifo_tabela_isa_lp_value {
+    height: 35px;
+    width: 50px;
+    background-color: #90BAEA;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+    margin-bottom: 2px;
+}
+
+.fifo_tabela_isa_parcel {
+    height: 35px;
+    width: 30px;
+    background-color: #A9C0FF;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+    margin-bottom: 2px;
+}
+
+.fifo_tabela_isa_parcel_value {
+    height: 35px;
+    width: 50px;
+    background-color: #4375FE;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 4px;
+    margin-bottom: 2px;
+}
+
+.fifo_tabela_isa_mono {
+    height: 35px;
+    width: 35px;
+    background-color: #008fb3;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+    margin-bottom: 2px;
+}
+
+.fifo_tabela_isa_mono_value {
+    height: 35px;
+    width: 50px;
+    background-color: #00b8e6;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 4px;
+    margin-bottom: 2px;
+}
+
+
+
+
+.fifo_tabela_isa_ra {
+    height: 35px;
+    width: 30px;
+    background-color: #6b00b3;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+    margin-bottom: 2px;
+}
+
+.fifo_tabela_isa_ra_value {
+    height: 35px;
+    width: 50px;
+    background-color: #8a00e6;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+    margin-bottom: 2px;
+}
+
+.fifo_tabela_isa_rb {
+    height: 35px;
+    width: 30px;
+    background-color: #a31aff;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+    margin-bottom: 2px;
+}
+
+.fifo_tabela_isa_rb_value {
+    height: 35px;
+    width: 50px;
+    background-color: #b84dff;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+    margin-bottom: 2px;
+}
+
+.fifo_tabela_isa_rh {
+    height: 35px;
+    width: 30px;
+    background-color: #cc80ff;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+    margin-bottom: 2px;
+}
+
+.fifo_tabela_isa_rh_value {
+    height: 35px;
+    width: 50px;
+    background-color: #e0b3ff;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 4px;
+    margin-bottom: 2px;
+}
+
+.fifo_tabela_isa_rap {
+    height: 35px;
+    width: 30px;
+    background-color: #b300b3;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+    margin-bottom: 2px;
+}
+
+.fifo_tabela_isa_rap_value {
+    height: 35px;
+    width: 50px;
+    background-color: #e600e6;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+    margin-bottom: 2px;
+}
+
+.fifo_tabela_isa_rbp {
+    height: 35px;
+    width: 30px;
+    background-color: #ff1aff;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+    margin-bottom: 2px;
+}
+
+.fifo_tabela_isa_rbp_value {
+    height: 35px;
+    width: 50px;
+    background-color: #ff4dff;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+    margin-bottom: 2px;
+}
+
+.fifo_tabela_isa_rhp {
+    height: 35px;
+    width: 30px;
+    background-color: #ff80ff;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+    margin-bottom: 2px;
+}
+
+.fifo_tabela_isa_rhp_value {
+    height: 35px;
+    width: 50px;
+    background-color: #ffb3ff;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 4px;
+    margin-bottom: 2px;
+}
+
+.fifo_tabela_isa_ac {
+    height: 35px;
+    width: 30px;
+    background-color: #b30059;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+    margin-bottom: 2px;
+}
+
+.fifo_tabela_isa_ac_value {
+    height: 35px;
+    width: 50px;
+    background-color: #e60073;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+    margin-bottom: 2px;
+}
+
+.fifo_tabela_isa_bc {
+    height: 35px;
+    width: 30px;
+    background-color: #ff1a8c;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+    margin-bottom: 2px;
+}
+
+.fifo_tabela_isa_bc_value {
+    height: 35px;
+    width: 50px;
+    background-color: #ff4da6;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+    margin-bottom: 2px;
+}
+
+
+.fifo_tabela_isa_hc {
+    height: 35px;
+    width: 30px;
+    background-color: #ff80bf;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 2px;
+    margin-bottom: 2px;
+}
+
+.fifo_tabela_isa_hc_value {
+    height: 35px;
+    width: 50px;
+    background-color: #ffb3d9;
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-right: 4px;
+    margin-bottom: 2px;
+}
+
+
+
+.fifo_tabela_isa_komentarz {
+    height: 35px;
+    width: 225px;
+    background-color: #ff794d;
+    color: black;
+    float: left;
+    text-align: left;
+    font-size: 9px;
+    margin-right: 2px;
+    margin-bottom: 2px;
+}
+
+.fifo_tabela_opcje {
+    height: 35px;
+    width: 40px;
+    background-color: #ff9933;
+    color: black;
+    float: left;
+    text-align: center;
+    margin-right: 0px;
+    margin-bottom: 2px;
+}
+/*=====================================*/
 #fifo_tabela_isa_numer {
     height: 35px;
     width: 80px;
@@ -901,18 +1328,7 @@
     margin-bottom: 2px;
 }
 /*FBA*/
-.fifo_tabela_isa_fba {
-    height: 35px;
-    width: 50px;
-    float: left;
-    text-align: center;
-    color: black;
-    font-size: 12px;
-    font-weight: bolder;
-    margin-right: 2px;
-    background-color: #00b36b;
-    margin-bottom: 2px;
-}
+
 #fifo_tabela_isa_fba {
     height: 35px;
     width: 50px;
@@ -1050,7 +1466,7 @@
     color: black;
     font-size: 12px;
     font-weight: bolder;
-    margin-right: 2px;
+    margin-right: 4px;
     margin-bottom: 2px;
 }
 
@@ -1328,14 +1744,14 @@
     color: black;
     float: left;
     text-align: center;
-    margin-right: 10px;
+    margin-right: 0px;
     margin-bottom: 2px;
 }
 /*FIFO SUMA*/
 #fifo_main_suma {
     height: 35px;
     width: 1820px;
-    /*background-color: forestgreen;*/
+    
     
 }
 
@@ -1359,7 +1775,7 @@
 
 #fifo_suma_fba {
     height: 35px;
-    width: px;
+    width: 0px;
     background-color: whitesmoke;
     color: black;
     float: left;

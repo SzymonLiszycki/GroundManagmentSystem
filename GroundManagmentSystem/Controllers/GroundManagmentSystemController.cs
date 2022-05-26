@@ -16,7 +16,7 @@ namespace GroundManagmentSystem.Controllers
         }
 
        
-        public IActionResult Pit()
+        public IActionResult Excel()
         {
             return View();
         }

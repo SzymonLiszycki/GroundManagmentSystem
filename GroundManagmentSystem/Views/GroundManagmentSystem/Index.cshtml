@@ -15,9 +15,6 @@
 
 
 
-    
-
-
 
 <div id="fifo_main" class="" >
 <table class="table">
@@ -26,53 +23,25 @@
         <!----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
         <!-------------------------------------------------------------------------------------------FIFO-SUMA------------------------------------------------------------------------------------------------------------------------------->
         <!----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-        <div id="fifo_main_name_bar"  class="border border border-secondary rounded" style="width:1755px; height:35px; margin-bottom:2px; text-align:center; font-size:25px; color:white;background-color:gray; font-weight:600; margin-top:10px;"> 
+        <div id="fifo_main_name_bar"  class="border border border-secondary rounded" style="width:1645px; height:35px; margin-bottom:2px; text-align:center; font-size:25px; color:white;background-color:gray; font-weight:600; margin-top:10px;"> 
             
             
-            FIFO</div>
-          
-        <div id="suma_main" class="border border border-secondary rounded-end" style="width:1755px; height:75px; margin-bottom:2px; text-align:center;background-color:white; font-weight:600;"> <!--FIFO SUMA -->
-        <div id="fifo_suma_nazwy" class="rounded border-0" data-bs-toggle="tooltip" data-bs-placement="top" title="ISA SUMA" style=" float:left;width:1785px;height:35px; margin-right:4px;margin-bottom:2px;">
-       <!-- <div id="fill_div" class="rounded border-0" style=" float:left;width:10px;height:35px; margin-right:4px;"></div>-->
-        <div class="btn-group" style="float:left;height:32px; width:210px;margin-right:2px;margin-left:2px; margin-top:1px;"> 
-              <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                  MENU
-                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="24" fill="currentColor" class="bi bi-menu-button" viewBox="0 0 16 16">
-                  <path d="M0 1.5A1.5 1.5 0 0 1 1.5 0h8A1.5 1.5 0 0 1 11 1.5v2A1.5 1.5 0 0 1 9.5 5h-8A1.5 1.5 0 0 1 0 3.5v-2zM1.5 1a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5h-8z"/>
-                  <path d="m7.823 2.823-.396-.396A.25.25 0 0 1 7.604 2h.792a.25.25 0 0 1 .177.427l-.396.396a.25.25 0 0 1-.354 0zM0 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8zm1 3v2a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2H1zm14-1V8a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2h14zM2 8.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0 4a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"/>
-                </svg>
-              </button>
-              <ul class="dropdown-menu" style="height:77px;width:100px;">
-                  <a asp-action="Create" class="btn btn-primary"  style="width:150px; height:33px;">DODAJ ISA
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
-                      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                      <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                    </svg>
-                </a> 
-              
-                
-              </ul>
+            FIFO
             </div>
-         <button id="fifo_nazwa_isa_ilosc" type="button" class="border border border-secondary rounded" data-bs-toggle="tooltip" data-bs-placement="top" title="Łączna ilość [szt]">
-            Ilość          
+          
+        <div id="suma_main" class="border border border-secondary rounded-end" style="width:1645px; height:75px; margin-bottom:2px; text-align:center;background-color:white; font-weight:600;"> <!--FIFO SUMA -->
+        <div id="fifo_suma_nazwy" class="rounded border-0" data-bs-toggle="tooltip" data-bs-placement="top" title="ISA SUMA" style=" float:left;width:1785px;height:35px; margin-right:4px;margin-bottom:2px;">
+       
+        
+         <button  id="total_value" class="fifo_nazwa_isa_ilosc_total border border border-secondary rounded" data-bs-toggle="tooltip" data-bs-placement="top" title="Łączna ilość [szt]">
+           <ilosc_tot style="font-weight:900;font-size:20px;"> Ilość Total   </ilosc_tot> 
         </button>
-        <button id="fifo_nazwa_isa_fba" type="button" class="rounded-start border border border-secondary " data-bs-toggle="tooltip" data-bs-placement="top" title="Łączna ilość  kontenerów:standard/morski/naczepa [szt.]">
+        <button id="fifo_nazwa_isa_fba" type="button" class="rounded-start border border border-secondary " data-bs-toggle="tooltip" data-bs-placement="top" title="Łączna ilość [szt.] z FBA">
            <p_fba>FBA</p_fba> 
             <p_fba_1>ILOŚĆ</p_fba_1>  
         </button>        
-        <button id="fifo_nazwa_isa_naczepa" type="button" class="border border border-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Kontener typu naczepa">
-             <p_fba_st >FBA</p_fba_st>
-             <p_fba_st_1 >ST</p_fba_st_1> 
-        </button>
-        <button id="fifo_nazwa_isa_morski" type="button" class="border border border-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Kontener morski">
-            <p_fba_sc >FBA </p_fba_sc>
-             <p_fba_sc_1 >SC</p_fba_sc_1> 
-                    
-        </button>
         <button id="fifo_nazwa_isa_standard" type="button" class="rounded-end border border border-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Kontener standardowy">
-            <p_fba_s >FBA</p_fba_s>
-            <p_fba_s_1 ">S</p_fba_s_1> 
-                    
+        <p_fba_s >FBA</p_fba_s>       
         </button>
          <button id="fifo_nazwa_isa_lp" type="button" class="rounded-start border border border-secondary " data-bs-placement="top" title="LP">
             <p_lp >@Html.DisplayNameFor(model => model.ISA_lp)</p_lp>       
@@ -91,17 +60,11 @@
         <button id="fifo_nazwa_isa_mono" type="button" class="rounded-start border border border-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Mono">
             <p_mono ">MON </p_mono>                 
         </button>
-        <button id="fifo_nazwa_isa_mono_value" type="button" class="border border border-secondary" data-bs-placement="top" title="LP">
+        <button id="fifo_nazwa_isa_mono_value" type="button" class="rounded-end border border border-secondary" data-bs-placement="top" title="LP">
             <p_mono_v >MON</p_mono_v>
             <p_mono_v_1 >ILOŚĆ</p_mono_v_1> 
         </button>
-        <button id="fifo_nazwa_isa_pax" type="button" class="border border border-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="PAX">
-            <p_pax >PAX</p_pax>                  
-        </button>
-        <button id="fifo_nazwa_isa_pax_value" type="button" class="rounded-end border border border-secondary " data-bs-placement="top" title="LP">
-            <p_pax_v >PAX</p_pax_v>
-            <p_pax_v_1 >ILOŚĆ</p_pax_v_1> 
-        </button>
+        
         <button id="fifo_nazwa_isa_ra" type="button" class="rounded-start border border border-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Recive apparel">
             <p_ra>RA </p_ra>      
         </button>
@@ -166,12 +129,26 @@
             <p_hc_v>HC </p_hc_v>   
             <p_hc_v_1> ILOŚĆ</p_hc_v_1>   
         </button>  
-        <div id="fifo_tabela_alert" class="border order border-secondary rounded" style="width:225px;height:34px; float:left; margin-top:1px;">
-            <svg id="alert_fifo" xmlns="http://www.w3.org/2000/svg" width="32" height="32"  class="bi bi-exclamation-diamond-fill" viewBox="0 0 16 16" style="position:relative; left:-40px;">
-              <path d="M9.05.435c-.58-.58-1.52-.58-2.1 0L.436 6.95c-.58.58-.58 1.519 0 2.098l6.516 6.516c.58.58 1.519.58 2.098 0l6.516-6.516c.58-.58.58-1.519 0-2.098L9.05.435zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-            </svg>
-         
-        </div>
+        <div class="btn-group" style="float:left;height:32px; width:260px;margin-right:2px;margin-left:2px; margin-top:1px;"> 
+
+              <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  MENU
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="24" fill="currentColor" class="bi bi-menu-button" viewBox="0 0 16 16">
+                  <path d="M0 1.5A1.5 1.5 0 0 1 1.5 0h8A1.5 1.5 0 0 1 11 1.5v2A1.5 1.5 0 0 1 9.5 5h-8A1.5 1.5 0 0 1 0 3.5v-2zM1.5 1a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5h-8z"/>
+                  <path d="m7.823 2.823-.396-.396A.25.25 0 0 1 7.604 2h.792a.25.25 0 0 1 .177.427l-.396.396a.25.25 0 0 1-.354 0zM0 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8zm1 3v2a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2H1zm14-1V8a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2h14zM2 8.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0 4a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"/>
+                </svg>
+              </button>
+              <ul class="dropdown-menu" style="height:67px;width:260px;position:relative; z-index:1000;">
+                  <a asp-action="Create" class="btn btn-primary"  style="width:259px; height:33px;margin-bottom:2px;">DODAJ ISA
+              
+                </a> 
+                <a asp-action="Excel" class="btn btn-success"  style="width:259px; height:33px;margin-bottom:2px;">Excel-Raport
+              
+                </a> 
+              
+                
+              </ul>
+            </div>
         </div>
 
         
@@ -179,7 +156,8 @@
 
 
         <div id="fifo_suma_podsumowanie_main" class="" style=" float:left;width:1785px;height:35px; margin-right:4px;">
-            <div id="fill_div" class="rounded border-0" style=" float:left;width:210px;height:35px; margin-right:4px;"></div>
+            
+            
             @{
                        
 
@@ -244,12 +222,13 @@
                     connection.Close();
                     }
                 }
-         
-                    <div id="fifo_tabela_isa_ilosc" class="border-end-0 border border-secondary ">
+                    
+                    <div id="total" class="fifo_nazwa_isa_ilosc_total_suma border border border-secondary rounded">
+                       
                        @if (table_count >= 1)
                        {
-                              int all_values_sum = (int) valuesList[0] +(int) valuesList[6]+(int) valuesList[8]+(int) valuesList[10]+(int) valuesList[12]+(int) valuesList[14]+(int) valuesList[16]+(int) valuesList[18]+(int) valuesList[20]+(int) valuesList[22]+(int) valuesList[24]+(int) valuesList[26]+(int) valuesList[28]+(int) valuesList[30];
-                              @all_values_sum                                                  
+                              int all_values_sum = (int) valuesList[1] +(int) valuesList[6]+(int) valuesList[8]+(int) valuesList[10]+(int) valuesList[12]+(int) valuesList[14]+(int) valuesList[16]+(int) valuesList[18]+(int) valuesList[20]+(int) valuesList[22]+(int) valuesList[24]+(int) valuesList[26]+(int) valuesList[28]+(int) valuesList[30];
+                                   <ilosc_tot_val style="font-weight:900;font-size:15px;"> @all_values_sum </ilosc_tot_val>                                              
                        }
                        else
                        {
@@ -264,27 +243,7 @@
                        @zero_int
                        }                         
                            
-                    </div>
-                    <div id="fifo_tabela_isa_naczepa" class="border-end-0 border border-secondary ">
-                        @if (table_count >= 1)
-                        {
-                         @valuesList[2]                        
-                        }
-                       else
-                       {
-                        @zero_int
-                       }                  
-                    </div>   
-                    <div id="fifo_tabela_isa_morski" class="border-end-0 border border-secondary ">
-                       @if (table_count >= 1)
-                        {
-                         @valuesList[3]                        
-                        }
-                       else
-                       {
-                        @zero_int
-                       }
-                    </div>
+                    </div>                    
                     <div id="fifo_tabela_isa_standard" class="border-end-0 border border-secondary ">
                         @if (table_count >= 1)
                         {
@@ -358,26 +317,6 @@
                         @zero_int
                        }                                   
                     </div>
-                    <div id="fifo_tabela_isa_pax" class="border-end-0 border border-secondary ">
-                        @if (table_count >= 1)
-                        {
-                         @valuesList[11]                        
-                        }
-                       else
-                       {
-                        @zero_int
-                       }                                    
-                    </div>
-                    <div id="fifo_tabela_isa_pax_value" class="border-end-0 border border-secondary ">
-                        @if (table_count >= 1)
-                        {
-                         @valuesList[12]                        
-                        }
-                       else
-                       {
-                        @zero_int
-                       }                                    
-                    </div>                   
                     <div id="fifo_tabela_isa_ra" class="border-end-0 border border-secondary ">
                       @if (table_count >= 1)
                         {
@@ -558,7 +497,7 @@
                         @zero_int
                        }                              
                     </div>
-                    <div id="fifo_tabela_last_update" class="border order border-secondary rounded" style="background-color:gray;width:225px;height:34px; float:left; margin-top:1px;">
+                    <div id="fifo_tabela_last_update" class="border order border-secondary rounded" style="background-color:gray;width:260px;height:34px; float:left; margin-top:1px;">
                         <p_last_update style="font-weight:900;font-size:13px;position:relative;top:-6px; color:white;">OSTATNIA AKTUALIZACJA</p_last_update><br />
                           
                         @if (table_count >= 1)
@@ -582,13 +521,13 @@
          <!----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
          <!----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
          <!----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-        <div id="fifo_main_name_space_bar" class="border border border-secondary rounded" style="width:1755px; height:2px; margin-bottom:10px;margin-top:10px;"></div>
-       <div id="fifo_main_nazwy" class="border-1 rounded sticky-top" >
+        <div id="fifo_main_name_space_bar" class="border border border-secondary rounded" style="width:1645px; height:2px; margin-bottom:10px;margin-top:10px;"></div>
+       <div id="fifo_main_nazwy" class="border-1 rounded sticky-topz-index:-1000;" >
 
       
         <button id="fifo_nazwa_isa_numer" type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="ISA numer" >
            @Html.DisplayNameFor(model => model.ISA_number)     
-           <p id="demo"></p>
+           
         </button>
         
         <button id="fifo_nazwa_isa_data" type="button" class="border border border-secondary rounded" data-bs-toggle="tooltip" data-bs-placement="top" title="Data">
@@ -607,16 +546,7 @@
         <button id="fifo_nazwa_isa_fba" type="button" class="rounded-start border border border-secondary " data-bs-toggle="tooltip" data-bs-placement="top" title="Uzupełnij to">
            <p_fba>FBA</p_fba> 
            <p_fba_1>ILOŚĆ</p_fba_1>  
-        </button>                  
-        <button id="fifo_nazwa_isa_naczepa" type="button" class="border border border-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Kontener typu naczepa">
-             <p_fba_st >FBA</p_fba_st>
-             <p_fba_st_1 >ST</p_fba_st_1> 
-        </button>
-        <button id="fifo_nazwa_isa_morski" type="button" class="border border border-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Kontener morski">
-            <p_fba_sc >FBA </p_fba_sc>
-             <p_fba_sc_1 >SC</p_fba_sc_1> 
-                    
-        </button>
+        </button>                         
         <button id="fifo_nazwa_isa_standard" type="button" class="rounded-end border border border-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Kontener standardowy">
             <p_fba_s >FBA</p_fba_s>
             <p_fba_s_1 ">S</p_fba_s_1> 
@@ -647,17 +577,10 @@
         <button id="fifo_nazwa_isa_mono" type="button" class="rounded-start border border border-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Mono">
             <p_mono ">MON </p_mono>                 
         </button>
-        <button id="fifo_nazwa_isa_mono_value" type="button" class="border border border-secondary" data-bs-placement="top" title="LP">
+        <button id="fifo_nazwa_isa_mono_value" type="button" class="rounded-end border border border-secondary " data-bs-placement="top" title="LP">
             <p_mono_v >MON</p_mono_v>
             <p_mono_v_1 >ILOŚĆ</p_mono_v_1> 
-        </button>
-        <button id="fifo_nazwa_isa_pax" type="button" class="border border border-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="PAX">
-            <p_pax >PAX</p_pax>                  
-        </button>
-        <button id="fifo_nazwa_isa_pax_value" type="button" class="rounded-end border border border-secondary " data-bs-placement="top" title="LP">
-            <p_pax_v >PAX</p_pax_v>
-            <p_pax_v_1 >ILOŚĆ</p_pax_v_1> 
-        </button>
+        </button>       
         <!--PAX/MONO-KONIEC-->
         <!--RA/RB/RH-START-->
         <button id="fifo_nazwa_isa_ra" type="button" class="rounded-start border border border-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Recive apparel">
@@ -735,9 +658,9 @@
         </button>
        
         
-        <button id="fifo_nazwa_isa_komentarz" type="button" class="border border border-secondary rounded" data-bs-toggle="tooltip" data-bs-placement="top" title="Komentarz">
+        <div id="fifo_nazwa_isa_komentarz"  class="border border border-secondary rounded">
             <p_comment style="color: black;font-size: 12px;font-weight: bolder;position:relative;left:0px; bottom:1px;">@Html.DisplayNameFor(model => model.ISA_comment)</p_comment>               
-        </button> 
+        </div> 
         <div id="fifo_nazwa_isa_opcje" class="border border border-secondary rounded">
           <p_opcje style="color: black;font-size: 12px;font-weight: 700;position:relative;left:2px; bottom:-8px;">OPCJE</p_opcje>
         </div>      
@@ -747,391 +670,115 @@
   
 @foreach (var item in Model.OrderBy(i=> i.ISA_date_time)) 
 {
-      <table>
-     <div id="@item.ISA_id+fifo_isa" class="border-end-0 border border-secondary rounded-start"  style="height: 35px;width: 80px;background-color: #ffff33;float: left;text-align: center;position: relative;left: -1px;color: black;font-size: 12px;font-weight: bolder;margin-bottom:2px;margin-right:4px;" value="@item.ISA_number">
-         @Html.DisplayFor(modelItem => item.ISA_number)
+      <table id="tblMain">
          
+        <div style="width:1648px; height:36px; margin-bottom:2px;" class="box">
+     <div id="@item.ISA_id+fifo_isa" class="fifo_tabela_isa_numer border-end-0 border border-secondary rounded-start" name="@item.ISA_id"  >
+         <a href="https://stackoverflow.com/questions/14617221/need-to-convert-result-of-innerhtml-to-number-on-javascript" target="_blank" >@Html.DisplayFor(modelItem => item.ISA_number)</a>
+      
       </div>
-      <div id="@item.ISA_id+fifo_data" class="border-end-0 border border-secondary" style="height: 35px; width: 60px;background-color: #ffff33;float: left;text-align: center;position: relative;left: -1px;color: black;font-size: 11px;font-weight: bolder;margin-left:0px;margin-right: 5px;margin-bottom: 2px;">
+      <div id="@item.ISA_id+fifo_data" class=" test fifo_tabela_isa_data border-end-0 border border-secondary" name="@item.ISA_id" >
           @Html.DisplayFor(modelItem => item.ISA_date_time)
       </div> 
-      <div id="@item.ISA_id+fifo_line" class="border-end-0 border border-secondary " style="height: 35px;width: 62px;background-color: #8cff1a;float: left;text-align: center;color: black;font-size: 12px;font-weight: bolder;margin-bottom: 2px;margin-right:4px;">
+      <div id="@item.ISA_id+fifo_line" class="fifo_tabela_isa_line border-end-0 border border-secondary " >
           @Html.DisplayFor(modelItem => item.ISA_line)
       </div> 
-      <div id="@item.ISA_id+fifo_value" class="border-end-0 border border-secondary " style="height: 35px; width: 50px;background-color: #00e64d;color: black;float: left;text-align: center;color: black;font-size: 12px;font-weight: bolder;margin-right: 4px;margin-bottom: 2px;">
+      <button   id="@item.ISA_id+fifo_value" class="fifo_tabela_isa_ilosc border-end-0 border border-secondary klik " >
                             @{                             
-                               int value_lacznie = (item.ISA_units) + (item.ISA_lp_value)+(item.ISA_parcel_value)+(item.ISA_mono_value)+(item.ISA_pax_value)+(item.ISA_ra_value)+(item.ISA_rb_value)+(item.ISA_rh_value)+(item.ISA_rap_value)+(item.ISA_rbp_value)+(item.ISA_rhp_value)+(item.ISA_ac_value)+(item.ISA_bc_value)+(item.ISA_hc_value);    
+                               int value_lacznie =(item.ISA_fba)+(item.ISA_units) + (item.ISA_lp_value)+(item.ISA_parcel_value)+(item.ISA_mono_value)+(item.ISA_pax_value)+(item.ISA_ra_value)+(item.ISA_rb_value)+(item.ISA_rh_value)+(item.ISA_rap_value)+(item.ISA_rbp_value)+(item.ISA_rhp_value)+(item.ISA_ac_value)+(item.ISA_bc_value)+(item.ISA_hc_value);    
                                
                             }
                        
                             @value_lacznie
                         
-      </div>                    
-      <div id="@item.ISA_id+fifo_fba" class="fifo_tabela_isa_fba border-end-0 border border-secondary">                           
+      </button>                    
+      <button onclick="sum_value(this.id)" id="@item.ISA_id+fifo_fba" class=" sumbtn fifo_tabela_isa_fba border-end-0 border border-secondary klik" value="@item.ISA_fba">                           
                              @item.ISA_fba
-      </div>
-      <div id="@item.ISA_id+fifo_st" class="border-end-0 border border-secondary "style="height: 35px;
-    width: 30px;
-    float: left;
-    text-align: center;
-    color: black;
-    font-size: 12px;
-    font-weight: bolder;
-    margin-right: 2px;
-    background-color: #00e68a;
-    margin-bottom: 2px;">
-                        @Html.DisplayFor(modelItem => item.ISA_semitrailer)
-      </div>   
-      <div id="@item.ISA_id+fifo_sc" class="border-end-0 border border-secondary "style="height: 35px;
-    width: 30px;
-    float: left;
-    text-align: center;
-    color: black;
-    font-size: 12px;
-    font-weight: bolder;
-    margin-right: 2px;
-    background-color: #1affa3;
-    margin-bottom: 2px;">
-                        @Html.DisplayFor(modelItem => item.ISA_fba_sea_container)
-       </div>
-      <div id="@item.ISA_id+fifo_s" class="border-end-0 border border-secondary "style="height: 35px;
-    width: 30px;
-    float: left;
-    text-align: center;
-    color: black;
-    font-size: 12px;
-    font-weight: bolder;
-    margin-right: 2px;
-    background-color: #4dffb8;
-    margin-bottom: 2px;">
+                             
+      </button>      
+      <button id="@item.ISA_id+fifo_s" class="fifo_tabela_isa_standard border-end-0 border border-secondary "value="@item.ISA_fba">
                         @Html.DisplayFor(modelItem => item.ISA_fba_standard)
-      </div>                                         
-      <div id="@item.ISA_id+fifo_lp" class="border-end-0 border border-secondary"style="height: 35px;
-    width: 30px;
-    background-color: #248f8f;
-    float: left;
-    text-align: center;
-    color: black;
-    font-size: 12px;
-    font-weight: bolder;
-    margin-left: 4px;
-    margin-right: 2px;
-    margin-bottom: 2px;">
+      </button>                                         
+      <button id="@item.ISA_id+fifo_lp" class="fifo_tabela_isa_lp border-end-0 border border-secondary">
                          @Html.DisplayFor(modelItem => item.ISA_lp) 
-      </div>
-      <div id="@item.ISA_id+fifo_lp_v" class="border-end-0 border border-secondary"style=" height: 35px;
-    width: 50px;
-    background-color: #2eb8b8;
-    float: left;
-    text-align: center;
-    color: black;
-    font-size: 12px;
-    font-weight: bolder;
-    margin-right: 2px;
-    margin-bottom: 2px;">
+      </button>
+      <div id="@item.ISA_id+fifo_lp_v" class="fifo_tabela_isa_lp_value border-end-0 border border-secondary">
                          @Html.DisplayFor(modelItem => item.ISA_lp_value) 
       </div>                                    
-      <div id="@item.ISA_id+fifo_pracel" class="border-end-0 border border-secondary "style="height: 35px;
-    width: 30px;
-    background-color: #47d1d1;
-    float: left;
-    text-align: center;
-    color: black;
-    font-size: 12px;
-    font-weight: bolder;
-    margin-right: 2px;
-    margin-bottom: 2px;">
+      <div id="@item.ISA_id+fifo_pracel" class="fifo_tabela_isa_parcel border-end-0 border border-secondary ">
                         @Html.DisplayFor(modelItem => item.ISA_parcel)
       </div>
-      <div id="@item.ISA_id+fifo_parcel_v" class="border-end-0 border border-secondary "style="height: 35px;
-    width: 50px;
-    background-color: #70dbdb;
-    float: left;
-    text-align: center;
-    color: black;
-    font-size: 12px;
-    font-weight: bolder;
-    margin-right: 4px;
-    margin-bottom: 2px;">
+      <div id="@item.ISA_id+fifo_parcel_v" class="fifo_tabela_isa_parcel_value border-end-0 border border-secondary ">
                         @Html.DisplayFor(modelItem => item.ISA_parcel_value)
       </div>                                      
-      <div id="@item.ISA_id+fifo_mono" class="border-end-0 border border-secondary "style="height: 35px;
-    width: 35px;
-    background-color: #008fb3;
-    float: left;
-    text-align: center;
-    color: black;
-    font-size: 12px;
-    font-weight: bolder;
-    margin-right: 2px;
-    margin-bottom: 2px;">
+      <div id="@item.ISA_id+fifo_mono" class="fifo_tabela_isa_mono border-end-0 border border-secondary ">
                         @Html.DisplayFor(modelItem => item.ISA_mono)
       </div>
-      <div id="@item.ISA_id+fifo_mono_v" class="border-end-0 border border-secondary "style="height: 35px;
-    width: 50px;
-    background-color: #00b8e6;
-    float: left;
-    text-align: center;
-    color: black;
-    font-size: 12px;
-    font-weight: bolder;
-    margin-right: 2px;
-    margin-bottom: 2px;">
+      <div id="@item.ISA_id+fifo_mono_v" class="fifo_tabela_isa_mono_value border-end-0 border border-secondary ">
                         @Html.DisplayFor(modelItem => item.ISA_mono_value)
       </div>
-      <div id="@item.ISA_id+fifo_pax" class="border-end-0 border border-secondary "style="height: 35px;
-    width: 30px;
-    background-color: #1ad1ff;
-    float: left;
-    text-align: center;
-    color: black;
-    font-size: 12px;
-    font-weight: bolder;
-    margin-right: 2px;
-    margin-bottom: 2px;">
-                        @Html.DisplayFor(modelItem => item.ISA_pax)
-      </div>
-      <div id="@item.ISA_id+fifo_pax_v" class="border-end-0 border border-secondary "style="height: 35px;
-    width: 50px;
-    background-color: #4ddbff;
-    float: left;
-    text-align: center;
-    color: black;
-    font-size: 12px;
-    font-weight: bolder;
-    margin-right: 4px;
-    margin-bottom: 2px;">
-                        @Html.DisplayFor(modelItem => item.ISA_pax_value)
-      </div>                   
-      <div id="@item.ISA_id+fifo_ra" class="border-end-0 border border-secondary "style="height: 35px;
-    width: 30px;
-    background-color: #6b00b3;
-    float: left;
-    text-align: center;
-    color: black;
-    font-size: 12px;
-    font-weight: bolder;
-    margin-right: 2px;
-    margin-bottom: 2px;">
+                 
+      <div id="@item.ISA_id+fifo_ra" class="fifo_tabela_isa_ra border-end-0 border border-secondary ">
                         @Html.DisplayFor(modelItem => item.ISA_ra)
       </div> 
-      <div id="@item.ISA_id+fifo_ra_v" class="border-end-0 border border-secondary "style="height: 35px;
-    width: 50px;
-    background-color: #8a00e6;
-    float: left;
-    text-align: center;
-    color: black;
-    font-size: 12px;
-    font-weight: bolder;
-    margin-right: 2px;
-    margin-bottom: 2px;">
+      <div id="@item.ISA_id+fifo_ra_v" class="fifo_tabela_isa_ra_value border-end-0 border border-secondary ">
                         @Html.DisplayFor(modelItem => item.ISA_ra_value)
       </div> 
-      <div id="@item.ISA_id+fifo_rb" class="border-end-0 border border-secondary "style=" height: 35px;
-    width: 30px;
-    background-color: #a31aff;
-    float: left;
-    text-align: center;
-    color: black;
-    font-size: 12px;
-    font-weight: bolder;
-    margin-right: 2px;
-    margin-bottom: 2px;">
+      <div id="@item.ISA_id+fifo_rb" class="fifo_tabela_isa_rb border-end-0 border border-secondary ">
                         @Html.DisplayFor(modelItem => item.ISA_rb)
       </div>
-      <div id="@item.ISA_id+fifo_rb_v" class="border-end-0 border border-secondary "style="height: 35px;
-    width: 50px;
-    background-color: #b84dff;
-    float: left;
-    text-align: center;
-    color: black;
-    font-size: 12px;
-    font-weight: bolder;
-    margin-right: 2px;
-    margin-bottom: 2px;">
+      <div id="@item.ISA_id+fifo_rb_v" class="fifo_tabela_isa_rb_value border-end-0 border border-secondary ">
                         @Html.DisplayFor(modelItem => item.ISA_rb_value)
       </div> 
-      <div id="@item.ISA_id+fifo_rh" class="border-end-0 border border-secondary "style="height: 35px;
-    width: 30px;
-    background-color: #cc80ff;
-    float: left;
-    text-align: center;
-    color: black;
-    font-size: 12px;
-    font-weight: bolder;
-    margin-right: 2px;
-    margin-bottom: 2px;">
+      <div id="@item.ISA_id+fifo_rh" class="fifo_tabela_isa_rh border-end-0 border border-secondary ">
                         @Html.DisplayFor(modelItem => item.ISA_rh)
       </div>
-      <div id="@item.ISA_id+fifo_rh_v" class="border-end-0 border border-secondary "style="height: 35px;
-    width: 50px;
-    background-color: #e0b3ff;
-    float: left;
-    text-align: center;
-    color: black;
-    font-size: 12px;
-    font-weight: bolder;
-    margin-right: 4px;
-    margin-bottom: 2px;">
+      <div id="@item.ISA_id+fifo_rh_v" class="fifo_tabela_isa_rh_value border-end-0 border border-secondary ">
                         @Html.DisplayFor(modelItem => item.ISA_rh_value)
       </div> 
-      <div id="@item.ISA_id+fifo_rap" class="border-end-0 border border-secondary"style="height: 35px;
-    width: 30px;
-    background-color: #b300b3;
-    float: left;
-    text-align: center;
-    color: black;
-    font-size: 12px;
-    font-weight: bolder;
-    margin-right: 2px;
-    margin-bottom: 2px;">
+      <div id="@item.ISA_id+fifo_rap" class="fifo_tabela_isa_rap border-end-0 border border-secondary">
                         @Html.DisplayFor(modelItem => item.ISA_rap)
       </div>
-      <div id="@item.ISA_id+fifo_rap_v" class="border-end-0 border border-secondary "style="height: 35px;
-    width: 50px;
-    background-color: #e600e6;
-    float: left;
-    text-align: center;
-    color: black;
-    font-size: 12px;
-    font-weight: bolder;
-    margin-right: 2px;
-    margin-bottom: 2px;">
+      <div id="@item.ISA_id+fifo_rap_v" class="fifo_tabela_isa_rap_value border-end-0 border border-secondary ">
                         @Html.DisplayFor(modelItem => item.ISA_rap_value)
       </div>  
-      <div id="@item.ISA_id+fifo_rbp" class="border-end-0 border border-secondary "style="height: 35px;
-    width: 30px;
-    background-color: #ff1aff;
-    float: left;
-    text-align: center;
-    color: black;
-    font-size: 12px;
-    font-weight: bolder;
-    margin-right: 2px;
-    margin-bottom: 2px;">
+      <div id="@item.ISA_id+fifo_rbp" class="fifo_tabela_isa_rbp border-end-0 border border-secondary ">
                         @Html.DisplayFor(modelItem => item.ISA_rbp)
       </div> 
-      <div id="@item.ISA_id+fifo_rbp_v" class="border-end-0 border border-secondary "style="height: 35px;
-    width: 50px;
-    background-color: #ff4dff;
-    float: left;
-    text-align: center;
-    color: black;
-    font-size: 12px;
-    font-weight: bolder;
-    margin-right: 2px;
-    margin-bottom: 2px;">
+      <div id="@item.ISA_id+fifo_rbp_v" class="fifo_tabela_isa_rbp_value border-end-0 border border-secondary ">
                         @Html.DisplayFor(modelItem => item.ISA_rbp_value)
       </div>  
-      <div id="@item.ISA_id+fifo_rhp" class="border-end-0 border border-secondary "style=" height: 35px;
-    width: 30px;
-    background-color: #ff80ff;
-    float: left;
-    text-align: center;
-    color: black;
-    font-size: 12px;
-    font-weight: bolder;
-    margin-right: 2px;
-    margin-bottom: 2px;">
+      <div id="@item.ISA_id+fifo_rhp" class="fifo_tabela_isa_rhp border-end-0 border border-secondary ">
                         @Html.DisplayFor(modelItem => item.ISA_rhp)                       
       </div> 
-      <div id="@item.ISA_id+fifo_rhp_v" class="border-end-0 border border-secondary"style="height: 35px;
-    width: 50px;
-    background-color: #ffb3ff;
-    float: left;
-    text-align: center;
-    color: black;
-    font-size: 12px;
-    font-weight: bolder;
-    margin-right: 4px;
-    margin-bottom: 2px;">
+      <div id="@item.ISA_id+fifo_rhp_v" class="fifo_tabela_isa_rhp_value border-end-0 border border-secondary">
                         @Html.DisplayFor(modelItem => item.ISA_rhp_value)
       </div>                   
-      <div id="@item.ISA_id+fifo_ac" class="border-end-0 border border-secondary "style="height: 35px;
-    width: 30px;
-    background-color: #b30059;
-    float: left;
-    text-align: center;
-    color: black;
-    font-size: 12px;
-    font-weight: bolder;
-    margin-right: 2px;
-    margin-bottom: 2px;">
+      <div id="@item.ISA_id+fifo_ac" class="fifo_tabela_isa_ac border-end-0 border border-secondary ">
                         @Html.DisplayFor(modelItem => item.ISA_ac)
       </div> 
-      <div id="@item.ISA_id+fifo_ac_v" class="border-end-0 border border-secondary "style="height: 35px;
-    width: 50px;
-    background-color: #e60073;
-    float: left;
-    text-align: center;
-    color: black;
-    font-size: 12px;
-    font-weight: bolder;
-    margin-right: 2px;
-    margin-bottom: 2px;">
+      <div id="@item.ISA_id+fifo_ac_v" class="fifo_tabela_isa_ac_value border-end-0 border border-secondary ">
                         @Html.DisplayFor(modelItem => item.ISA_ac_value)
       </div>
-      <div id="@item.ISA_id+fifo_bc" class="border-end-0 border border-secondary "style="height: 35px;
-    width: 30px;
-    background-color: #ff1a8c;
-    float: left;
-    text-align: center;
-    color: black;
-    font-size: 12px;
-    font-weight: bolder;
-    margin-right: 2px;
-    margin-bottom: 2px;">
+      <div id="@item.ISA_id+fifo_bc" class="fifo_tabela_isa_bc border-end-0 border border-secondary ">
                         @Html.DisplayFor(modelItem => item.ISA_bc)
       </div>
-      <div id="@item.ISA_id+fifo_bc_v" class="border-end-0 border border-secondary "style="height: 35px;
-    width: 50px;
-    background-color: #ff4da6;
-    float: left;
-    text-align: center;
-    color: black;
-    font-size: 12px;
-    font-weight: bolder;
-    margin-right: 2px;
-    margin-bottom: 2px;">
+      <div id="@item.ISA_id+fifo_bc_v" class="fifo_tabela_isa_bc_value border-end-0 border border-secondary ">
                         @Html.DisplayFor(modelItem => item.ISA_bc_value)
       </div>
-      <div id="@item.ISA_id+fifo_hc" class="border-end-0 border border-secondary "style="height: 35px;
-    width: 30px;
-    background-color: #ff80bf;
-    float: left;
-    text-align: center;
-    color: black;
-    font-size: 12px;
-    font-weight: bolder;
-    margin-right: 2px;
-    margin-bottom: 2px;">
+      <div id="@item.ISA_id+fifo_hc" class="fifo_tabela_isa_hc border-end-0 border border-secondary ">
                         @Html.DisplayFor(modelItem => item.ISA_hc)
       </div>
-      <div id="@item.ISA_id+fifo_hc_v" class="border-end-0 border border-secondary "style="height: 35px;
-    width: 50px;
-    background-color: #ffb3d9;
-    float: left;
-    text-align: center;
-    color: black;
-    font-size: 12px;
-    font-weight: bolder;
-    margin-right: 4px;
-    margin-bottom: 2px;">
+      <div id="@item.ISA_id+fifo_hc_v" class="fifo_tabela_isa_hc_value border-end-0 border border-secondary ">
                         @Html.DisplayFor(modelItem => item.ISA_hc_value)
       </div>                   
-      <div id="@item.ISA_id+fifo_comment" class="border-end-0 border border-secondary "style=" height: 35px;
-    width: 225px;
-    background-color: #ff794d;
-    color: black;
-    float: left;
-    text-align: left;
-    font-size: 9px;
-    margin-right: 2px;
-    margin-bottom: 2px;">
+      <div id="@item.ISA_id+fifo_comment" class="fifo_tabela_isa_komentarz border-end-0 border border-secondary " onclick="isEvenClick() && sayHello()">
                         @Html.DisplayFor(modelItem => item.ISA_comment)
       </div>
+      
+     
                     <div class="btn-group dropend" style="color:red;">
-                      <button id="fifo_tabela_opcje" type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" >
+                      <button id="fifo_tabela_opcje" type="button" class="fifo_tabela_opcje btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" >
                           
                                                             <p_opcje></p_opcje>
                       </button>
@@ -1143,14 +790,32 @@
                         <a asp-action="Delete" asp-route-id="@item.ISA_id" class="btn btn-danger"style="position:relative; bottom:8px;left:-3px; height:34px;"><p1 style="font-size:11px;">Usuń</p1>
                            
                         </a>
-                        <a asp-action="Details" asp-route-id="@item.ISA_id" class="btn btn-info"style="position:relative; bottom:8px;left:-3px; height:34px; height:34px;"><p1 style="font-size:11px;">Szczegóły</p1>
+                        <a asp-action="Details" asp-route-id="@item.ISA_id" class="btn btn-info"style="position:relative; bottom:8px;left:-3px; height:34px; "><p1 style="font-size:11px;">Szczegóły</p1>
                           
                         </a> 
-                        <button value="@item.ISA_number" onclick="document.getElementById('@item.ISA_number').getAttribute('value','test')">The time is?</button>
+                        
                      </div>
 
  
           
+</div>
+<script>
+    window.onload = function () {
+    var el = document.getElementById("@item.ISA_id+fifo_comment");
+    el.onclick = sayHello;
+}
+
+function sayHello() {
+    console.log("Hello");
+}
+
+    </script>
+
+    @* <script>
+        Skrypt pobierajacy vartosc danego div'a' musi byc dodany "data-value"
+        var divElement = document.getElementById('@item.ISA_id+fifo_fba');
+alert( divElement .getAttribute('data-value'));
+    </script>*@
 
 </table>
 
@@ -1164,9 +829,7 @@
                     document.getElementById("@item.ISA_id+fifo_line").style.backgroundColor = "lightgray";
                     document.getElementById("@item.ISA_id+fifo_value").style.backgroundColor = "lightgray";
                     document.getElementById("@item.ISA_id+fifo_fba").style.backgroundColor = "lightgray";
-                    document.getElementById("@item.ISA_id+fifo_fba").style.backgroundColor = "lightgray";
-                    document.getElementById("@item.ISA_id+fifo_st").style.backgroundColor = "lightgray";
-                    document.getElementById("@item.ISA_id+fifo_sc").style.backgroundColor = "lightgray";
+                    document.getElementById("@item.ISA_id+fifo_fba").style.backgroundColor = "lightgray";                   
                     document.getElementById("@item.ISA_id+fifo_s").style.backgroundColor = "lightgray";
                     document.getElementById("@item.ISA_id+fifo_lp").style.backgroundColor = "lightgray";
                     document.getElementById("@item.ISA_id+fifo_lp_v").style.backgroundColor = "lightgray";
@@ -1174,8 +837,6 @@
                     document.getElementById("@item.ISA_id+fifo_parcel_v").style.backgroundColor = "lightgray";
                     document.getElementById("@item.ISA_id+fifo_mono").style.backgroundColor = "lightgray";
                     document.getElementById("@item.ISA_id+fifo_mono_v").style.backgroundColor = "lightgray";
-                    document.getElementById("@item.ISA_id+fifo_pax").style.backgroundColor = "lightgray";
-                    document.getElementById("@item.ISA_id+fifo_pax_v").style.backgroundColor = "lightgray";
                     document.getElementById("@item.ISA_id+fifo_ra").style.backgroundColor = "lightgray";
                     document.getElementById("@item.ISA_id+fifo_ra_v").style.backgroundColor = "lightgray";
                     document.getElementById("@item.ISA_id+fifo_rb").style.backgroundColor = "lightgray";
@@ -1214,8 +875,6 @@
                     document.getElementById("@item.ISA_id+fifo_value").style.backgroundColor = "red";
                     document.getElementById("@item.ISA_id+fifo_fba").style.backgroundColor = "red";
                     document.getElementById("@item.ISA_id+fifo_fba").style.backgroundColor = "red";
-                    document.getElementById("@item.ISA_id+fifo_st").style.backgroundColor = "red";
-                    document.getElementById("@item.ISA_id+fifo_sc").style.backgroundColor = "red";
                     document.getElementById("@item.ISA_id+fifo_s").style.backgroundColor = "red";
                     document.getElementById("@item.ISA_id+fifo_lp").style.backgroundColor = "red";
                     document.getElementById("@item.ISA_id+fifo_lp_v").style.backgroundColor = "red";
@@ -1223,8 +882,6 @@
                     document.getElementById("@item.ISA_id+fifo_parcel_v").style.backgroundColor = "red";
                     document.getElementById("@item.ISA_id+fifo_mono").style.backgroundColor = "red";
                     document.getElementById("@item.ISA_id+fifo_mono_v").style.backgroundColor = "red";
-                    document.getElementById("@item.ISA_id+fifo_pax").style.backgroundColor = "red";
-                    document.getElementById("@item.ISA_id+fifo_pax_v").style.backgroundColor = "red";
                     document.getElementById("@item.ISA_id+fifo_ra").style.backgroundColor = "red";
                     document.getElementById("@item.ISA_id+fifo_ra_v").style.backgroundColor = "red";
                     document.getElementById("@item.ISA_id+fifo_rb").style.backgroundColor = "red";
@@ -1251,6 +908,8 @@
                     
                     
                       </script>
+                      
+                      
     /*Alert*/                  
    <div class="alert alert-danger alert-dismissible fade show" role="alert"style="position:fixed; top:0px;left:750px; width:450px; height:100px;">
   <strong>Palę się!</strong>  Palę się mordeczko! ISA:[@item.ISA_number]
@@ -1261,9 +920,22 @@
 
                  
                 }
+
+
+
+
+
+
+
+
                        
 } 
-    
 
-<br>
+
+<br />
+
+
+
+
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 

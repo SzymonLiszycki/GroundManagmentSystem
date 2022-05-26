@@ -7,47 +7,58 @@
 
 @using IronXL;
 
-<
 
-    @{
 
+@{
+
+
+
+
+
+    string sql = "SELECT ISA_number,ISA_date_time,ISA_line,ISA_ra,ISA_ra_value,ISA_rb,ISA_rb_value,ISA_rh,ISA_rh_value,ISA_ac,ISA_ac_value,ISA_bc,ISA_bc_value,ISA_hc,ISA_hc_value,ISA_rap,ISA_rap_value,ISA_rbp,ISA_rbp_value,ISA_rhp,ISA_rhp_value FROM isa_models ";
+
+    //Your connection string
+    string connectionString = @"server=localhost; database=gmsdb; user=root; password=";
+
+    using (MySqlConnection connection = new MySqlConnection(connectionString))
+    {
+
+        WorkBook workbook;
+
+        //Open connections to the database
+        connection.Open();
+        MySqlDataAdapter adapter = new MySqlDataAdapter(sql, connection);
+        DataSet ds = new DataSet();
         
-         
-//            string sql = "SELECT ISA_number,ISA_date_time FROM isa_models";
-
-//    //Your connection string
-//    string connectionString = @"server=localhost; database=gmsdb; user=root; password=";
-
-//    using (MySqlConnection connection = new MySqlConnection(connectionString))
-//    {
-//        //Open connections to the database
-//        connection.Open();
-//        MySqlDataAdapter adapter = new MySqlDataAdapter(sql, connection);
-//        DataSet ds = new DataSet();
-//        // Fill DataSet with data
-//        adapter.Fill(ds);
-//        WorkBook workbook;
+        
+        
+       
+        
 
 
 
-//        //Create an Excel workbook from the SQL DataSet in one line
-//        workbook = WorkBook.Load(ds);
+        adapter.Fill(ds);
+        
+        workbook = WorkBook.Load(ds);
+        
+        
 
-//        <input type="file" webkitdirectory directory multiple/>
-//        workbook.SaveAs("C:\\Users\\liszy\\OneDrive\\Pulpit\\raport.xlsx");
-//    }
+       
+    workbook.SaveAs("C:\\Users\\liszy\\OneDrive\\Pulpit\\raport.xlsx");
+    }
             
-//   <div class="alert alert-success" role="alert">
-//  <h4 class="alert-heading">Well done!</h4>
-//  <p>Utworzono raport!</p>
-//  <hr>
-//  <p class="mb-0"></p>
-//  <a asp-action="Index">powrót</a>
-//</div>
+   
         
-        
+}
 
 
-}
-}
+  
+
+
+
+
+
+
+
+
 
