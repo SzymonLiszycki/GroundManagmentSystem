@@ -18,7 +18,7 @@ namespace GroundManagmentSystem.Models
             public string ?ISA_line { get; set; }
             [DisplayName("Ilość")]
             public int ISA_units { get; set; }
-            [DisplayName("FBA-Ilość")]
+            [DisplayName("FBA Ilość")]
             public int ISA_fba { get; set; }                                
             [DisplayName("FBA-ST")]
             public int ISA_semitrailer { get; set; }
@@ -26,27 +26,27 @@ namespace GroundManagmentSystem.Models
             public int ISA_fba_sea_container { get; set; }
             [DisplayName("FBA-S")]
             public int ISA_fba_standard { get; set; }                      
-            [DisplayName("LP")]
+            [DisplayName("Licence plate (Palety)")]
             public int ISA_lp { get; set; }
-            [DisplayName("LP ilość")]
+            [DisplayName("Licence plate (ilość sztuk)")]
             public int ISA_lp_value { get; set; }
-            [DisplayName("Parcel")]
+            [DisplayName("Parcel (Palety)")]
             public int ISA_parcel { get; set; }
-            [DisplayName("Parcel ilość")]
+            [DisplayName("Parcel (ilość sztuk)")]
             public int ISA_parcel_value { get; set; }
-            [DisplayName("Mono.")]
+            [DisplayName("Monoasin (palety)")]
             public int ISA_mono { get; set; }
-            [DisplayName("Monp-ILOŚĆ")]
+            [DisplayName("Monoasin (Ilość sztuk)")]
             public int ISA_mono_value { get; set; }
             [DisplayName("Pax.")]
             public int ISA_pax { get; set; }
             [DisplayName("PAX-ILOŚĆ")]
             public int ISA_pax_value { get; set; }
-            [DisplayName("Ra.")]
+            [DisplayName("Recive apparel")]
             public int ISA_ra { get; set; }
-            [DisplayName("Ra-ILOŚĆ")]
+            [DisplayName("Recive apparel ILOŚĆ")]
             public int ISA_ra_value { get; set; }
-            [DisplayName("Rb.")]
+            [DisplayName("Recive boots.")]
             public int ISA_rb { get; set; }
             [DisplayName("Rb-ILOŚĆ")]
             public int ISA_rb_value { get; set; }
@@ -70,15 +70,15 @@ namespace GroundManagmentSystem.Models
             public int ISA_ac { get; set; }
             [DisplayName("ac-ILOŚĆ")]
             public int ISA_ac_value { get; set; }
-            [DisplayName("Bc.")]
+            [DisplayName("BC")]
             public int ISA_bc { get; set; }
-            [DisplayName("bc-ILOŚĆ")]
+            [DisplayName("BC ILOŚĆ")]
             public int ISA_bc_value { get; set; }
-            [DisplayName("Hc.")]
+            [DisplayName("HC")]
             public int ISA_hc { get; set; }
-            [DisplayName("hc-ILOŚĆ")]
+            [DisplayName("HC Ilość")]
             public int ISA_hc_value { get; set; }
-            [DisplayName("DS")]
+            [DisplayName("Do sprawdzenia")]
             public bool ISA_to_chceck { get; set; }
             [DisplayName("Komentarz")]
             public string? ISA_comment { get; set; }

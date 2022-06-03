@@ -41,7 +41,7 @@ namespace GroundManagmentSystem.Migrations
                         .HasColumnType("longtext");
 
                     b.Property<DateTime>("ISA_date_time")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime");
 
                     b.Property<int>("ISA_fba")
                         .HasColumnType("int");
@@ -59,7 +59,7 @@ namespace GroundManagmentSystem.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime>("ISA_last_update")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime");
 
                     b.Property<string>("ISA_line")
                         .HasColumnType("longtext");

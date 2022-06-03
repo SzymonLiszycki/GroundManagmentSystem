@@ -6,25 +6,24 @@
 
 
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Delete">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input  asp-for="ISA_id" hidden />
-            <div class="form-group">
-                <label asp-for="ISA_number" class="control-label"></label>
-                <input asp-for="ISA_number" class="form-control" />
-                <span asp-validation-for="ISA_number" class="text-danger"></span>
-            </div>
+<div >
+    <div class="alert alert-danger" role="alert">
+  <h4 style="text-align:center"class="alert-heading">Usuwanie ISA:@Model.ISA_number</h4>
+  <p>Czy na pewno usunąć ISA:@Model.ISA_number ?</p>
+  <hr>
+  <p class="mb-0">
+      <form asp-action="Delete">
+            
             
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Usuń" class="btn btn-danger" />
             </div>
         </form>
-    </div>
+        <div style="position:relative; bottom:38px; left:80px;">
+    <a style="float:left"class="btn btn-success" asp-action="Index">Anuluj</a>
 </div>
+</p>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+
+
 

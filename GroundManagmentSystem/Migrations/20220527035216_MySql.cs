@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace GroundManagmentSystem.Migrations
 {
-    public partial class @new : Migration
+    public partial class MySql : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -20,7 +20,7 @@ namespace GroundManagmentSystem.Migrations
                     ISA_id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     ISA_number = table.Column<long>(type: "bigint", nullable: false),
-                    ISA_date_time = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    ISA_date_time = table.Column<DateTime>(type: "datetime", nullable: false),
                     ISA_line = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     ISA_units = table.Column<int>(type: "int", nullable: false),
@@ -57,7 +57,7 @@ namespace GroundManagmentSystem.Migrations
                     ISA_to_chceck = table.Column<bool>(type: "tinyint(1)", nullable: false),
                     ISA_comment = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    ISA_last_update = table.Column<DateTime>(type: "datetime(6)", nullable: false)
+                    ISA_last_update = table.Column<DateTime>(type: "datetime", nullable: false)
                 },
                 constraints: table =>
                 {

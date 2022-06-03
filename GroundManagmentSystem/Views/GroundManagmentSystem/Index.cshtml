@@ -4,7 +4,6 @@
 @using System.Data;
 @using System.Collections
 @using MySqlConnector
-@using IronXL;
 <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 
@@ -17,6 +16,7 @@
 
 
 <div id="fifo_main" class="" >
+    <div id="total_1"></div>
 <table class="table">
     
     <thead>
@@ -44,7 +44,7 @@
         <p_fba_s >FBA</p_fba_s>       
         </button>
          <button id="fifo_nazwa_isa_lp" type="button" class="rounded-start border border border-secondary " data-bs-placement="top" title="LP">
-            <p_lp >@Html.DisplayNameFor(model => model.ISA_lp)</p_lp>       
+            <p_lp >LP</p_lp>       
         </button>
         <button id="fifo_nazwa_isa_lp_value" type="button" class="border border border-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="LP">
             <p_lp_v>LP</p_lp_v>
@@ -53,11 +53,11 @@
         <button id="fifo_nazwa_isa_parcel" type="button" class="border border border-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Parcel">
             <p_parcel>PAR</p_parcel>                 
         </button>
-         <button id="fifo_nazwa_isa_parcel_value" type="button" class="rounded-end border border border-secondary " data-bs-placement="top" title="LP">
+         <button id="fifo_nazwa_isa_parcel_value" type="button" class="border border border-secondary" data-bs-placement="top" title="LP">
             <p_parcel_v >PAR</p_parcel_v>
             <p_parcel_v_1 >ILOŚĆ</p_parcel_v_1> 
         </button>
-        <button id="fifo_nazwa_isa_mono" type="button" class="rounded-start border border border-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Mono">
+        <button id="fifo_nazwa_isa_mono" type="button" class="border border border-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Mono">
             <p_mono ">MON </p_mono>                 
         </button>
         <button id="fifo_nazwa_isa_mono_value" type="button" class="rounded-end border border border-secondary" data-bs-placement="top" title="LP">
@@ -82,7 +82,7 @@
         <button id="fifo_nazwa_isa_rh" type="button" class="border border border-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Recive hardline">
             <p_rh >RH</p_rh>      
         </button>
-         <button id="fifo_nazwa_isa_rh_value" type="button" class="rounded-end border border border-secondary " data-bs-toggle="tooltip" data-bs-placement="top" title="Recive apparel">
+         <button id="fifo_nazwa_isa_rh_value" type="button" class="rounded-end border border border-secondary " data-bs-toggle="tooltip" data-bs-placement="top" title="Recive apparel" style="margin-right:5px;">
             <p_rh_v>RH</p_rh_v> 
             <P_rh_v_1>ILOŚĆ</P_rh_v_1>
         </button>
@@ -103,7 +103,7 @@
         <button id="fifo_nazwa_isa_rhp" type="button" class="border border border-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Recive hardline prep.">
             <p_rhp>RHP </p_rhp> 
         </button>
-        <button id="fifo_nazwa_isa_rhp_value" type="button" class="rounded-end border border border-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Recive apparel prep.">
+        <button id="fifo_nazwa_isa_rhp_value" type="button" class="rounded-end border border border-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Recive apparel prep." style="margin-right:5px;">
             <p_rhp_v>RHP </p_rhp_v> 
             <p_rhp_v_1>ILOŚĆ </p_rhp_v_1>    
         </button>
@@ -140,9 +140,16 @@
               </button>
               <ul class="dropdown-menu" style="height:67px;width:260px;position:relative; z-index:1000;">
                   <a asp-action="Create" class="btn btn-primary"  style="width:259px; height:33px;margin-bottom:2px;">DODAJ ISA
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                      <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                    </svg>
               
                 </a> 
                 <a asp-action="Excel" class="btn btn-success"  style="width:259px; height:33px;margin-bottom:2px;">Excel-Raport
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-spreadsheet" viewBox="0 0 16 16">
+                      <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V9H3V2a1 1 0 0 1 1-1h5.5v2zM3 12v-2h2v2H3zm0 1h2v2H4a1 1 0 0 1-1-1v-1zm3 2v-2h3v2H6zm4 0v-2h3v1a1 1 0 0 1-1 1h-2zm3-3h-3v-2h3v2zm-7 0v-2h3v2H6z"/>
+                    </svg>
               
                 </a> 
               
@@ -159,102 +166,158 @@
             
             
             @{
-                       
 
-            }
 
-                    @{
-                        int zero_int = 0;
-                        string ConnectionString = "server=localhost; database=gmsdb; user=root; password=";
-                        string sqlQuery = $"SELECT COUNT(ISA_units) FROM isa_models ";
-                        MySqlConnection con = new MySqlConnection(ConnectionString);
-                        MySqlCommand sc = new MySqlCommand(sqlQuery, con);
-                        con.Open();
-                        int table_count = int.Parse(sc.ExecuteScalar()+"");                         
-                        
+                }
 
-                        
-                        ArrayList valuesList = new ArrayList();
+                @{
+                    int all_values_sum = 0;
+                    int sum_fba = 0;
+                    int sum_fba_value = 0;
+                    int sum_lp = 0;
+                    int sum_lp_value = 0;
+                    int sum_parcel =0;
+                    int sum_parcel_value = 0;
+                    int sum_mono=0;
+                    int sum_mono_value = 0;
+                    int sum_ra = 0;
+                    int sum_ra_value = 0;
+                    int sum_rb = 0;
+                    int sum_rb_value = 0;
+                    int sum_rh = 0;
+                    int sum_rh_value = 0;
+                    int sum_rap = 0;
+                    int sum_rap_value = 0;
+                    int sum_rbp = 0;
+                    int sum_rbp_value = 0;
+                    int sum_rhp = 0;
+                    int sum_rhp_value = 0;
+                    int sum_ac = 0;
+                    int sum_ac_value = 0;
+                    int sum_bc = 0;
+                    int sum_bc_value = 0;
+                    int sum_hc = 0;
+                    int sum_hc_value = 0;
 
-                    
+
+
+
+
+                    int zero_int = 0;
+                    string ConnectionString = "server=sql11.freemysqlhosting.net; database=sql11495583; user=sql11495583; password=aCawqiN5pu;";
+                    string sqlQuery = $"SELECT COUNT(ISA_units) FROM ISA_Models ";
+                    MySqlConnection con = new MySqlConnection(ConnectionString);
+                    MySqlCommand sc = new MySqlCommand(sqlQuery, con);
+                    con.Open();
+                    int table_count = int.Parse(sc.ExecuteScalar()+"");                         
+
+
+
+                    ArrayList valuesList = new ArrayList();
+
+
                     if (table_count>=1)
                     {
-                    MySqlConnection connection = new MySqlConnection("server=localhost; database=gmsdb; user=root; password=");                       
-                    string sqlQuery1= "SELECT SUM(ISA_units),SUM(ISA_fba),SUM(ISA_semitrailer),SUM(ISA_fba_sea_container),SUM(ISA_fba_standard),SUM(ISA_lp),SUM(ISA_lp_value),SUM(ISA_parcel),SUM(ISA_parcel_value),SUM(ISA_mono),SUM(ISA_mono_value),SUM(ISA_pax),SUM(ISA_pax_value),SUM(ISA_ra),SUM(ISA_ra_value),SUM(ISA_rb),SUM(ISA_rb_value),SUM(ISA_rh),SUM(ISA_rh_value),SUM(ISA_rap),SUM(ISA_rap_value),SUM(ISA_rbp),SUM(ISA_rbp_value),SUM(ISA_rhp),SUM(ISA_rhp_value),SUM(ISA_ac),SUM(ISA_ac_value),SUM(ISA_bc),SUM(ISA_bc_value),SUM(ISA_hc),SUM(ISA_hc_value)  FROM isa_models";
-                    MySqlCommand sc1 = new MySqlCommand(sqlQuery1, con);
-                    connection.Open();
-                    MySqlDataReader dataReader = sc1.ExecuteReader();
-                    while (dataReader.Read())
-                    {
-                    valuesList.Add(Convert.ToInt32(dataReader[0]));//  Unity łącznie                    
-                    valuesList.Add(Convert.ToInt32(dataReader[1]));// Suma FBA
-                    valuesList.Add(Convert.ToInt32(dataReader[2]));// Suma naczep
-                    valuesList.Add(Convert.ToInt32(dataReader[3]));// Suma morski
-                    valuesList.Add(Convert.ToInt32(dataReader[4]));// Suma FBA standard
-                    valuesList.Add(Convert.ToInt32(dataReader[5]));// Suma LP
-                    valuesList.Add(Convert.ToInt32(dataReader[6]));// Suma LP Ilość
-                    valuesList.Add(Convert.ToInt32(dataReader[7]));// Suma Parcel
-                    valuesList.Add(Convert.ToInt32(dataReader[8]));// Suma Parcel Ilość
-                    valuesList.Add(Convert.ToInt32(dataReader[9]));// Suma mono
-                    valuesList.Add(Convert.ToInt32(dataReader[10]));// Suma mono Ilość
-                    valuesList.Add(Convert.ToInt32(dataReader[11]));// Suma pax
-                    valuesList.Add(Convert.ToInt32(dataReader[12]));// Suma pax Ilość
-                    valuesList.Add(Convert.ToInt32(dataReader[13]));// Suma ra
-                    valuesList.Add(Convert.ToInt32(dataReader[14]));// Suma ra Ilość
-                    valuesList.Add(Convert.ToInt32(dataReader[15]));// Suma rb
-                    valuesList.Add(Convert.ToInt32(dataReader[16]));// Suma rb Ilość
-                    valuesList.Add(Convert.ToInt32(dataReader[17]));// Suma rh
-                    valuesList.Add(Convert.ToInt32(dataReader[18]));// Suma rh Ilość
-                    valuesList.Add(Convert.ToInt32(dataReader[19]));// Suma rap
-                    valuesList.Add(Convert.ToInt32(dataReader[20]));// suma rap ilość
-                    valuesList.Add(Convert.ToInt32(dataReader[21]));// suma rbp
-                    valuesList.Add(Convert.ToInt32(dataReader[22]));// suma rbp ilość
-                    valuesList.Add(Convert.ToInt32(dataReader[23]));// suma rhp
-                    valuesList.Add(Convert.ToInt32(dataReader[24]));// suma rhp ilość
-                    valuesList.Add(Convert.ToInt32(dataReader[25]));// suma ac
-                    valuesList.Add(Convert.ToInt32(dataReader[26]));// suma ac ilość
-                    valuesList.Add(Convert.ToInt32(dataReader[27]));// suma bc
-                    valuesList.Add(Convert.ToInt32(dataReader[28]));// suma bc ilosc
-                    valuesList.Add(Convert.ToInt32(dataReader[29]));// suma hc
-                    valuesList.Add(Convert.ToInt32(dataReader[30]));// suma hc ilosc
+                        MySqlConnection connection = new MySqlConnection("server=sql11.freemysqlhosting.net; database=sql11495583; user=sql11495583; password=aCawqiN5pu;");                       
+                        string sqlQuery1= "SELECT SUM(ISA_units),SUM(ISA_fba),SUM(ISA_semitrailer),SUM(ISA_fba_sea_container),SUM(ISA_fba_standard),SUM(ISA_lp),SUM(ISA_lp_value),SUM(ISA_parcel),SUM(ISA_parcel_value),SUM(ISA_mono),SUM(ISA_mono_value),SUM(ISA_pax),SUM(ISA_pax_value),SUM(ISA_ra),SUM(ISA_ra_value),SUM(ISA_rb),SUM(ISA_rb_value),SUM(ISA_rh),SUM(ISA_rh_value),SUM(ISA_rap),SUM(ISA_rap_value),SUM(ISA_rbp),SUM(ISA_rbp_value),SUM(ISA_rhp),SUM(ISA_rhp_value),SUM(ISA_ac),SUM(ISA_ac_value),SUM(ISA_bc),SUM(ISA_bc_value),SUM(ISA_hc),SUM(ISA_hc_value)  FROM ISA_Models";
+                        MySqlCommand sc1 = new MySqlCommand(sqlQuery1, con);
+                        connection.Open();
+                        MySqlDataReader dataReader = sc1.ExecuteReader();
+                        while (dataReader.Read())
+                        {
+                            valuesList.Add(Convert.ToInt32(dataReader[0]));//  Unity łącznie                    
+                            valuesList.Add(Convert.ToInt32(dataReader[1]));// Suma FBA
+                            valuesList.Add(Convert.ToInt32(dataReader[2]));// Suma naczep
+                            valuesList.Add(Convert.ToInt32(dataReader[3]));// Suma morski
+                            valuesList.Add(Convert.ToInt32(dataReader[4]));// Suma FBA standard
+                            valuesList.Add(Convert.ToInt32(dataReader[5]));// Suma LP
+                            valuesList.Add(Convert.ToInt32(dataReader[6]));// Suma LP Ilość
+                            valuesList.Add(Convert.ToInt32(dataReader[7]));// Suma Parcel
+                            valuesList.Add(Convert.ToInt32(dataReader[8]));// Suma Parcel Ilość
+                            valuesList.Add(Convert.ToInt32(dataReader[9]));// Suma mono
+                            valuesList.Add(Convert.ToInt32(dataReader[10]));// Suma mono Ilość
+                            valuesList.Add(Convert.ToInt32(dataReader[11]));// Suma pax
+                            valuesList.Add(Convert.ToInt32(dataReader[12]));// Suma pax Ilość
+                            valuesList.Add(Convert.ToInt32(dataReader[13]));// Suma ra
+                            valuesList.Add(Convert.ToInt32(dataReader[14]));// Suma ra Ilość
+                            valuesList.Add(Convert.ToInt32(dataReader[15]));// Suma rb
+                            valuesList.Add(Convert.ToInt32(dataReader[16]));// Suma rb Ilość
+                            valuesList.Add(Convert.ToInt32(dataReader[17]));// Suma rh
+                            valuesList.Add(Convert.ToInt32(dataReader[18]));// Suma rh Ilość
+                            valuesList.Add(Convert.ToInt32(dataReader[19]));// Suma rap
+                            valuesList.Add(Convert.ToInt32(dataReader[20]));// suma rap ilość
+                            valuesList.Add(Convert.ToInt32(dataReader[21]));// suma rbp
+                            valuesList.Add(Convert.ToInt32(dataReader[22]));// suma rbp ilość
+                            valuesList.Add(Convert.ToInt32(dataReader[23]));// suma rhp
+                            valuesList.Add(Convert.ToInt32(dataReader[24]));// suma rhp ilość
+                            valuesList.Add(Convert.ToInt32(dataReader[25]));// suma ac
+                            valuesList.Add(Convert.ToInt32(dataReader[26]));// suma ac ilość
+                            valuesList.Add(Convert.ToInt32(dataReader[27]));// suma bc
+                            valuesList.Add(Convert.ToInt32(dataReader[28]));// suma bc ilosc
+                            valuesList.Add(Convert.ToInt32(dataReader[29]));// suma hc
+                            valuesList.Add(Convert.ToInt32(dataReader[30]));// suma hc ilosc
 
+                        }
+                        connection.Close();
                     }
-                    connection.Close();
+                    if(table_count>=1){
+                        all_values_sum = (int) valuesList[1] +(int) valuesList[6]+(int) valuesList[8]+(int) valuesList[10]+(int) valuesList[12]+(int) valuesList[14]+(int) valuesList[16]+(int) valuesList[18]+(int) valuesList[20]+(int) valuesList[22]+(int) valuesList[24]+(int) valuesList[26]+(int) valuesList[28]+(int) valuesList[30];
+                        sum_fba = (int)valuesList[1];
+                        sum_fba_value=(int)valuesList[4];                        
+                     sum_lp = (int)valuesList[5]; 
+                    sum_lp_value = (int)valuesList[6]; 
+                    sum_parcel =(int)valuesList[7]; 
+                    sum_parcel_value =(int)valuesList[8]; 
+                    sum_mono=(int)valuesList[9]; 
+                     sum_mono_value = (int)valuesList[10]; 
+                    sum_ra = (int)valuesList[13]; 
+                    sum_ra_value =(int)valuesList[14]; 
+                     sum_rb =(int)valuesList[15]; 
+                      sum_rb_value = (int)valuesList[16]; 
+                     sum_rh = (int)valuesList[17]; 
+                     sum_rh_value =(int)valuesList[18]; 
+                     sum_rap = (int)valuesList[19]; 
+                     sum_rap_value =(int)valuesList[20]; 
+                     sum_rbp =(int)valuesList[21]; 
+                     sum_rbp_value = (int)valuesList[22]; 
+                     sum_rhp = (int)valuesList[23]; 
+                    sum_rhp_value = (int)valuesList[24]; 
+                    sum_ac = (int)valuesList[25]; 
+                    sum_ac_value =(int)valuesList[26]; 
+                    sum_bc = (int)valuesList[27]; 
+                    sum_bc_value = (int)valuesList[28]; 
+                    sum_hc = (int)valuesList[29]; 
+                    sum_hc_value = (int)valuesList[30]; 
                     }
-                }
                     
-                    <div id="total" class="fifo_nazwa_isa_ilosc_total_suma border border border-secondary rounded">
+                  
+                    
+
+                }
+                
+                    
+                    <button id="total"  class="fifo_nazwa_isa_ilosc_total_suma border border border-secondary rounded" value="@all_values_sum" >
                        
                        @if (table_count >= 1)
                        {
-                              int all_values_sum = (int) valuesList[1] +(int) valuesList[6]+(int) valuesList[8]+(int) valuesList[10]+(int) valuesList[12]+(int) valuesList[14]+(int) valuesList[16]+(int) valuesList[18]+(int) valuesList[20]+(int) valuesList[22]+(int) valuesList[24]+(int) valuesList[26]+(int) valuesList[28]+(int) valuesList[30];
-                                   <ilosc_tot_val style="font-weight:900;font-size:15px;"> @all_values_sum </ilosc_tot_val>                                              
+                              
+                                   <ilosc_tot_val style="font-weight:600;font-size:20px;text-align:left;"> @all_values_sum </ilosc_tot_val>                                              
                        }
                        else
                        {
                         @zero_int
                        }                                                      
-                    </div>                                            
-                    <div id="fifo_tabela_isa_fba" class=" fifo_tabela_isa_fba border-end-0 border border-secondary ">
-                      @if (table_count >= 1){                           
-                            @valuesList[1]
-                        }
-                       else{
-                       @zero_int
-                       }                         
-                           
-                    </div>                    
-                    <div id="fifo_tabela_isa_standard" class="border-end-0 border border-secondary ">
-                        @if (table_count >= 1)
-                        {
-                         @valuesList[4]                        
-                        }
-                       else
-                       {
-                        @zero_int
-                       }                      
-                    </div>                                       
-                     <div id="fifo_tabela_isa_lp" class="border-end-0 border border-secondary">
+                    </button>                                            
+                    <button id="sum_fba1"  onclick="sum_value(this.id)" class=" fifo_tabela_isa_fba border-end-0 border border-secondary " value="@sum_fba" >                   
+                            @sum_fba                                
+                    </button>                    
+                    <button id="sum_fba_value1" onclick="sum_value(this.id)"  class="fifo_tabela_isa_standard border-end-0 border border-secondary " value="@valuesList[1]">
+                       
+                   @valuesList[1]  
+                   tutej
+                                 
+                    </button>                                       
+                     <button id="sum_lp1" onclick="sum_value(this.id)"  class="fifo_tabela_isa_lp border-end-0 border border-secondary" value="@sum_lp">
                          @if (table_count >= 1)
                         {
                          @valuesList[5]                        
@@ -264,8 +327,8 @@
                         @zero_int
                        }
                          
-                    </div>
-                    <div id="fifo_tabela_isa_lp_value" class="border-end-0 border border-secondary">
+                    </button>
+                    <button id="sum_lp_value1" onclick="sum_value(this.id)"  class=" fifo_tabela_isa_lp_value border-end-0 border border-secondary" value="@sum_lp_value">
                         @if (table_count >= 1)
                         {
                          @valuesList[6]                        
@@ -274,8 +337,8 @@
                        {
                         @zero_int
                        }                       
-                    </div>                                    
-                    <div id="fifo_tabela_isa_parcel" class="border-end-0 border border-secondary ">
+                    </button>                                    
+                    <button id="sum_parcel1" onclick="sum_value(this.id)"  class="fifo_tabela_isa_parcel border-end-0 border border-secondary "value="@sum_parcel">
                         @if (table_count >= 1)
                         {
                          @valuesList[7]                        
@@ -285,8 +348,8 @@
                         @zero_int
                        }              
                       
-                    </div>
-                    <div id="fifo_tabela_isa_parcel_value" class="border-end-0 border border-secondary ">
+                    </button>
+                    <button id="sum_parcel_value" onclick="sum_value(this.id)"  class="fifo_tabela_isa_parcel_value border-end-0 border border-secondary "value="@sum_parcel_value">
                       @if (table_count >= 1)
                         {
                          @valuesList[8]                        
@@ -296,8 +359,8 @@
                         @zero_int
                        }             
                       
-                    </div>                                 
-                   <div id="fifo_tabela_isa_mono" class="border-end-0 border border-secondary ">
+                    </button>                                 
+                   <button  id="sum_mono" onclick="sum_value(this.id)"  class="fifo_tabela_isa_mono border-end-0 border border-secondary "value="@sum_mono">
                       @if (table_count >= 1)
                         {
                          @valuesList[9]                        
@@ -306,8 +369,8 @@
                        {
                         @zero_int
                        }               
-                    </div>
-                    <div id="fifo_tabela_isa_mono_value" class="border-end-0 border border-secondary ">
+                    </button>
+                    <button id="sum_mono_value" onclick="sum_value(this.id)" class="fifo_tabela_isa_mono_value border-end-0 border border-secondary "value="@sum_mono_value">
                         @if (table_count >= 1)
                         {
                          @valuesList[10]                        
@@ -316,8 +379,8 @@
                        {
                         @zero_int
                        }                                   
-                    </div>
-                    <div id="fifo_tabela_isa_ra" class="border-end-0 border border-secondary ">
+                    </button>
+                    <button id="sum_ra"  onclick="sum_value(this.id)"  class=" fifo_tabela_isa_ra border-end-0 border border-secondary "value="@sum_ra">
                       @if (table_count >= 1)
                         {
                          @valuesList[13]                        
@@ -326,8 +389,8 @@
                        {
                         @zero_int
                        }           
-                    </div> 
-                    <div id="fifo_tabela_isa_ra_value" class="border-end-0 border border-secondary ">
+                    </button> 
+                    <button id="sum_ra_value"  onclick="sum_value(this.id)"  class="fifo_tabela_isa_ra_value border-end-0 border border-secondary "value="@sum_ra_value">
                         @if (table_count >= 1)
                         {
                          @valuesList[14]                        
@@ -336,8 +399,8 @@
                        {
                         @zero_int
                        }           
-                    </div> 
-                     <div id="fifo_tabela_isa_rb" class="border-end-0 border border-secondary ">
+                    </button> 
+                     <button id="sum_rb" onclick="sum_value(this.id)"  class=" fifo_tabela_isa_rb border-end-0 border border-secondary "value="@sum_rb">
                         @if (table_count >= 1)
                         {
                          @valuesList[15]                        
@@ -346,8 +409,8 @@
                        {
                         @zero_int
                        }           
-                    </div>
-                    <div id="fifo_tabela_isa_rb_value" class="border-end-0 border border-secondary ">
+                    </button>
+                    <button id="sum_rb_value" onclick="sum_value(this.id)"  class=" fifo_tabela_isa_rb_value border-end-0 border border-secondary "value="@sum_rb_value">
                        @if (table_count >= 1)
                         {
                          @valuesList[16]                        
@@ -356,8 +419,8 @@
                        {
                         @zero_int
                        }           
-                    </div> 
-                    <div id="fifo_tabela_isa_rh" class="border-end-0 border border-secondary ">
+                    </button> 
+                    <button id="sum_rh" onclick="sum_value(this.id)" class="fifo_tabela_isa_rh border-end-0 border border-secondary "value="@sum_rh">
                         @if (table_count >= 1)
                         {
                          @valuesList[17]                        
@@ -366,8 +429,8 @@
                        {
                         @zero_int
                        }           
-                    </div>
-                    <div id="fifo_tabela_isa_rh_value" class="border-end-0 border border-secondary ">
+                    </button>
+                    <button id="sum_rh_value"  onclick="sum_value(this.id)"  class=" fifo_tabela_isa_rh_value border-end-0 border border-secondary "value="@sum_rh_value">
                         @if (table_count >= 1)
                         {
                          @valuesList[18]                        
@@ -376,8 +439,8 @@
                        {
                         @zero_int
                        }           
-                    </div>        
-                    <div id="fifo_tabela_isa_rap" class="border-end-0 border border-secondary">
+                    </button>        
+                    <button id="sum_rap" onclick="sum_value(this.id)"  class=" fifo_tabela_isa_rap border-end-0 border border-secondary"value="@sum_rap">
                         @if (table_count >= 1)
                         {
                          @valuesList[19]                        
@@ -386,8 +449,8 @@
                        {
                         @zero_int
                        }                                 
-                    </div>
-                    <div id="fifo_tabela_isa_rap_value" class="border-end-0 border border-secondary ">
+                    </button>
+                    <button id="sum_rap_value"  onclick="sum_value(this.id)" class=" fifo_tabela_isa_rap_value border-end-0 border border-secondary "value="@sum_rap_value">
                         @if (table_count >= 1)
                         {
                          @valuesList[20]                        
@@ -396,8 +459,8 @@
                        {
                         @zero_int
                        }                               
-                    </div>  
-                   <div id="fifo_tabela_isa_rbp" class="border-end-0 border border-secondary ">
+                    </button>  
+                   <button id="sum_rbp" onclick="sum_value(this.id)"  class=" fifo_tabela_isa_rbp border-end-0 border border-secondary "value="@sum_rbp">
                         @if (table_count >= 1)
                         {
                          @valuesList[21]                        
@@ -406,8 +469,8 @@
                        {
                         @zero_int
                        }                                  
-                    </div> 
-                    <div id="fifo_tabela_isa_rbp_value" class="border-end-0 border border-secondary ">
+                    </button> 
+                    <button id="sum_rbp_value" onclick="sum_value(this.id)"  class=" fifo_tabela_isa_rbp_value border-end-0 border border-secondary "value="@sum_rbp_value">
                          @if (table_count >= 1)
                         {
                          @valuesList[22]                        
@@ -416,8 +479,8 @@
                        {
                         @zero_int
                        }                                 
-                    </div>  
-                    <div id="fifo_tabela_isa_rhp" class="border-end-0 border border-secondary ">
+                    </button>  
+                    <button id="sum_rhp" onclick="sum_value(this.id)"   class=" fifo_tabela_isa_rhp border-end-0 border border-secondary "value="@sum_rhp">
                         @if (table_count >= 1)
                         {
                          @valuesList[23]                        
@@ -426,8 +489,8 @@
                        {
                         @zero_int
                        }                                   
-                    </div> 
-                    <div id="fifo_tabela_isa_rhp_value" class="border-end-0 border border-secondary">
+                    </button> 
+                    <button id="sum_rhp_value" onclick="sum_value(this.id)"  class="fifo_tabela_isa_rhp_value  border-end-0 border border-secondary"value="@sum_rhp_value">
                         @if (table_count >= 1)
                         {
                          @valuesList[24]                        
@@ -436,8 +499,8 @@
                        {
                         @zero_int
                        }                                  
-                    </div>                   
-                    <div id="fifo_tabela_isa_ac" class="border-end-0 border border-secondary ">
+                    </button>                   
+                    <button id="sum_ac" onclick="sum_value(this.id)"  class=" fifo_tabela_isa_ac border-end-0 border border-secondary "value="@sum_ac">
                         @if (table_count >= 1)
                         {
                          @valuesList[25]                        
@@ -446,7 +509,8 @@
                        {
                         @zero_int
                        }                                 
-                    </div> <div id="fifo_tabela_isa_ac_value" class="border-end-0 border border-secondary ">
+                    </button> 
+                    <button id="sum_ac_value" onclick="sum_value(this.id)"  class="fifo_tabela_isa_ac_value border-end-0 border border-secondary "value="@sum_ac_value">
                         @if (table_count >= 1)
                         {
                          @valuesList[26]                        
@@ -455,8 +519,8 @@
                        {
                         @zero_int
                        }                                
-                    </div>
-                    <div id="fifo_tabela_isa_bc" class="border-end-0 border border-secondary ">
+                    </button>
+                    <button id="sum_bc" onclick="sum_value(this.id)"  class="fifo_tabela_isa_bc border-end-0 border border-secondary "value="@sum_bc">
                         @if (table_count >= 1)
                         {
                          @valuesList[27]                        
@@ -466,8 +530,8 @@
                         @zero_int
                        }           
                         
-                    </div>
-                    <div id="fifo_tabela_isa_bc_value" class="border-end-0 border border-secondary ">
+                    </button>
+                    <button id="sum_bc_value" onclick="sum_value(this.id)"  class="fifo_tabela_isa_bc_value border-end-0 border border-secondary "value="@sum_bc_value">
                         @if (table_count >= 1)
                         {
                          @valuesList[28]                        
@@ -476,8 +540,8 @@
                        {
                         @zero_int
                        }                            
-                   </div>
-                    <div id="fifo_tabela_isa_hc" class="border-end-0 border border-secondary ">
+                   </button>
+                    <button id="sum_hc" onclick="sum_value(this.id)"  class=" fifo_tabela_isa_hc border-end-0 border border-secondary "value="@sum_hc">
                         @if (table_count >= 1)
                         {
                          @valuesList[29]                        
@@ -486,8 +550,8 @@
                        {
                         @zero_int
                        }                                 
-                    </div>
-                    <div id="fifo_tabela_isa_hc_value" class="border-end-0 border border-secondary ">
+                    </button>
+                    <button id="sum_hc_value" onclick="sum_value(this.id)" class="fifo_tabela_isa_hc_value border-end-0 border border-secondary "value="@sum_hc_value">
                         @if (table_count >= 1)
                         {
                          @valuesList[30]                        
@@ -496,14 +560,14 @@
                        {
                         @zero_int
                        }                              
-                    </div>
-                    <div id="fifo_tabela_last_update" class="border order border-secondary rounded" style="background-color:gray;width:260px;height:34px; float:left; margin-top:1px;">
+                    </button>
+                    <div id="fifo_tabela_last_update" class="border order border-secondary rounded" style="background-color:gray;width:260px;height:34px; float:left;margin-left:2px; margin-top:1px;">
                         <p_last_update style="font-weight:900;font-size:13px;position:relative;top:-6px; color:white;">OSTATNIA AKTUALIZACJA</p_last_update><br />
                           
                         @if (table_count >= 1)
                         {
                           MySqlConnection con_update = new MySqlConnection(ConnectionString);
-                        string update_question = $"SELECT ISA_last_update FROM isa_models ORDER BY ISA_last_update DESC";
+                        string update_question = $"SELECT ISA_last_update FROM ISA_Models ORDER BY ISA_last_update DESC";
 
                          MySqlCommand  update_answer = new MySqlCommand(update_question, con_update);
                             con_update.Open();
@@ -530,24 +594,24 @@
            
         </button>
         
-        <button id="fifo_nazwa_isa_data" type="button" class="border border border-secondary rounded" data-bs-toggle="tooltip" data-bs-placement="top" title="Data">
+        <button id="fifo_nazwa_isa_data" type="button" class="border border border-secondary rounded" data-bs-toggle="tooltip" data-bs-placement="top" title="Data: Dzień.Miesiąc.Rok Godzina:Minuta:Sekunda">
             @Html.DisplayNameFor(model => model.ISA_date_time)     
         </button>
-        <button id="fifo_nazwa_isa_line" type="button" class="border border border-secondary rounded" data-bs-toggle="tooltip" data-bs-placement="top" title="Data">
+        <button id="fifo_nazwa_isa_line" type="button" class="rounded-start border border border-secondary " data-bs-toggle="tooltip" data-bs-placement="top" title=" Miejsce składowania towaru">
             @Html.DisplayNameFor(model => model.ISA_line)     
         </button>         
         
-         <button id="fifo_nazwa_isa_ilosc" type="button" class="border border border-secondary rounded" data-bs-toggle="tooltip" data-bs-placement="top" title="Jest to łączna ilość wszystkich [szt], które są przypisane do danego numeru ISA. Składowe na łączną ilość to Ilość,Parcel-ilośc,Lp-Ilość,PAX-Ilość,Mono-Ilość,Ra/Rb/Rh-Ilość, Rap/Rbp/Rhp-Ilość oraz Ac/Bc/Hc-Ilość">
+         <button id="fifo_nazwa_isa_ilosc" type="button" class="rounded-end border border border-secondary " data-bs-toggle="tooltip" data-bs-placement="top" title="Jest to łączna ilość wszystkich [szt], które są przypisane do danego numeru ISA. Składowe na łączną ilość to Ilość,Parcel-ilośc,Lp-Ilość,PAX-Ilość,Mono-Ilość,Ra/Rb/Rh-Ilość, Rap/Rbp/Rhp-Ilość oraz Ac/Bc/Hc-Ilość">
             @Html.DisplayNameFor(model => model.ISA_units)         
         </button>
 
         
         <!--FBA-START-->
-        <button id="fifo_nazwa_isa_fba" type="button" class="rounded-start border border border-secondary " data-bs-toggle="tooltip" data-bs-placement="top" title="Uzupełnij to">
+        <button id="fifo_nazwa_isa_fba" type="button" class="rounded-start border border border-secondary " data-bs-toggle="tooltip" data-bs-placement="top" title="Ilość sztuk w Kontener/Kontener morski/Naczepa">
            <p_fba>FBA</p_fba> 
            <p_fba_1>ILOŚĆ</p_fba_1>  
         </button>                         
-        <button id="fifo_nazwa_isa_standard" type="button" class="rounded-end border border border-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Kontener standardowy">
+        <button id="fifo_nazwa_isa_standard" type="button" class="rounded-end border border border-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Kontener/Kontener morski/Naczepa">
             <p_fba_s >FBA</p_fba_s>
             <p_fba_s_1 ">S</p_fba_s_1> 
                     
@@ -557,27 +621,27 @@
 
         <!--LP/PARCEL-START-->
         
-        <button id="fifo_nazwa_isa_lp" type="button" class="rounded-start border border border-secondary " data-bs-placement="top" title="LP">
-            <p_lp >@Html.DisplayNameFor(model => model.ISA_lp)</p_lp>       
+        <button id="fifo_nazwa_isa_lp" type="button" class="rounded-start border border border-secondary " data-bs-placement="top" title="Licence plate- ilość palet">
+            <p_lp >LP</p_lp>       
         </button>
-        <button id="fifo_nazwa_isa_lp_value" type="button" class="border border border-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="LP">
+        <button id="fifo_nazwa_isa_lp_value" type="button" class="border border border-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Licence plate- ilość sztuk">
             <p_lp_v>LP</p_lp_v>
             <p_lp_v_1 >ILOŚĆ</p_lp_v_1>  
         </button>       
-        <button id="fifo_nazwa_isa_parcel" type="button" class="border border border-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Parcel">
+        <button id="fifo_nazwa_isa_parcel" type="button" class="border border border-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Parcel - ilość palet">
             <p_parcel>PAR</p_parcel>                 
         </button>
-         <button id="fifo_nazwa_isa_parcel_value" type="button" class="rounded-end border border border-secondary " data-bs-placement="top" title="LP">
+         <button id="fifo_nazwa_isa_parcel_value" type="button" class="border border border-secondary " data-bs-placement="top" title="Parcel- ilość sztuk">
             <p_parcel_v >PAR</p_parcel_v>
             <p_parcel_v_1 >ILOŚĆ</p_parcel_v_1> 
         </button>
          <!--LP/PARCEL-KONIEC-->
 
          <!--PAX/MONO-START-->
-        <button id="fifo_nazwa_isa_mono" type="button" class="rounded-start border border border-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Mono">
+        <button id="fifo_nazwa_isa_mono" type="button" class="border border border-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Monoasin - ilość palet">
             <p_mono ">MON </p_mono>                 
         </button>
-        <button id="fifo_nazwa_isa_mono_value" type="button" class="rounded-end border border border-secondary " data-bs-placement="top" title="LP">
+        <button id="fifo_nazwa_isa_mono_value" type="button" class="rounded-end border border border-secondary " data-bs-placement="top" title="Monoasin- ilość sztuk">
             <p_mono_v >MON</p_mono_v>
             <p_mono_v_1 >ILOŚĆ</p_mono_v_1> 
         </button>       
@@ -658,10 +722,10 @@
         </button>
        
         
-        <div id="fifo_nazwa_isa_komentarz"  class="border border border-secondary rounded">
-            <p_comment style="color: black;font-size: 12px;font-weight: bolder;position:relative;left:0px; bottom:1px;">@Html.DisplayNameFor(model => model.ISA_comment)</p_comment>               
+        <div   class="fifo_tabela_isa_komentarz border border border-secondary rounded">
+            <p_comment style="color: black;font-size: 12px;font-weight: bolder;position:relative;left:75px; bottom:-5px;">@Html.DisplayNameFor(model => model.ISA_comment)</p_comment>               
         </div> 
-        <div id="fifo_nazwa_isa_opcje" class="border border border-secondary rounded">
+        <div id="" class="fifo_tabela_opcje border border border-secondary rounded">
           <p_opcje style="color: black;font-size: 12px;font-weight: 700;position:relative;left:2px; bottom:-8px;">OPCJE</p_opcje>
         </div>      
       </div>
@@ -673,19 +737,19 @@
       <table id="tblMain">
          
         <div style="width:1648px; height:36px; margin-bottom:2px;" class="box">
-     <div id="@item.ISA_id+fifo_isa" class="fifo_tabela_isa_numer border-end-0 border border-secondary rounded-start" name="@item.ISA_id"  >
-         <a href="https://stackoverflow.com/questions/14617221/need-to-convert-result-of-innerhtml-to-number-on-javascript" target="_blank" >@Html.DisplayFor(modelItem => item.ISA_number)</a>
+     <button id="@item.ISA_id+fifo_isa" class="fifo_tabela_isa_numer border-end-0 border border-secondary rounded-start" name="@item.ISA_id"  >
+         <a href="https://fc-inbound-dock-hub-eu.aka.amazon.com/en_US/#/dockmaster/appointment/ktw1/view/@item.ISA_number/appointmentDetail" target="_blank" >@Html.DisplayFor(modelItem => item.ISA_number)</a>
       
-      </div>
+      </button>
       <div id="@item.ISA_id+fifo_data" class=" test fifo_tabela_isa_data border-end-0 border border-secondary" name="@item.ISA_id" >
           @Html.DisplayFor(modelItem => item.ISA_date_time)
       </div> 
       <div id="@item.ISA_id+fifo_line" class="fifo_tabela_isa_line border-end-0 border border-secondary " >
           @Html.DisplayFor(modelItem => item.ISA_line)
       </div> 
-      <button   id="@item.ISA_id+fifo_value" class="fifo_tabela_isa_ilosc border-end-0 border border-secondary klik " >
+      <button onclick="sum_value(this.id)"   id="@item.ISA_id+fifo_value" class="fifo_tabela_isa_ilosc border-end-0 border border-secondary klik " value="@((item.ISA_fba)+(item.ISA_units) + (item.ISA_lp_value)+(item.ISA_parcel_value)+(item.ISA_mono_value)+(item.ISA_pax_value)+(item.ISA_ra_value)+(item.ISA_rb_value)+(item.ISA_rh_value)+(item.ISA_rap_value)+(item.ISA_rbp_value)+(item.ISA_rhp_value)+(item.ISA_ac_value)+(item.ISA_bc_value)+(item.ISA_hc_value))">
                             @{                             
-                               int value_lacznie =(item.ISA_fba)+(item.ISA_units) + (item.ISA_lp_value)+(item.ISA_parcel_value)+(item.ISA_mono_value)+(item.ISA_pax_value)+(item.ISA_ra_value)+(item.ISA_rb_value)+(item.ISA_rh_value)+(item.ISA_rap_value)+(item.ISA_rbp_value)+(item.ISA_rhp_value)+(item.ISA_ac_value)+(item.ISA_bc_value)+(item.ISA_hc_value);    
+                               int value_lacznie =((item.ISA_fba)+(item.ISA_units) + (item.ISA_lp_value)+(item.ISA_parcel_value)+(item.ISA_mono_value)+(item.ISA_pax_value)+(item.ISA_ra_value)+(item.ISA_rb_value)+(item.ISA_rh_value)+(item.ISA_rap_value)+(item.ISA_rbp_value)+(item.ISA_rhp_value)+(item.ISA_ac_value)+(item.ISA_bc_value)+(item.ISA_hc_value));    
                                
                             }
                        
@@ -696,101 +760,111 @@
                              @item.ISA_fba
                              
       </button>      
-      <button id="@item.ISA_id+fifo_s" class="fifo_tabela_isa_standard border-end-0 border border-secondary "value="@item.ISA_fba">
+      <button onclick="sum_value(this.id)" id="@item.ISA_id+fifo_s" class="fifo_tabela_isa_standard border-end-0 border border-secondary "value="@item.ISA_fba_standard">
                         @Html.DisplayFor(modelItem => item.ISA_fba_standard)
       </button>                                         
-      <button id="@item.ISA_id+fifo_lp" class="fifo_tabela_isa_lp border-end-0 border border-secondary">
+      <button onclick="sum_value(this.id)" id="@item.ISA_id+fifo_lp" class="fifo_tabela_isa_lp border-end-0 border border-secondary" value="@item.ISA_lp">
                          @Html.DisplayFor(modelItem => item.ISA_lp) 
       </button>
-      <div id="@item.ISA_id+fifo_lp_v" class="fifo_tabela_isa_lp_value border-end-0 border border-secondary">
+      <button onclick="sum_value(this.id)" id="@item.ISA_id+fifo_lp_v" class="fifo_tabela_isa_lp_value border-end-0 border border-secondary"value="@item.ISA_lp_value">
                          @Html.DisplayFor(modelItem => item.ISA_lp_value) 
-      </div>                                    
-      <div id="@item.ISA_id+fifo_pracel" class="fifo_tabela_isa_parcel border-end-0 border border-secondary ">
+      </button>                                    
+      <button onclick="sum_value(this.id)" id="@item.ISA_id+fifo_pracel" class="fifo_tabela_isa_parcel border-end-0 border border-secondary " value="@item.ISA_parcel">
                         @Html.DisplayFor(modelItem => item.ISA_parcel)
-      </div>
-      <div id="@item.ISA_id+fifo_parcel_v" class="fifo_tabela_isa_parcel_value border-end-0 border border-secondary ">
+      </button>
+      <button onclick="sum_value(this.id)" id="@item.ISA_id+fifo_parcel_v" class="fifo_tabela_isa_parcel_value border-end-0 border border-secondary "value="@item.ISA_parcel_value">
                         @Html.DisplayFor(modelItem => item.ISA_parcel_value)
-      </div>                                      
-      <div id="@item.ISA_id+fifo_mono" class="fifo_tabela_isa_mono border-end-0 border border-secondary ">
+      </button>                                      
+      <button onclick="sum_value(this.id)" id="@item.ISA_id+fifo_mono" class="fifo_tabela_isa_mono border-end-0 border border-secondary "value="@item.ISA_mono">
                         @Html.DisplayFor(modelItem => item.ISA_mono)
-      </div>
-      <div id="@item.ISA_id+fifo_mono_v" class="fifo_tabela_isa_mono_value border-end-0 border border-secondary ">
+      </button>
+      <button onclick="sum_value(this.id)" id="@item.ISA_id+fifo_mono_v" class="fifo_tabela_isa_mono_value border-end-0 border border-secondary "value="@item.ISA_mono_value">
                         @Html.DisplayFor(modelItem => item.ISA_mono_value)
-      </div>
+      </button>
                  
-      <div id="@item.ISA_id+fifo_ra" class="fifo_tabela_isa_ra border-end-0 border border-secondary ">
+      <button onclick="sum_value(this.id)"  id="@item.ISA_id+fifo_ra" class="fifo_tabela_isa_ra border-end-0 border border-secondary "value="@item.ISA_ra">
                         @Html.DisplayFor(modelItem => item.ISA_ra)
-      </div> 
-      <div id="@item.ISA_id+fifo_ra_v" class="fifo_tabela_isa_ra_value border-end-0 border border-secondary ">
+      </button> 
+      <button onclick="sum_value(this.id)"  id="@item.ISA_id+fifo_ra_v" class="fifo_tabela_isa_ra_value border-end-0 border border-secondary "value="@item.ISA_ra_value">
                         @Html.DisplayFor(modelItem => item.ISA_ra_value)
-      </div> 
-      <div id="@item.ISA_id+fifo_rb" class="fifo_tabela_isa_rb border-end-0 border border-secondary ">
+      </button> 
+      <button onclick="sum_value(this.id)" id="@item.ISA_id+fifo_rb" class="fifo_tabela_isa_rb border-end-0 border border-secondary "value="@item.ISA_rb">
                         @Html.DisplayFor(modelItem => item.ISA_rb)
-      </div>
-      <div id="@item.ISA_id+fifo_rb_v" class="fifo_tabela_isa_rb_value border-end-0 border border-secondary ">
+      </button>
+      <button onclick="sum_value(this.id)" id="@item.ISA_id+fifo_rb_v" class="fifo_tabela_isa_rb_value border-end-0 border border-secondary "value="@item.ISA_rb_value">
                         @Html.DisplayFor(modelItem => item.ISA_rb_value)
-      </div> 
-      <div id="@item.ISA_id+fifo_rh" class="fifo_tabela_isa_rh border-end-0 border border-secondary ">
+      </button> 
+      <button onclick="sum_value(this.id)" id="@item.ISA_id+fifo_rh" class="fifo_tabela_isa_rh border-end-0 border border-secondary "value="@item.ISA_rh">
                         @Html.DisplayFor(modelItem => item.ISA_rh)
-      </div>
-      <div id="@item.ISA_id+fifo_rh_v" class="fifo_tabela_isa_rh_value border-end-0 border border-secondary ">
+      </button>
+      <button onclick="sum_value(this.id)" id="@item.ISA_id+fifo_rh_v" class="fifo_tabela_isa_rh_value border-end-0 border border-secondary "value="@item.ISA_rh_value">
                         @Html.DisplayFor(modelItem => item.ISA_rh_value)
-      </div> 
-      <div id="@item.ISA_id+fifo_rap" class="fifo_tabela_isa_rap border-end-0 border border-secondary">
+      </button> 
+      <button onclick="sum_value(this.id)" id="@item.ISA_id+fifo_rap" class="fifo_tabela_isa_rap border-end-0 border border-secondary"value="@item.ISA_rap">
                         @Html.DisplayFor(modelItem => item.ISA_rap)
-      </div>
-      <div id="@item.ISA_id+fifo_rap_v" class="fifo_tabela_isa_rap_value border-end-0 border border-secondary ">
+      </button>
+      <button onclick="sum_value(this.id)" id="@item.ISA_id+fifo_rap_v" class="fifo_tabela_isa_rap_value border-end-0 border border-secondary "value="@item.ISA_rap_value">
                         @Html.DisplayFor(modelItem => item.ISA_rap_value)
-      </div>  
-      <div id="@item.ISA_id+fifo_rbp" class="fifo_tabela_isa_rbp border-end-0 border border-secondary ">
+      </button>  
+      <button onclick="sum_value(this.id)" id="@item.ISA_id+fifo_rbp" class="fifo_tabela_isa_rbp border-end-0 border border-secondary "value="@item.ISA_rbp">
                         @Html.DisplayFor(modelItem => item.ISA_rbp)
-      </div> 
-      <div id="@item.ISA_id+fifo_rbp_v" class="fifo_tabela_isa_rbp_value border-end-0 border border-secondary ">
+      </button> 
+      <button onclick="sum_value(this.id)" id="@item.ISA_id+fifo_rbp_v" class="fifo_tabela_isa_rbp_value border-end-0 border border-secondary "value="@item.ISA_rbp_value">
                         @Html.DisplayFor(modelItem => item.ISA_rbp_value)
-      </div>  
-      <div id="@item.ISA_id+fifo_rhp" class="fifo_tabela_isa_rhp border-end-0 border border-secondary ">
+      </button>  
+      <button onclick="sum_value(this.id)" id="@item.ISA_id+fifo_rhp" class="fifo_tabela_isa_rhp border-end-0 border border-secondary "value="@item.ISA_rhp">
                         @Html.DisplayFor(modelItem => item.ISA_rhp)                       
-      </div> 
-      <div id="@item.ISA_id+fifo_rhp_v" class="fifo_tabela_isa_rhp_value border-end-0 border border-secondary">
+      </button> 
+      <button onclick="sum_value(this.id)" id="@item.ISA_id+fifo_rhp_v" class="fifo_tabela_isa_rhp_value border-end-0 border border-secondary" value="@item.ISA_rhp_value">
                         @Html.DisplayFor(modelItem => item.ISA_rhp_value)
-      </div>                   
-      <div id="@item.ISA_id+fifo_ac" class="fifo_tabela_isa_ac border-end-0 border border-secondary ">
+      </button>                   
+      <button onclick="sum_value(this.id)" id="@item.ISA_id+fifo_ac" class="fifo_tabela_isa_ac border-end-0 border border-secondary " value="@item.ISA_ac">
                         @Html.DisplayFor(modelItem => item.ISA_ac)
-      </div> 
-      <div id="@item.ISA_id+fifo_ac_v" class="fifo_tabela_isa_ac_value border-end-0 border border-secondary ">
+      </button> 
+      <button onclick="sum_value(this.id)" id="@item.ISA_id+fifo_ac_v" class="fifo_tabela_isa_ac_value border-end-0 border border-secondary " value="@item.ISA_ac_value">
                         @Html.DisplayFor(modelItem => item.ISA_ac_value)
-      </div>
-      <div id="@item.ISA_id+fifo_bc" class="fifo_tabela_isa_bc border-end-0 border border-secondary ">
+      </button>
+      <button onclick="sum_value(this.id)" id="@item.ISA_id+fifo_bc" class="fifo_tabela_isa_bc border-end-0 border border-secondary " value="@item.ISA_bc">
                         @Html.DisplayFor(modelItem => item.ISA_bc)
-      </div>
-      <div id="@item.ISA_id+fifo_bc_v" class="fifo_tabela_isa_bc_value border-end-0 border border-secondary ">
+      </button>
+      <button onclick="sum_value(this.id)" id="@item.ISA_id+fifo_bc_v" class="fifo_tabela_isa_bc_value border-end-0 border border-secondary "value="@item.ISA_bc_value">
                         @Html.DisplayFor(modelItem => item.ISA_bc_value)
-      </div>
-      <div id="@item.ISA_id+fifo_hc" class="fifo_tabela_isa_hc border-end-0 border border-secondary ">
+      </button>
+      <button onclick="sum_value(this.id)" id="@item.ISA_id+fifo_hc" class="fifo_tabela_isa_hc border-end-0 border border-secondary "value="@item.ISA_hc">
                         @Html.DisplayFor(modelItem => item.ISA_hc)
-      </div>
-      <div id="@item.ISA_id+fifo_hc_v" class="fifo_tabela_isa_hc_value border-end-0 border border-secondary ">
+      </button>
+      <button onclick="sum_value(this.id)" id="@item.ISA_id+fifo_hc_v" class="fifo_tabela_isa_hc_value border-end-0 border border-secondary "value="@item.ISA_hc_value">
                         @Html.DisplayFor(modelItem => item.ISA_hc_value)
-      </div>                   
-      <div id="@item.ISA_id+fifo_comment" class="fifo_tabela_isa_komentarz border-end-0 border border-secondary " onclick="isEvenClick() && sayHello()">
+      </button>                   
+      <div id="@item.ISA_id+fifo_comment" class="fifo_tabela_isa_komentarz border-end-0 border border-secondary " >
                         @Html.DisplayFor(modelItem => item.ISA_comment)
       </div>
       
      
                     <div class="btn-group dropend" style="color:red;">
-                      <button id="fifo_tabela_opcje" type="button" class="fifo_tabela_opcje btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" >
+                      <button  type="button" class="fifo_tabela_opcje btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" >
                           
-                                                            <p_opcje></p_opcje>
+                                                            
                       </button>
-                      <ul class="dropdown-menu border-end-0 border border-secondary" style="width:225px;height:35px; background-color:#ff9933;">
+                      <ul class="white_link dropdown-menu border-end-0 border border-secondary" style="width:300px;height:35px; background-color:#ff9933;">
                           <a asp-action="Edit" class="btn btn-primary"  asp-route-id="@item.ISA_id" style="position:relative; bottom:8px;height:34px; " ><p1 style="font-size:11px;">Edytuj</p1>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                            </svg>
                             
                             </a>                          
                     
                         <a asp-action="Delete" asp-route-id="@item.ISA_id" class="btn btn-danger"style="position:relative; bottom:8px;left:-3px; height:34px;"><p1 style="font-size:11px;">Usuń</p1>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                              <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                              <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                            </svg>
                            
                         </a>
                         <a asp-action="Details" asp-route-id="@item.ISA_id" class="btn btn-info"style="position:relative; bottom:8px;left:-3px; height:34px; "><p1 style="font-size:11px;">Szczegóły</p1>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16">
+                              <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001zm-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708l-1.585-1.585z"/>
+                            </svg>
                           
                         </a> 
                         
@@ -799,23 +873,7 @@
  
           
 </div>
-<script>
-    window.onload = function () {
-    var el = document.getElementById("@item.ISA_id+fifo_comment");
-    el.onclick = sayHello;
-}
 
-function sayHello() {
-    console.log("Hello");
-}
-
-    </script>
-
-    @* <script>
-        Skrypt pobierajacy vartosc danego div'a' musi byc dodany "data-value"
-        var divElement = document.getElementById('@item.ISA_id+fifo_fba');
-alert( divElement .getAttribute('data-value'));
-    </script>*@
 
 </table>
 
@@ -912,7 +970,7 @@ alert( divElement .getAttribute('data-value'));
                       
     /*Alert*/                  
    <div class="alert alert-danger alert-dismissible fade show" role="alert"style="position:fixed; top:0px;left:750px; width:450px; height:100px;">
-  <strong>Palę się!</strong>  Palę się mordeczko! ISA:[@item.ISA_number]
+  <strong>UWAGA!</strong>  Kończy się czas przyjęćia towaru <br>ISA:[@item.ISA_number]<br> Linia:[@item.ISA_line]
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
                      
@@ -931,11 +989,11 @@ alert( divElement .getAttribute('data-value'));
                        
 } 
 
-
-<br />
-
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
 
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+
+
 

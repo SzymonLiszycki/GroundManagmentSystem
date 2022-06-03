@@ -29,7 +29,7 @@
 }
 
 #fifo_nazwa_isa_numer {
-    background-color: #FDE248;
+    background-color: #FCBA12;
     height: 35px;
     width: 80px;
     float: left;
@@ -40,7 +40,7 @@
     margin-right: 2px;
 }
 #fifo_nazwa_isa_line {
-    background-color: #FDC537;
+    background-color: #FDFD53;
     height: 35px;
     width: 62px;
     float: left;
@@ -48,12 +48,12 @@
     font-size: 12px;
     font-weight: bolder;
     text-align: center;
-    margin-right: 4px;
+    margin-right: 2px;
 }
 
 
 #fifo_nazwa_isa_data {
-    background-color: #FCD444;
+    background-color: #FCBA12;
     height: 35px;
     width: 62px;
     float: left;
@@ -64,7 +64,7 @@
     margin-right: 4px;
 }
 .fifo_nazwa_isa_ilosc_total {
-    background-color: red;
+    background-color: #FDFD53;
     height: 35px;
     width: 265px;
     float: left;
@@ -74,18 +74,17 @@
     margin-right: 4px;
 }
 .fifo_nazwa_isa_ilosc_total_suma {
-    background-color: #009933;
+    background-color: #FFF47A;
     height: 35px;
     width: 265px;
     float: left;
     color: black;
-    font-size: 12px;
     font-weight: bolder;
     margin-right: 4px;
 }
 
 #fifo_nazwa_isa_ilosc {
-    background-color: #BFDD52;
+    background-color: #FDFD53;
     height: 35px;
     width: 50px;
     float: left;
@@ -100,7 +99,7 @@
     width: 50px;
     float: left;
     margin-right: 2px;
-    background-color: #65AD64;
+    background-color: #B2D732;
 }
 
                                     p_fba {
@@ -127,7 +126,7 @@
     width: 30px;
     float: left;
     margin-right: 2px;
-    background-color: #78B777;
+    background-color: #B2D732;
 }
                                 p_fba_s {
                                     color: black;
@@ -145,32 +144,10 @@
                                     left: 0px;
                                     top: -20px;
                                 }
-#fifo_nazwa_isa_value {
-    background-color: #66ffc2;
-    height: 35px;
-    width: 30px;
-    float: left;
-    margin-right: 2px;
-}
-                                p_fba_pl {
-                                    color: black;
-                                    font-size: 12px;
-                                    font-weight: bolder;
-                                    position: relative;
-                                    left: -3px;
-                                    top: -9px;
-                                }
-                                p_fba_pl_1 {
-                                    color: black;
-                                    font-size: 9px;
-                                    font-weight: bolder;
-                                    position: relative;
-                                    left: -0px;
-                                    top: -20px;
-                                }
+
 /*LP/PARCEL*/  /*Paleta kolorów #00ffcc  <- Main (OD 30 % + 10%)  Tabela-> #33cccc*/ /*https://www.w3schools.com/colors/colors_picker.asp */
 #fifo_nazwa_isa_lp {
-    background-color: #439BBE;
+    background-color: #67AFCB;
     height: 35px;
     width: 30px;
     float: left;
@@ -188,7 +165,7 @@
                                     bottom: 9px;
                                 }
 #fifo_nazwa_isa_lp_value {
-    background-color: #3B85DA;
+    background-color: #67AFCB;
     height: 35px;
     width: 50px;
     float: left;
@@ -215,7 +192,7 @@
                                 }
 
 #fifo_nazwa_isa_parcel {
-    background-color: #3F7CEF;
+    background-color: #609CE1;
     height: 35px;
     width: 30px;
     float: left;
@@ -234,7 +211,7 @@
                                     bottom: 9px;
                                 }
 #fifo_nazwa_isa_parcel_value {
-    background-color: #4375FE ;
+    background-color: #609CE1;
     height: 35px;
     width: 50px;
     float: left;
@@ -264,14 +241,14 @@
 
 /*MONO/PAX*//*Paleta kolorów #00ffcc  <- Main (OD 30 % + 10%)  Tabela-> #33cccc*/ /*https://www.w3schools.com/colors/colors_picker.asp */
 #fifo_nazwa_isa_mono {
-    background-color: #007a99;
+    background-color: #558CF1;
     height: 35px;
     width: 35px;
     float: left;
     font-size: 20px;
     color: black;
     font-size: 11px;
-    margin-left: 4px;
+    margin-left: 2px;
     margin-right: 2px;
 }
                                 p_mono {
@@ -286,13 +263,13 @@
 #fifo_nazwa_isa_mono_value {
     height: 35px;
     width: 50px;
-    background-color: #00a3cc;
+    background-color: #558CF1;
     float: left;
     text-align: center;
     color: black;
     font-size: 12px;
     font-weight: bolder;
-    margin-right: 2px;
+    margin-right: 0px;
 }
     
 
@@ -317,7 +294,8 @@
 
 
 #fifo_nazwa_isa_ra {
-    background-color: #5c0099;
+    background-color: #8A8AEF;
+    ;
     height: 35px;
     width: 30px;
     float: left;
@@ -325,7 +303,7 @@
     color: black;
     font-size: 11px;
     margin-right: 2px;
-    margin-left: 2px;
+    margin-left: 4px;
 }
                                         p_ra {
                                             color: black;
@@ -337,7 +315,7 @@
                                         }
 
 #fifo_nazwa_isa_ra_value {
-    background-color: #7a00cc;
+    background-color: #8A8AEF;
     height: 35px;
     width: 50px;
     float: left;
@@ -364,7 +342,7 @@
                                             bottom: 6px;
                                         }
 #fifo_nazwa_isa_rb {
-    background-color: #9900ff;
+    background-color: #8C78E8;
     height: 35px;
     width: 30px;
     float: left;
@@ -384,7 +362,7 @@
 
 
 #fifo_nazwa_isa_rb_value {
-    background-color: #ad33ff;
+    background-color: #8C78E8;
     height: 35px;
     width: 50px;
     float: left;
@@ -410,7 +388,7 @@
                                             bottom: 6px;
                                         }
 #fifo_nazwa_isa_rh {
-    background-color: #c266ff;
+    background-color: #905BEC;
     height: 35px;
     width: 30px;
     float: left;
@@ -428,7 +406,7 @@
                                             bottom: 8px;
                                         }
 #fifo_nazwa_isa_rh_value {
-    background-color: #d699ff;
+    background-color: #905BEC;
     height: 35px;
     width: 50px;
     float: left;
@@ -455,7 +433,7 @@
                                             bottom: 6px;
                                         }
 #fifo_nazwa_isa_rap {
-    background-color: #990099;
+    background-color: #A33AF2;
     height: 35px;
     width: 30px;
     float: left;
@@ -473,7 +451,7 @@
                                                 bottom: 7px;
                                             }
 #fifo_nazwa_isa_rap_value {
-    background-color: #cc00cc;
+    background-color: #A33AF2;
     height: 35px;
     width: 50px;
     float: left;
@@ -500,7 +478,7 @@
                                         }
 
 #fifo_nazwa_isa_rbp {
-    background-color: #ff00ff;
+    background-color: #C91BFE;
     height: 35px;
     width: 30px;
     float: left;
@@ -518,7 +496,7 @@
                                         bottom: 7px;
                                     }
 #fifo_nazwa_isa_rbp_value {
-    background-color: #ff33ff;
+    background-color: #C91BFE;
     height: 35px;
     width: 50px;
     float: left;
@@ -545,7 +523,7 @@
                                     }
 
 #fifo_nazwa_isa_rhp {
-    background-color: #ff66ff;
+    background-color: #F415ED;
     height: 35px;
     width: 30px;
     float: left;
@@ -563,7 +541,7 @@
                                     bottom: 7px;
                                 }
 #fifo_nazwa_isa_rhp_value {
-    background-color: #ff99ff;
+    background-color: #F415ED;
     height: 35px;
     width: 50px;
     float: left;
@@ -590,7 +568,7 @@
                                 }
 
 #fifo_nazwa_isa_ac {
-    background-color: #99004d;
+    background-color: #ED5094;
     height: 35px;
     width: 30px;
     float: left;
@@ -608,7 +586,7 @@
                                     bottom: 6px;
                                 }
 #fifo_nazwa_isa_ac_value {
-    background-color: #cc0066;
+    background-color: #ED5094;
     height: 35px;
     width: 50px;
     float: left;
@@ -635,7 +613,7 @@
                                 }
 
 #fifo_nazwa_isa_bc {
-    background-color: #ff0080;
+    background-color: #EA5779;
     height: 35px;
     width: 30px;
     float: left;
@@ -653,7 +631,7 @@
                                     bottom: 7px;
                                 }
 #fifo_nazwa_isa_bc_value {
-    background-color: #ff3399;
+    background-color: #EA5779;
     height: 35px;
     width: 50px;
     float: left;
@@ -680,7 +658,7 @@
                                 }
 
 #fifo_nazwa_isa_hc {
-    background-color: #ff66b3;
+    background-color: #F1656E;
     height: 35px;
     width: 30px;
     float: left;
@@ -698,7 +676,7 @@
                                     bottom: 7px;
                                 }
 #fifo_nazwa_isa_hc_value {
-    background-color: #ff99cc;
+    background-color: #F1656E;
     height: 35px;
     width: 50px;
     float: left;
@@ -756,7 +734,7 @@
 
 /*FIFO TABELA G£ÓWNA*/
 #fifo_tabela_main {
-    background-color: ;
+   
     width: 1840px;
     height: 37px;
 }
@@ -808,7 +786,7 @@
 .fifo_tabela_isa_numer {
     height: 35px;
     width: 80px;
-    background-color: #FEF2AE;
+    background-color: #FED777;
     float: left;
     text-align: center;
     position: relative;
@@ -820,34 +798,52 @@
     margin-right: 2px;
 }
 /*Link ISA*/
-b:link {
+/* unvisited link */
+a:link {
     color: black;
-    background-color: transparent;
+    text-decoration:none;
+}
+
+/* visited link */
+a:visited {
+    color: black;
+}
+
+/* mouse over link */
+a:hover {
+    color: blue;
+}
+
+/* selected link */
+a:active {
+    color: blue;
+}
+
+.
+.white_link a:link {
+    color: ghostwhite;
     text-decoration: none;
 }
 
-b:visited {
+/* visited link */
+.white_link a:visited {
     color: black;
-    background-color: transparent;
-    text-decoration: none;
 }
 
-b:hover {
+/* mouse over link */
+.white_link a:hover {
     color: blue;
-    background-color: transparent;
-    text-decoration: underline;
 }
 
-b:active {
+/* selected link */
+.white_link a:active {
     color: blue;
-    background-color: transparent;
-    text-decoration: underline;
 }
 
 .fifo_tabela_isa_line {
     height: 35px;
     width: 60px;
-    background-color: #FEE29A;
+    background-color: #FFF47A;
     float: left;
     text-align: center;
     position: relative;
@@ -856,14 +852,14 @@ b:active {
     font-size: 12px;
     font-weight: bolder;
     margin-left: 5px;
-    margin-right: 5px;
+    margin-right: 2px;
     margin-bottom: 2px;
 }
 
 .fifo_tabela_isa_data {
     height: 35px;
     width: 62px;
-    background-color: #FEEBAA;
+    background-color: #FED777;
     float: left;
     text-align: center;
     color: black;
@@ -877,7 +873,7 @@ b:active {
 .fifo_tabela_isa_ilosc {
     height: 35px;
     width: 50px;
-    background-color: #DEEDA6;
+    background-color: #FFF47A;
     color: black;
     float: left;
     text-align: center;
@@ -897,7 +893,7 @@ b:active {
     font-size: 12px;
     font-weight: bolder;
     margin-right: 2px;
-    background-color: #A9D1A8;
+    background-color: #D3E788;
     margin-bottom: 2px;
 }
 
@@ -912,7 +908,7 @@ b:active {
     font-size: 12px;
     font-weight: bolder;
     margin-right: 2px;
-    background-color: #B9DAB9;
+    background-color: #D3E788;
     margin-bottom: 2px;
 }
 
@@ -921,7 +917,7 @@ b:active {
 .fifo_tabela_isa_lp {
     height: 35px;
     width: 30px;
-    background-color: #8DC3D8;
+    background-color: #9CCBDD;
     float: left;
     text-align: center;
     color: black;
@@ -935,7 +931,7 @@ b:active {
 .fifo_tabela_isa_lp_value {
     height: 35px;
     width: 50px;
-    background-color: #90BAEA;
+    background-color: #9CCBDD;
     float: left;
     text-align: center;
     color: black;
@@ -948,7 +944,7 @@ b:active {
 .fifo_tabela_isa_parcel {
     height: 35px;
     width: 30px;
-    background-color: #A9C0FF;
+    background-color: #87B4E8;
     float: left;
     text-align: center;
     color: black;
@@ -961,20 +957,20 @@ b:active {
 .fifo_tabela_isa_parcel_value {
     height: 35px;
     width: 50px;
-    background-color: #4375FE;
+    background-color: #87B4E8;
     float: left;
     text-align: center;
     color: black;
     font-size: 12px;
     font-weight: bolder;
-    margin-right: 4px;
+    margin-right: 2px;
     margin-bottom: 2px;
 }
 
 .fifo_tabela_isa_mono {
     height: 35px;
     width: 35px;
-    background-color: #008fb3;
+    background-color: #76A2F4;
     float: left;
     text-align: center;
     color: black;
@@ -987,7 +983,7 @@ b:active {
 .fifo_tabela_isa_mono_value {
     height: 35px;
     width: 50px;
-    background-color: #00b8e6;
+    background-color: #76A2F4;
     float: left;
     text-align: center;
     color: black;
@@ -1003,7 +999,7 @@ b:active {
 .fifo_tabela_isa_ra {
     height: 35px;
     width: 30px;
-    background-color: #6b00b3;
+    background-color: #AAAAF3;
     float: left;
     text-align: center;
     color: black;
@@ -1016,7 +1012,7 @@ b:active {
 .fifo_tabela_isa_ra_value {
     height: 35px;
     width: 50px;
-    background-color: #8a00e6;
+    background-color: #AAAAF3;
     float: left;
     text-align: center;
     color: black;
@@ -1029,7 +1025,7 @@ b:active {
 .fifo_tabela_isa_rb {
     height: 35px;
     width: 30px;
-    background-color: #a31aff;
+    background-color: #9F8EEC;
     float: left;
     text-align: center;
     color: black;
@@ -1042,7 +1038,7 @@ b:active {
 .fifo_tabela_isa_rb_value {
     height: 35px;
     width: 50px;
-    background-color: #b84dff;
+    background-color: #9F8EEC;
     float: left;
     text-align: center;
     color: black;
@@ -1055,7 +1051,7 @@ b:active {
 .fifo_tabela_isa_rh {
     height: 35px;
     width: 30px;
-    background-color: #cc80ff;
+    background-color: #AC84F1;
     float: left;
     text-align: center;
     color: black;
@@ -1068,20 +1064,20 @@ b:active {
 .fifo_tabela_isa_rh_value {
     height: 35px;
     width: 50px;
-    background-color: #e0b3ff;
+    background-color: #AC84F1;
     float: left;
     text-align: center;
     color: black;
     font-size: 12px;
     font-weight: bolder;
-    margin-right: 4px;
+    margin-right: 5px;
     margin-bottom: 2px;
 }
 
 .fifo_tabela_isa_rap {
     height: 35px;
     width: 30px;
-    background-color: #b300b3;
+    background-color: #C27EF7;
     float: left;
     text-align: center;
     color: black;
@@ -1094,7 +1090,7 @@ b:active {
 .fifo_tabela_isa_rap_value {
     height: 35px;
     width: 50px;
-    background-color: #e600e6;
+    background-color: #C27EF7;
     float: left;
     text-align: center;
     color: black;
@@ -1107,7 +1103,7 @@ b:active {
 .fifo_tabela_isa_rbp {
     height: 35px;
     width: 30px;
-    background-color: #ff1aff;
+    background-color: #DC6CFE;
     float: left;
     text-align: center;
     color: black;
@@ -1120,7 +1116,7 @@ b:active {
 .fifo_tabela_isa_rbp_value {
     height: 35px;
     width: 50px;
-    background-color: #ff4dff;
+    background-color: #DC6CFE;
     float: left;
     text-align: center;
     color: black;
@@ -1133,7 +1129,7 @@ b:active {
 .fifo_tabela_isa_rhp {
     height: 35px;
     width: 30px;
-    background-color: #ff80ff;
+    background-color: #F86DF3;
     float: left;
     text-align: center;
     color: black;
@@ -1146,20 +1142,20 @@ b:active {
 .fifo_tabela_isa_rhp_value {
     height: 35px;
     width: 50px;
-    background-color: #ffb3ff;
+    background-color: #F86DF3;
     float: left;
     text-align: center;
     color: black;
     font-size: 12px;
     font-weight: bolder;
-    margin-right: 4px;
+    margin-right: 5px;
     margin-bottom: 2px;
 }
 
 .fifo_tabela_isa_ac {
     height: 35px;
     width: 30px;
-    background-color: #b30059;
+    background-color: #EF629F;
     float: left;
     text-align: center;
     color: black;
@@ -1172,7 +1168,7 @@ b:active {
 .fifo_tabela_isa_ac_value {
     height: 35px;
     width: 50px;
-    background-color: #e60073;
+    background-color: #EF629F;
     float: left;
     text-align: center;
     color: black;
@@ -1185,7 +1181,7 @@ b:active {
 .fifo_tabela_isa_bc {
     height: 35px;
     width: 30px;
-    background-color: #ff1a8c;
+    background-color: #F26E8D;
     float: left;
     text-align: center;
     color: black;
@@ -1198,7 +1194,7 @@ b:active {
 .fifo_tabela_isa_bc_value {
     height: 35px;
     width: 50px;
-    background-color: #ff4da6;
+    background-color: #F26E8D;
     float: left;
     text-align: center;
     color: black;
@@ -1212,7 +1208,7 @@ b:active {
 .fifo_tabela_isa_hc {
     height: 35px;
     width: 30px;
-    background-color: #ff80bf;
+    background-color: #F58F96;
     float: left;
     text-align: center;
     color: black;
@@ -1225,7 +1221,7 @@ b:active {
 .fifo_tabela_isa_hc_value {
     height: 35px;
     width: 50px;
-    background-color: #ffb3d9;
+    background-color: #F58F96;
     float: left;
     text-align: center;
     color: black;
@@ -1240,7 +1236,7 @@ b:active {
 .fifo_tabela_isa_komentarz {
     height: 35px;
     width: 225px;
-    background-color: #ff794d;
+    background-color: #FDC168;
     color: black;
     float: left;
     text-align: left;
@@ -1252,7 +1248,7 @@ b:active {
 .fifo_tabela_opcje {
     height: 35px;
     width: 40px;
-    background-color: #ff9933;
+    background-color: #FCBA12;
     color: black;
     float: left;
     text-align: center;
@@ -1342,31 +1338,7 @@ b:active {
     margin-bottom: 2px;
 }
 
-#fifo_tabela_isa_naczepa {
-    height: 35px;
-    width: 30px;
-    float: left;
-    text-align: center;
-    color: black;
-    font-size: 12px;
-    font-weight: bolder;
-    margin-right: 2px;
-    background-color: #00e68a;
-    margin-bottom: 2px;
-}
 
-#fifo_tabela_isa_morski {
-    height: 35px;
-    width: 30px;
-    float: left;
-    text-align: center;
-    color: black;
-    font-size: 12px;
-    font-weight: bolder;
-    margin-right: 2px;
-    background-color: #1affa3;
-    margin-bottom: 2px;
-}
 
 #fifo_tabela_isa_standard {
     height: 35px;
@@ -1650,7 +1622,7 @@ b:active {
 #fifo_tabela_isa_ac {
     height: 35px;
     width: 30px;
-    background-color: #b30059;
+    background-color: #FDD7D3;
     float: left;
     text-align: center;
     color: black;
@@ -1659,10 +1631,11 @@ b:active {
     margin-right: 2px;
     margin-bottom: 2px;
 }
+
 #fifo_tabela_isa_ac_value {
     height: 35px;
     width: 50px;
-    background-color: #e60073;
+    background-color: #FDD7D3;
     float: left;
     text-align: center;
     color: black;
@@ -1724,23 +1697,10 @@ b:active {
 }
 
 
-
-#fifo_tabela_isa_komentarz {
-    height: 35px;
-    width: 225px;
-    background-color: #ff794d;
-    color: black;
-    float: left;
-    text-align: left;
-    font-size: 9px;
-    margin-right: 2px;
-    margin-bottom: 2px;
-}
-
 #fifo_tabela_opcje {
     height: 35px;
     width: 40px;
-    background-color: #ff9933;
+    background-color: #FE8E39;
     color: black;
     float: left;
     text-align: center;
@@ -1782,24 +1742,6 @@ b:active {
     text-align: center;
 }
 
-#fifo_suma_naczepa {
-    height: 35px;
-    width: 50px;
-    background-color: whitesmoke;
-    color: black;
-    float: left;
-    text-align: center;
-}
-
-#fifo_suma_morski {
-    height: 35px;
-    width: 70px;
-    background-color: whitesmoke;
-    color: black;
-    float: left;
-    text-align: center;
-}
-
 #fifo_suma_standardowy {
     height: 35px;
     width: 70px;
@@ -1809,14 +1751,6 @@ b:active {
     text-align: center;
 }
 
-#fifo_suma_fba_palety {
-    height: 35px;
-    width: 70px;
-    background-color: whitesmoke;
-    color: black;
-    float: left;
-    text-align: center;
-}
 
 #fifo_suma_lp {
     height: 35px;
@@ -1845,14 +1779,6 @@ b:active {
     text-align: center
 }
 
-#fifo_suma_pax {
-    height: 35px;
-    width: 70px;
-    background-color: whitesmoke;
-    color: black;
-    float: left;
-    text-align: center
-}
 
 #fifo_suma_ra {
     height: 35px;

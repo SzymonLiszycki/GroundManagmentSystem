@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GroundManagmentSystem.Migrations
 {
     [DbContext(typeof(Ground_Managment_System_Db_context))]
-    [Migration("20220520042509_new")]
-    partial class @new
+    [Migration("20220527035216_MySql")]
+    partial class MySql
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -43,7 +43,7 @@ namespace GroundManagmentSystem.Migrations
                         .HasColumnType("longtext");
 
                     b.Property<DateTime>("ISA_date_time")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime");
 
                     b.Property<int>("ISA_fba")
                         .HasColumnType("int");
@@ -61,7 +61,7 @@ namespace GroundManagmentSystem.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime>("ISA_last_update")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime");
 
                     b.Property<string>("ISA_line")
                         .HasColumnType("longtext");

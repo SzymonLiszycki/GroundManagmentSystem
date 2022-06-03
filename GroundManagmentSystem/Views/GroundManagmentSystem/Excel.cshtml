@@ -4,49 +4,67 @@
 @using System.Data;
 @using System.Collections
 @using MySqlConnector
+@using Spire.Xls
+@using System.Drawing;
 
-@using IronXL;
+
+
 
 
 
 @{
+    DateTime data = DateTime.Now;
+    int hour = data.Hour;
+    string shift;
+    string shift_full;
+    string file_name;
+    string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
+     string user = Environment.UserName;
 
 
-
-
-
-    string sql = "SELECT ISA_number,ISA_date_time,ISA_line,ISA_ra,ISA_ra_value,ISA_rb,ISA_rb_value,ISA_rh,ISA_rh_value,ISA_ac,ISA_ac_value,ISA_bc,ISA_bc_value,ISA_hc,ISA_hc_value,ISA_rap,ISA_rap_value,ISA_rbp,ISA_rbp_value,ISA_rhp,ISA_rhp_value FROM isa_models ";
-
-    //Your connection string
-    string connectionString = @"server=localhost; database=gmsdb; user=root; password=";
-
-    using (MySqlConnection connection = new MySqlConnection(connectionString))
+    MySqlConnection connection = new MySqlConnection();
+    connection.ConnectionString = @"server=sql11.freemysqlhosting.net; database=sql11495583; user=sql11495583; password=aCawqiN5pu";
+    MySqlCommand command = new MySqlCommand();
+    command.CommandText = "SELECT ISA_number,ISA_date_time,ISA_line,ISA_ra,ISA_ra_value,ISA_rb,ISA_rb_value,ISA_rh,ISA_rh_value,ISA_ac,ISA_ac_value,ISA_bc,ISA_bc_value,ISA_hc,ISA_hc_value,ISA_rap,ISA_rap_value,ISA_rbp,ISA_rbp_value,ISA_rhp,ISA_rhp_value FROM ISA_Models";
+    using (MySqlDataAdapter dataAdapter = new MySqlDataAdapter(command.CommandText, connection))
     {
+        DataTable t = new DataTable();
+        dataAdapter.Fill(t);
+        Workbook book = new Workbook();
+        Worksheet sheet = book.Worksheets[0];
+        sheet.InsertDataTable(t, true, 1, 1);
+        if (hour>6 && hour<18)
+        {
+            shift = "DS";
+            shift_full = " dzienna (DS)";
+        }
+        else
+        {
+            shift = "NS";
+            shift_full = " nocna(NS)";
+        }
+        book.SaveToFile($"C:\\Users\\{user}\\OneDrive\\Pulpit\\NYR {data.ToString("MM/dd/yyyy")}{shift}.xlsx");
+        sheet.Range["A1:E1"].Style.Color = Color.MediumSeaGreen;
+        sheet.Range["A2:A10"].Style.Color = Color.LightYellow;
 
-        WorkBook workbook;
 
-        //Open connections to the database
-        connection.Open();
-        MySqlDataAdapter adapter = new MySqlDataAdapter(sql, connection);
-        DataSet ds = new DataSet();
-        
-        
-        
-       
-        
-
-
-
-        adapter.Fill(ds);
-        
-        workbook = WorkBook.Load(ds);
-        
-        
-
-       
-    workbook.SaveAs("C:\\Users\\liszy\\OneDrive\\Pulpit\\raport.xlsx");
     }
-            
+     file_name=$"NYR {data.ToString("MM/dd/yyyy")}{shift}.xlsx";
+file_name=$"NYR {data.ToString("MM/dd/yyyy")}{shift}.xlsx";
+   
+    <div style="text-align:center " class="alert alert-success" role="alert">
+  <h4 class="alert-heading">Utworzono raport!</h4>
+  <p>Utorzono raport NYR  z dnia @data.ToString("MM/dd/yyyy") <br> Zmiana:@shift_full</p>
+  <p>Nazwa:@file_name</p>
+  <p>Lokalizacja: Pulpit</p>
+  <hr>
+  <p class="mb-0"><br /><br /></p>
+  <div style="position:relative; bottom:38px; left:600px;">
+    <a style="float:left"class="btn btn-secondary" asp-action="Index">Powrót</a>
+</div>
+</div>
+   
+    }
    
         
 }
